@@ -7,10 +7,10 @@
 	<key>ThemeIdentifier</key>
 	<string>net.mmeiss.nnw-themes.Default+</string>
 	<key>CreatorHomePage</key>
-    <string>https://github.com/meissnem/</string>
+    <string>https://github.com/meissnem/nnw_themes</string>
 	<key>CreatorName</key>
 	<string>Matt Meissner</string>
 	<key>Version</key>
-	<integer>1</integer>
+	<integer>2</integer>
 </dict>
 </plist>
