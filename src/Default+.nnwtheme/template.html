@@ -1,0 +1,120 @@
+<!-- Template Variables
+
+title: The title of the article
+preferred_link: The best link to associate with the article for linking out.
+
+external_link_label: A localized label for the external link.
+external_link_stripped: The external link minus the scheme. Useful for displaying the external link.
+external_link: The external link of the article if there is one provided by the author.
+
+feed_link_title: The name of the feed associated with this article.
+feed_link: The URL of the feed associated with this article.
+byline: HTML that combines all the authors and links to them if available.
+avatar_src: The image source URL for the feed icon / avatar.
+dateline_style: Either "articleDateline" or "articleDatelineTitle" depending on if the title was populated or not.
+
+datetime_long: Long version of a combined publish date and time.
+datetime_medium: Medium length version of a combined publish date and time.
+datetime_short: Short version of a combined publish date and time.
+
+date_long: Long version of the publish date.
+date_medium: Medium version of the publish date.
+date_short: Long version of the publish date.
+
+time_long: Long version of the publish time.
+time_medium: Medium version of the publish time.
+time_short: Long version of the publish time.
+
+text_size_class: The size class that the user has selected in Preferences for article text.
+body: The body of the article.
+
+-->
+
+<style>
+</style>
+<script type="text/javascript">
+    document.addEventListener("DOMContentLoaded", function(event) {
+        let url = (new URL("[[feed_link]]"));
+        let feedDomain = url.hostname.replace('www.','').replaceAll('.', '_')
+
+        const article = document.getElementById("nnwArticle");
+        article.className += " " + feedDomain;
+
+        document.body.className += " [[text_size_class]]";
+    })
+</script>
+
+
+<article id="nnwArticle" class="topContainer [[dateline_style]] [[text_size_class]]">
+    <!-- this block is only displayed on no-title posts -->
+    <aside class="avatar">
+        <img src="[[avatar_src]]" height="48" />
+    </aside>
+
+    <div>
+        <header class="headerContainer">
+            <div>
+                <div class="postByline">[[byline]]</div>
+                <div><a class="feedlink" href="[[feed_link]]">[[feed_link_title]]</a></div>
+                <div class="articleTitle"><h1><a href="[[preferred_link]]">[[title]]</a></h1></div>
+            </div>
+
+            <div class="avatar rightAlign">
+                <img id="nnwImageIcon" src="[[avatar_src]]" height="48" />
+            </div>
+
+            <div class="articleInfo">
+                <div>
+                    <div class="articleByline">[[byline]]</div>
+                    <div class="articleDateline"><a href="[[preferred_link]]">[[datetime_medium]]</a></div>
+                </div>
+                <div class="externalLink">[[external_link_label]] <a href="[[external_link]]">[[external_link_stripped]]</a></div>
+            </div>
+
+        </header>
+
+        <div id="bodyContainer" class="articleBody">
+            [[body]]
+        </div>
+
+        <footer id="nnwFooter">
+            <div class="postDateline"><a href="[[preferred_link]]">[[datetime_medium]]</a></div>
+        </footer>
+    </div>
+</article>
+
+<hr/>
+    <details>
+        <summary>Debugging</summary>
+
+        <table class="debugging-table">
+            <thead></thead>
+            <tbody>
+                <tr><td>title:</td><td>[[title]]</td></tr>
+                <tr><td>preferred_link:</td><td>[[preferred_link]]</td></tr>
+                <tr><td>external_link_label:</td><td>[[external_link_label]]</td></tr>
+                <tr><td>external_link_stripped:</td><td>[[external_link_stripped]]</td></tr>
+                <tr><td>external_link:</td><td>[[external_link]]</td></tr>
+                <tr><td>feed_link_title:</td><td>[[feed_link_title]]</td></tr>
+                <tr><td>feed_link:</td><td>[[feed_link]]</td></tr>
+                <tr><td>byline:</td><td>[[byline]]</td></tr>
+                <tr><td>avatar_src:</td><td>[[avatar_src]]</td></tr>
+                <tr><td>dateline_style:</td><td>[[dateline_style]]</td></tr>
+                <tr><td>datetime_long:</td><td>[[datetime_long]]</td></tr>
+                <tr><td>datetime_medium:</td><td>[[datetime_medium]]</td></tr>
+                <tr><td>datetime_short:</td><td>[[datetime_short]]</td></tr>
+                <tr><td>date_long:</td><td>[[date_long]]</td></tr>
+                <tr><td>date_medium:</td><td>[[date_medium]]</td></tr>
+                <tr><td>date_short:</td><td>[[date_short]]</td></tr>
+                <tr><td>time_long:</td><td>[[time_long]]</td></tr>
+                <tr><td>time_medium:</td><td>[[time_medium]]</td></tr>
+                <tr><td>time_short:</td><td>[[time_short]]</td></tr>
+                <tr><td>text_size_class:</td><td>[[text_size_class]]</td></tr>
+            </tbody>
+        </table>
+
+    <xmp class="debugging" style="white-space: pre-wrap">
+body :
+[[body]]
+    </xmp>
+    </details>

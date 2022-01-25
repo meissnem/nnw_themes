@@ -1,0 +1,787 @@
+:root {
+    color-scheme: light dark;
+
+    --header-font: ui-sans-serif,sans-serif;
+    --text-font: ui-sans-serif,sans-serif;
+
+    /* same as .largeText */
+    --large-title:  normal  normal  normal  normal  34px/41px   var(--header-font);
+    --title1:       normal  normal  normal  normal  28px/34px   var(--header-font);
+    --title2:       normal  normal  normal  normal  22px/28px   var(--header-font);
+    --title3:       normal  normal  normal  normal  20px/25px   var(--header-font);
+    --headline:     normal  normal  500     normal  17px/22px   var(--header-font);
+    --body:         normal  normal  normal  normal  17px/22px   var(--text-font);
+    --callout:      normal  normal  normal  normal  16px/21px   var(--header-font);
+    --subhead:      normal  normal  normal  normal  15px/20px   var(--header-font);
+    --footnote:     normal  normal  normal  normal  13px/18px   var(--text-font);
+    --caption1:     normal  normal  normal  normal  12px/16px   var(--header-font);
+    --caption2:     normal  normal  normal  normal  11px/13px   var(--header-font);
+
+    /*
+    --large-title-tracking:   0.4px;
+    --title1-tracking:        0.38px;
+    --title2-tracking:       -0.26px;
+    --title3-tracking:       -0.45px;
+    --headline-tracking:     -0.43px;
+    --body-tracking:         -0.43px;
+    --callout-tracking:      -0.31px;
+    --subhead-tracking:      -0.23px;
+    --footnote-tracking:     -0.08px;
+    --caption1-tracking:      0px;
+    --caption2-tracking:      0.06px;
+    */
+}
+
+/* apply dynamic type numbers from the HIG to the NNW 6.0 styles */
+.xsmallText {
+    --large-title:  normal  normal  normal  normal  31px/38px   var(--header-font);
+    --title1:       normal  normal  normal  normal  25px/31px   var(--header-font);
+    --title2:       normal  normal  normal  normal  19px/24px   var(--header-font);
+    --title3:       normal  normal  normal  normal  17px/22px   var(--header-font);
+    --headline:     normal  normal  500     normal  14px/19px   var(--header-font);
+    /* --body:         normal  normal  normal  normal  14px/19px   var(--text-font); */
+    --body:         normal  normal  normal  normal  14px/21px   var(--text-font);
+    --callout:      normal  normal  normal  normal  13px/18px   var(--header-font);
+    --subhead:      normal  normal  normal  normal  12px/16px   var(--header-font);
+    --footnote:     normal  normal  normal  normal  12px/16px   var(--text-font);
+    --caption1:     normal  normal  normal  normal  11px/13px   var(--header-font);
+    --caption2:     normal  normal  normal  normal  11px/13px   var(--header-font);
+
+    font: var(--body);
+    /* letter-spacing: var(--body-tracking); */
+}
+
+.smallText {
+    --large-title:  normal  normal  normal  normal  32px/39px   var(--header-font);
+    --title1:       normal  normal  normal  normal  26px/32px   var(--header-font);
+    --title2:       normal  normal  normal  normal  20px/25px   var(--header-font);
+    --title3:       normal  normal  normal  normal  18px/23px   var(--header-font);
+    --headline:     normal  normal  500     normal  15px/20px   var(--header-font);
+    /* --body:         normal  normal  normal  normal  15px/20px   var(--text-font); */
+    --body:         normal  normal  normal  normal  15px/23px   var(--text-font);
+    --callout:      normal  normal  normal  normal  14px/19px   var(--header-font);
+    --subhead:      normal  normal  normal  normal  13px/18px   var(--header-font);
+    --footnote:     normal  normal  normal  normal  12px/16px   var(--text-font);
+    --caption1:     normal  normal  normal  normal  11px/13px   var(--header-font);
+    --caption2:     normal  normal  normal  normal  11px/13px   var(--header-font);
+
+    --large-title-tracking:   0.41px;
+    --title1-tracking:        0.22px;
+    --title2-tracking:       -0.45px;
+    --title3-tracking:       -0.44px;
+    --headline-tracking:     -0.23px;
+    --body-tracking:         -0.23px;
+    --callout-tracking:      -0.15px;
+    --subhead-tracking:      -0.08px;
+    --footnote-tracking:      0px;
+    --caption1-tracking:      0.06px;
+    --caption2-tracking:      0.06px;
+
+    font: var(--body);
+    /* letter-spacing: var(--body-tracking); */
+}
+
+.mediumText {
+    --large-title:  normal  normal  normal  normal  33px/40px   var(--header-font);
+    --title1:       normal  normal  normal  normal  27px/33px   var(--header-font);
+    --title2:       normal  normal  normal  normal  21px/26px   var(--header-font);
+    --title3:       normal  normal  normal  normal  19px/24px   var(--header-font);
+    --headline:     normal  normal  500     normal  16px/21px   var(--header-font);
+    /* --body:         normal  normal  normal  normal  16px/21px   var(--text-font); */
+    --body:         normal  normal  normal  normal  16px/24px   var(--text-font);
+    --callout:      normal  normal  normal  normal  15px/20px   var(--header-font);
+    --subhead:      normal  normal  normal  normal  14px/19px   var(--header-font);
+    --footnote:     normal  normal  normal  normal  12px/16px   var(--text-font);
+    --caption1:     normal  normal  normal  normal  11px/13px   var(--header-font);
+    --caption2:     normal  normal  normal  normal  11px/13px   var(--header-font);
+
+    --large-title-tracking:   0.40px;
+    --title1-tracking:        0.29px;
+    --title2-tracking:       -0.36px;
+    --title3-tracking:       -0.45px;
+    --headline-tracking:     -0.31px;
+    --body-tracking:         -0.31px;
+    --callout-tracking:      -0.23px;
+    --subhead-tracking:      -0.15px;
+    --footnote-tracking:      0px;
+    --caption1-tracking:      0.06px;
+    --caption2-tracking:      0.06px;
+
+    font: var(--body);
+    /* letter-spacing: var(--body-tracking); */
+}
+
+.largeText {
+    --large-title:  normal  normal  normal  normal  34px/41px   var(--header-font);
+    --title1:       normal  normal  normal  normal  28px/34px   var(--header-font);
+    --title2:       normal  normal  normal  normal  22px/28px   var(--header-font);
+    --title3:       normal  normal  normal  normal  20px/25px   var(--header-font);
+    --headline:     normal  normal  500     normal  17px/22px   var(--header-font);
+    --body:         normal  normal  normal  normal  17px/22px   var(--text-font);
+    --callout:      normal  normal  normal  normal  16px/21px   var(--header-font);
+    --subhead:      normal  normal  normal  normal  15px/20px   var(--header-font);
+    --footnote:     normal  normal  normal  normal  13px/18px   var(--text-font);
+    --caption1:     normal  normal  normal  normal  12px/16px   var(--header-font);
+    --caption2:     normal  normal  normal  normal  11px/13px   var(--header-font);
+
+    --large-title-tracking:   0.40px;
+    --title1-tracking:        0.38px;
+    --title2-tracking:       -0.26px;
+    --title3-tracking:       -0.45px;
+    --headline-tracking:     -0.43px;
+    --body-tracking:         -0.43px;
+    --callout-tracking:      -0.31px;
+    --subhead-tracking:      -0.23px;
+    --footnote-tracking:     -0.08px;
+    --caption1-tracking:      0px;
+    --caption2-tracking:      0.06px;
+
+    font: var(--body);
+    /* letter-spacing: var(--body-tracking); */
+}
+
+.xlargeText {
+    --large-title:  normal  normal  normal  normal  36px/34px   var(--header-font);
+    --title1:       normal  normal  normal  normal  30px/37px   var(--header-font);
+    --title2:       normal  normal  normal  normal  24px/30px   var(--header-font);
+    --title3:       normal  normal  normal  normal  22px/28px   var(--header-font);
+    --headline:     normal  normal  500     normal  19px/24px   var(--header-font);
+    --body:         normal  normal  normal  normal  19px/24px   var(--text-font);
+    --callout:      normal  normal  normal  normal  18px/23px   var(--header-font);
+    --subhead:      normal  normal  normal  normal  17px/22px   var(--header-font);
+    --footnote:     normal  normal  normal  normal  15px/20px   var(--text-font);
+    --caption1:     normal  normal  normal  normal  14px/19px   var(--header-font);
+    --caption2:     normal  normal  normal  normal  13px/18px   var(--header-font);
+
+    --large-title-tracking:   0.37px;
+    --title1-tracking:        0.40px;
+    --title2-tracking:        0.07px;
+    --title3-tracking:       -0.26px;
+    --headline-tracking:     -0.45px;
+    --body-tracking:         -0.45px;
+    --callout-tracking:      -0.44px;
+    --subhead-tracking:      -0.43px;
+    --footnote-tracking:     -0.23px;
+    --caption1-tracking:     -0.15px;
+    --caption2-tracking:     -0.08px;
+
+    font: var(--body);
+    /* letter-spacing: var(--body-tracking); */
+}
+
+.xxlargeText {
+    --large-title:  normal  normal  normal  normal  38px/46px   var(--header-font);
+    --title1:       normal  normal  normal  normal  32px/39px   var(--header-font);
+    --title2:       normal  normal  normal  normal  26px/32px   var(--header-font);
+    --title3:       normal  normal  normal  normal  24px/30px   var(--header-font);
+    --headline:     normal  normal  500     normal  21px/26px   var(--header-font);
+    --body:         normal  normal  normal  normal  21px/26px   var(--text-font);
+    --callout:      normal  normal  normal  normal  20px/25px   var(--header-font);
+    --subhead:      normal  normal  normal  normal  19px/24px   var(--header-font);
+    --footnote:     normal  normal  normal  normal  17px/22px   var(--text-font);
+    --caption1:     normal  normal  normal  normal  16px/21px   var(--header-font);
+    --caption2:     normal  normal  normal  normal  15px/20px   var(--header-font);
+
+    --large-title-tracking:   0.37px;
+    --title1-tracking:        0.41px;
+    --title2-tracking:        0.22px;
+    --title3-tracking:        0.07px;
+    --headline-tracking:     -0.36px;
+    --body-tracking:         -0.36px;
+    --callout-tracking:      -0.45px;
+    --subhead-tracking:      -0.45px;
+    --footnote-tracking:     -0.43px;
+    --caption1-tracking:     -0.31px;
+    --caption2-tracking:     -0.23px;
+
+    font: var(--body);
+    /* letter-spacing: var(--body-tracking); */
+}
+
+
+body {
+    font: var(--body);
+    margin-inline: auto;
+    margin-block 20px 64px;
+    max-width: 44em;
+    padding-inline: 48px;
+    /* letter-spacing: var(--body-tracking); */
+}
+
+h1 { font: var(--title1);   /* letter-spacing: var(--title1-tracking);  */ }
+h2 { font: var(--title2);   /* letter-spacing: var(--title2-tracking);  */ }
+h3 { font: var(--title3);   /* letter-spacing: var(--title3-tracking);  */ }
+h4 { font: var(--headline); /* letter-spacing: var(--headline-tracking);*/ }
+h5 { font: var(--subhead);  /* letter-spacing: var(--subhead-tracking); */ }
+h6 { font: var(--footnote); /* letter-spacing: var(--footnote-tracking);*/ }
+
+h1, h2, h3, h4, h5, h6 {
+  font-weight: 600;
+  clear: both;
+}
+code, pre {
+    ui-monospace, "SF Mono", Menlo, "Courier New", Courier, monospace;
+}
+
+code {
+    background-color: -apple-system-grid;
+}
+
+pre {
+    display: inline-block;
+    background-color: -apple-system-grid;
+    padding: 2ch 2ch;
+    width: 100%;
+    border-radius: 8px;
+    border: 1px solid -apple-system-separator;
+    white-space: pre-wrap;
+}
+img, figure, video, div, object {
+    max-width: 100%;
+    height: auto !important;
+}
+
+a:link {
+    color: -apple-system-blue;
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+header {
+    font: var(--headline);
+    margin-block-end: 1em;
+}
+
+footer, .footnote, .footnotes, .footnotes ~ * {
+    font: var(--footnote);
+    margin-block-start: 1em;
+    color: -apple-system-secondary-label;
+}
+
+blockquote {
+  margin-inline: 0;
+  padding-inline: 15px;
+  border-inline: 3px solid -apple-system-separator;
+  color: -apple-system-label;
+}
+
+hr {
+    border: 1px solid -apple-system-separator;
+}
+
+figure {
+    margin-inline: 0
+}
+
+figure * {
+    color: -apple-system-secondary-label;
+    font: var(--caption1);
+}
+
+figure cite {
+    font: var(--caption1);
+    display: block;
+    color: -apple-system-secondary-label;
+}
+
+figcaption, small, .caption {
+    font: var(--caption1);
+    color: -apple-system-secondary-label;
+}
+
+div, p, img, iframe {
+    max-width: 100%;
+}
+img, iframe {
+    margin: 0 auto;
+}
+
+.credit {
+    font-style: italic;
+}
+
+.p-fullbleed-block, figure.e-image {
+    text-align: center;
+}
+
+/*****************************************************/
+
+.topContainer {
+    display: grid;
+}
+
+.avatar {
+    text-align: right;
+}
+.avatar img {
+    max-height: 48px;
+}
+
+.systemMessage {
+    color: -apple-system-tertiary-label;
+}
+
+.externalLink {
+    font-style: italic;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+header a:link, footer a:link {
+
+
+    color: inherit;
+    text-decoration: none;
+}
+
+header a:hover, footer a:hover {
+    color: -apple-system-blue !important;
+    text-decoration: underline;
+}
+
+
+.twitter-tweet {
+    margin-inline: auto;
+}
+
+.twitterAvatar {
+    vertical-align: middle;
+    border-radius: 4px;
+    max-height: 48px;
+    margin-block-end: 16px;
+}
+
+.twitterUsername {
+    font: var(--headline);
+    display: inline-block;
+    vertical-align: middle;
+    margin-inline-start: 8px;
+    margin-block-end: 16px;
+
+}
+.twitterScreenName {
+    font: var(--subhead);
+}
+.twitterTimestamp {
+    display: block;
+    margin-block-start: 1em;
+    font: var(--footnote);
+    color: -apple-system-secondary-label;
+}
+
+.twitterTimestamp:link {
+    color: inherit
+}
+.twitterTimestamp:hover {
+    color: -apple-system-blue;
+}
+
+/* A "post" -- no title */
+.topContainer.articleDatelineTitle {
+    grid-template-columns: 48px auto;
+    grid-gap: 8px;
+}
+
+.topContainer.articleDatelineTitle .headerContainer {
+    display: grid;
+    grid-template-columns: auto 0;
+    grid-gap: 0;
+}
+
+.topContainer.articleDatelineTitle .articleByline, .topContainer.articleDatelineTitle .articleDateline {
+    display: none;
+}
+
+.topContainer..articleDatelineTitle .headerContainer .avatar {
+    display: none;
+}
+
+.postByline {
+    font: var(--headline);
+}
+
+.topContainer.articleDatelineTitle .articleTitle {
+    display: none;
+}
+
+.topContainer.articleDatelineTitle .feedlink {
+    font: var(--subhead);
+    color: -apple-system-secondary-label;
+}
+
+.topContainer.articleDatelineTitle blockquote {
+    background-color: -apple-system-grouped-background;
+    margin-inline: 0;
+    padding: 16px;
+    border-radius: 16px;
+    border: 1px solid -apple-system-container-border;
+}
+
+/* An "article" -- With a title */
+.topContainer.articleDateline aside.avatar {
+    height: 0;
+}
+
+.topContainer.articleDateline {
+    grid-template-columns: 0 auto;
+    grid-gap: 0;
+}
+
+.topContainer.articleDateline > .avatar {
+    visibility: hidden;
+}
+
+.topContainer.articleDateline .headerContainer {
+    display: grid;
+    grid-template-columns: auto 128px;
+    grid-gap: 0;
+}
+
+.topContainer.articleDateline .postByline {
+    display: none;
+}
+
+.topContainer.articleDateline .postDateline {
+    display: none;
+}
+
+.topContainer.articleDateline .feedlink {
+    font: var(--subhead);
+    color: -apple-system-secondary-label;
+}
+
+.topContainer.articleDateline h1 {
+    margin-block: 0.25em;
+}
+
+.topContainer.articleDateline .articleInfo {
+    font: var(--subhead);
+    grid-column: 1 / span 2;
+    color: -apple-system-secondary-label;
+}
+div.articleByline, div.articleDateline {
+    display: inline;
+}
+
+div.articleDateline::before {
+    content: "    ";
+}
+
+
+.articleByline {
+    font-weight: 600;
+}
+
+div.articleDateline {
+    float: right;
+}
+
+
+
+.inputmag_com p>u {
+    font: var(--headline);
+    /* letter-spacing: var(--headline-tracking); */
+    font-weight: 800;
+    letter-spacing: 0.75px;
+    text-decoration: none;
+    text-transform: uppercase;
+}
+
+.inputmag_com blockquote[data-md-text-align=center] {
+    /* pull quote */
+    display: block;
+    font: var(--callout);
+    /* letter-spacing: var(--callout-tracking); */
+    font-weight: 300;
+    font-style: italic;
+    text-align: center;
+    color: -apple-system-secondary-label;
+    margin-block: 1em;
+    padding-block: 1em;
+    padding-inline: inherit;
+    border-block: 1px solid -apple-system-separator;
+    border-inline: inherit;
+}
+
+.inputmag_com blockquote[data-md-text-align=center] em, blockquote[data-md-text-align=center] i {
+    font-style: normal;
+}
+
+.inputmag_com blockquote[data-md-text-align=center] strong, blockquote[data-md-text-align=center] b {
+    font-weight: 500;
+}
+
+
+.macrumors_com .linkback:first-of-type {
+    border-block-start: 1px solid -apple-system-separator;
+    margin-block-start: 1.65em;
+    padding-block-start: 1.65em;
+}
+.macrumors_com .linkback {
+    font-style: italic;
+}
+
+.macrumors_com .linkback em, .linkback i { 
+    font-style: normal;
+}
+
+
+.startribune_com .l-article-downpage-left {
+    display: none;
+}
+
+.startribune_com .article-author-contact {
+    border-block-start: 1px solid -apple-system-separator;
+    font: var(--footnote);
+    /* letter-spacing: var(--footnote-tracking); */
+}
+
+.startribune_com .article-author-headshot-sm {
+    float: left;
+    width: 50px;
+    height: 50px;
+    margin-right: 1.5em;
+}
+
+
+/* The Verge */
+.theverge_com .p--has-dropcap:first-letter, .theverge_com p.has-drop-cap:first-letter {
+    font-size: 4em;
+    float: left;
+    margin-block-start: .15em;
+}
+
+.theverge_com .p-large-text {
+    font: var(--title3);
+    /* letter-spacing: var(--title3-tracking); */
+}
+
+.theverge_com .c-float-left {
+    float: left;
+    width: 45%;
+    margin-right: 5%;
+}
+
+.theverge_com .c-float-right {
+    float: right;
+    width: 45%;
+    margin-left: 5%;
+}
+
+.theverge_com .p-fullbleed-block, .theverge_com figure.e-image {
+    text-align: center;
+}
+
+/*
+.theverge_com figure.e-image img {
+    width: 100%;
+}
+*/
+
+.theverge_com aside q {
+    /* pull quote */
+    display: block;
+    font: var(--callout);
+    /* letter-spacing: var(--callout-tracking); */
+    font-weight: 300;
+    font-style: italic;
+    color: -apple-system-secondary-label;
+    border-block: 1px solid -apple-system-separator;
+    margin-block: 1em;
+    padding-block: 1em;
+}
+
+.theverge_com aside q::before, .theverge_com aside q::after {
+    /* The Verge adds their own quotes if they want them */
+    content: "";
+}
+
+.theverge_com aside q em, .theverge_com aside q i {
+    font-style: normal;
+}
+
+.theverge_com aside q strong, .theverge_com aside q b {
+    font-weight: 500;
+}
+
+.theverge_com figure cite {
+    font: var(--caption1);
+    /* letter-spacing: var(--caption1-tracking); */
+    line-height: 1.3em;
+    display: block;
+}
+
+.theverge_com .c-end-para:after {
+    content: " ■";
+    font-size: 0.5em;
+}
+
+.boingboing_net .next-post-list-container {
+    display: none;
+}
+
+.twincities_com aside.related {
+    display: none;
+}
+
+figure cite {
+    text-align: initial;
+}
+
+p.alignright {
+    float: none;
+    text-align: right;
+    margin-block-start: -0.5em;
+}
+
+.aligncenter {
+    text-align: center;
+    margin-inline: auto;
+}
+.alignright, .float-right {
+    float: right;
+    margin-block-start: 0;
+    margin-inline: 8px;
+}
+.alignleft, .float-left {
+    float: left;
+    margin-block-start: 0;
+    margin-inline: 8px;
+}
+
+.wp-caption-text {
+    text-align: initial;
+    font: var(--caption1);
+    color: -apple-system-secondary-label;
+}
+
+
+
+.twincities_com .size-article_inline_half {
+    max-width: 50%;
+}
+
+.cidrap_umn_edu .field-name-field-image-thumbnail {
+    float: left;
+    margin-block-start: 0;
+    margin-inline-end: 8px;
+}
+
+.cidrap_umn_edu .field-name-field-byline, .cidrap_umn_edu .field-name-field-date {
+    display: none;
+}
+
+.cidrap_umn_edu .field-name-field-bullet-points > .field-items {
+    display: block;
+    list-style-type: disc;
+    margin: 1em 0;
+    padding-inline-start: 40px;
+}
+
+.cidrap_umn_edu .field-name-field-bullet-points > .field-items > .field-item {
+    display: list-item;
+    text-align: -webkit-match-parent;
+}
+
+.mprnews_org .apm-related-list {
+    display: none;
+}
+
+.macstories_net .media-wrapper {
+    max-width: 100%;
+    height: auto !important;
+    margin-inline: 0;
+}
+
+.macstories_net .image-caption {
+    text-align: initial;
+    font: var(--caption1);
+    color: -apple-system-secondary-label;
+}
+
+.macstories_net .aside, .macstories_net .shortcuts-box {
+    margin: 1em auto;
+    border: 1px solid -apple-system-grid;
+    border-radius: 8px;
+    font: var(--subhead);
+    padding: 8px;
+}
+
+.macstories_net .aside-narrow {
+    max-width: 22em;
+}
+
+.macstories_net .shortcuts-box {
+    max-width: 33em;
+}
+.macstories_net .aside p {
+    text-align: initial;
+}
+
+.macstories_net .media-element-content {
+    display: grid;
+    grid-template-columns: auto auto;
+    grid-gap: 8px;
+}
+
+.macstories_net .shortcuts-box .media-element-image {
+    max-height: 80px;
+}
+
+.macstories_net .media-element-description .title {
+    margin-block-start: 0;
+}
+
+
+.starwars_com .dplus-promo-container {
+    display: none;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.articleBody > img {
+    display: block;
+    margin-inline: auto;
+}
+
+.articleBody > h1, .articleBody > h2, .articleBody > h3, .articleBody > h4, .articleBody > h5, .articleBody > h6 {
+    margin-block-end: .25em;
+    border-bottom: thin solid -apple-system-separator;
+}
+.articleBody h1+*, .articleBody h2+*, .articleBody h3+*, .articleBody h4+*, .articleBody h5+*, .articleBody h6+* {
+    margin-block-start: .25em;
+}
+
+.debugging-table td {
+    font-family: ui-monospace;
+}
+
+.debugging-table td:nth-child(1) {
+    font-weight: bold;
+    text-align: right;
+    vertical-align: top;
+}
+
+.center-wrap {
+    margin-inline: auto;
+    text-align: center;
+}
