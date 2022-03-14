@@ -120,7 +120,7 @@
 body {
     font: var(--font-body);
     margin-inline: auto;
-    margin-block 20px 64px;
+    margin-block: 20px 64px;
     max-width: 42em;
     padding-inline: clamp(20px, calc(calc(100vw - 700px) + 20px), 48px);
 }

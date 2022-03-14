@@ -32,15 +32,22 @@ body: The body of the article.
 
 <script type="text/javascript">
     document.addEventListener("DOMContentLoaded", function(event) {
-        let url = (new URL("[[feed_link]]"));
-        let feedDomain = url.hostname.replace('www.','').replaceAll('.', '_')
+        var feedDomain = "";
+        try {
+            let url = (new URL("[[feed_link]]"));
+            feedDomain = url.hostname.replace('www.','').replaceAll('.', '_');
+        } catch(e) {
+            ;
+        }
 
         //const article = document.getElementById("nnwArticle");
         //article.className += " " + feedDomain;
 
         document.body.className += " [[dateline_style]]";
         document.body.className += " [[text_size_class]]";
-        document.body.className += " " + feedDomain;
+        if (feedDomain != "") {
+            document.body.className += " " + feedDomain;
+        }
     })
 </script>
 <article id="nnwArticle" class="topContainer">
