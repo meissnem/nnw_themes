@@ -52,13 +52,17 @@ body: The body of the article.
 </script>
 <article id="nnwArticle" class="topContainer">
     <header class="headerContainer">
-        <div class="avatar"><img id="nnwImageIcon" src="[[avatar_src]]" height="48" /></div>
+        <div class="avatar articleHidden"><img id="nnwImageIcon" src="[[avatar_src]]" height="48" /></div>
         <div class="byline articleHidden">[[byline]]</div>
-        <div class="feedlink"><a href="[[feed_link]]">[[feed_link_title]]</a></div>
-        <h1 class="articleTitle"><a href="[[preferred_link]]">[[title]]</a></h1>
+        <div class="feedlink articleHidden"><a href="[[feed_link]]">[[feed_link_title]]</a></div>
+        <div class="headerGrid postHidden">
+            <div class="feedlink"><a href="[[feed_link]]">[[feed_link_title]]</a></div>
+            <div class="avatar"><img id="nnwImageIcon" src="[[avatar_src]]" height="24" /></div>
+            <h1 class="articleTitle"><a href="[[preferred_link]]">[[title]]</a></h1>
+        </div>
         <div class="byline postHidden">[[byline]]</div>
         <div class="dateline postHidden"><a href="[[preferred_link]]">[[datetime_medium]]</a></div>
-        <div class="externalLink">[[external_link_label]] <a href="[[external_link]]">[[external_link_stripped]]</a></div>
+        <div class="externalLink postHidden">[[external_link_label]] <a href="[[external_link]]">[[external_link_stripped]]</a></div>
     </header>
     <div id="bodyContainer" class="articleBody">
         [[body]]

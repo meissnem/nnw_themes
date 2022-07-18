@@ -1,8 +1,9 @@
 :root {
     color-scheme: light dark;
 
-    --header-font: ui-sans-serif,sans-serif;
-    --text-font: ui-sans-serif,sans-serif;
+    --font-family-sans-serif: ui-sans-serif,sans-serif;
+    --font-family-serif: ui-serif,serif;
+    --font-family-monospace: ui-monospace,monospace;
 
     --font-body:        -apple-system-tall-body;
     --font-headline:    -apple-system-headline;
@@ -21,7 +22,8 @@
     --color-blockquote-background: -apple-system-grouped-background;
     --color-body:                  -webkit-text;
     --color-body-background:       -apple-system-text-background;
-    --color-border:                -apple-system-separator;
+    --color-border:                -apple-system-container-border;
+    --color-grid:                  -apple-system-grid;
     --color-pre-background:        -apple-system-grid;
     --color-header-text:           -apple-system-header-text;
     --color-link:                  var(--color-accent);
@@ -30,91 +32,93 @@
     --color-tertiary-label:        -apple-system-tertiary-label;
     --color-newsfoot-background:   -apple-system-background;
     --color-newsfoot-secondary-background:   -apple-system-secondary-background;
+    --color-newsfoot-popover-background: -apple-system-tertiary-label;
+    --color-newsfoot-popover-hover-background: -apple-system-quaternary-label;
 
 }
 
 .xsmallText {
-     --font-body:        normal  normal  normal  normal  15px/24px  var(--text-font);
-     --font-headline:    normal  normal  500     normal  15px/22px  var(--header-font);
-     --font-subheadline: normal  normal  normal  normal  13px/19px  var(--header-font);
-     --font-footnote:    normal  normal  normal  normal  13px/19px  var(--text-font);
-     --font-caption1:    normal  normal  normal  normal  12px/15px  var(--header-font);
-     --font-caption2:    normal  normal  normal  normal  12px/15px  var(--header-font);
-     --font-title0:      normal  normal  normal  normal  31px/40px  var(--header-font);
-     --font-title1:      normal  normal  normal  normal  25px/33px  var(--header-font);
-     --font-title2:      normal  normal  normal  normal  19px/26px  var(--header-font);
-     --font-title3:      normal  normal  normal  normal  17px/24px  var(--header-font);
-     --font-callout:     normal  normal  normal  normal  14px/20px  var(--header-font);
+     --font-body:        normal  normal  normal  normal  15px/24px  var(--font-family-sans-serif);
+     --font-headline:    normal  normal  500     normal  15px/22px  var(--font-family-sans-serif);
+     --font-subheadline: normal  normal  normal  normal  13px/19px  var(--font-family-sans-serif);
+     --font-footnote:    normal  normal  normal  normal  13px/19px  var(--font-family-sans-serif);
+     --font-caption1:    normal  normal  normal  normal  12px/15px  var(--font-family-sans-serif);
+     --font-caption2:    normal  normal  normal  normal  12px/15px  var(--font-family-sans-serif);
+     --font-title0:      normal  normal  normal  normal  31px/40px  var(--font-family-sans-serif);
+     --font-title1:      normal  normal  normal  normal  25px/33px  var(--font-family-sans-serif);
+     --font-title2:      normal  normal  normal  normal  19px/26px  var(--font-family-sans-serif);
+     --font-title3:      normal  normal  normal  normal  17px/24px  var(--font-family-sans-serif);
+     --font-callout:     normal  normal  normal  normal  14px/20px  var(--font-family-sans-serif);
 }
 
 .smallText {
-    --font-body:         normal  normal  normal  normal  15px/24px  var(--text-font);
-    --font-headline:     normal  normal  500     normal  15px/22px  var(--header-font);
-    --font-subheadline:  normal  normal  normal  normal  14px/21px  var(--header-font);
-    --font-footnote:     normal  normal  normal  normal  13px/19px  var(--text-font);
-    --font-caption1:     normal  normal  normal  normal  12px/15px  var(--header-font);
-    --font-caption2:     normal  normal  normal  normal  12px/15px  var(--header-font);
-    --font-title0:       normal  normal  normal  normal  32px/40px  var(--header-font);
-    --font-title1:       normal  normal  normal  normal  26px/33px  var(--header-font);
-    --font-title2:       normal  normal  normal  normal  20px/27px  var(--header-font);
-    --font-title3:       normal  normal  normal  normal  18px/25px  var(--header-font);
-    --font-callout:      normal  normal  normal  normal  15px/22px  var(--header-font);
+    --font-body:         normal  normal  normal  normal  15px/24px  var(--font-family-sans-serif);
+    --font-headline:     normal  normal  500     normal  15px/22px  var(--font-family-sans-serif);
+    --font-subheadline:  normal  normal  normal  normal  14px/21px  var(--font-family-sans-serif);
+    --font-footnote:     normal  normal  normal  normal  13px/19px  var(--font-family-sans-serif);
+    --font-caption1:     normal  normal  normal  normal  12px/15px  var(--font-family-sans-serif);
+    --font-caption2:     normal  normal  normal  normal  12px/15px  var(--font-family-sans-serif);
+    --font-title0:       normal  normal  normal  normal  32px/40px  var(--font-family-sans-serif);
+    --font-title1:       normal  normal  normal  normal  26px/33px  var(--font-family-sans-serif);
+    --font-title2:       normal  normal  normal  normal  20px/27px  var(--font-family-sans-serif);
+    --font-title3:       normal  normal  normal  normal  18px/25px  var(--font-family-sans-serif);
+    --font-callout:      normal  normal  normal  normal  15px/22px  var(--font-family-sans-serif);
 }
 
 .mediumText {
-    --font-body:         normal  normal  normal  normal  16px/24px  var(--text-font);
-    --font-headline:     normal  normal  500     normal  16px/22px  var(--header-font);
-    --font-subheadline:  normal  normal  normal  normal  15px/22px  var(--header-font);
-    --font-footnote:     normal  normal  normal  normal  13px/19px  var(--text-font);
-    --font-caption1:     normal  normal  normal  normal  12px/15px  var(--header-font);
-    --font-caption2:     normal  normal  normal  normal  12px/15px  var(--header-font);
-    --font-title0:       normal  normal  normal  normal  33px/41px  var(--header-font);
-    --font-title1:       normal  normal  normal  normal  27px/34px  var(--header-font);
-    --font-title2:       normal  normal  normal  normal  21px/27px  var(--header-font);
-    --font-title3:       normal  normal  normal  normal  19px/26px  var(--header-font);
-    --font-callout:      normal  normal  normal  normal  16px/22px  var(--header-font);
+    --font-body:         normal  normal  normal  normal  16px/24px  var(--font-family-sans-serif);
+    --font-headline:     normal  normal  500     normal  16px/22px  var(--font-family-sans-serif);
+    --font-subheadline:  normal  normal  normal  normal  15px/22px  var(--font-family-sans-serif);
+    --font-footnote:     normal  normal  normal  normal  13px/19px  var(--font-family-sans-serif);
+    --font-caption1:     normal  normal  normal  normal  12px/15px  var(--font-family-sans-serif);
+    --font-caption2:     normal  normal  normal  normal  12px/15px  var(--font-family-sans-serif);
+    --font-title0:       normal  normal  normal  normal  33px/41px  var(--font-family-sans-serif);
+    --font-title1:       normal  normal  normal  normal  27px/34px  var(--font-family-sans-serif);
+    --font-title2:       normal  normal  normal  normal  21px/27px  var(--font-family-sans-serif);
+    --font-title3:       normal  normal  normal  normal  19px/26px  var(--font-family-sans-serif);
+    --font-callout:      normal  normal  normal  normal  16px/22px  var(--font-family-sans-serif);
 }
 
 .largeText {
-    --font-body:         normal  normal  normal  normal  17px/26px  var(--text-font);
-    --font-headline:     normal  normal  500     normal  17px/24px  var(--header-font);
-    --font-subheadline:  normal  normal  normal  normal  15px/22px  var(--header-font);
-    --font-footnote:     normal  normal  normal  normal  14px/21px  var(--text-font);
-    --font-caption1:     normal  normal  normal  normal  13px/19px  var(--header-font);
-    --font-caption2:     normal  normal  normal  normal  12px/15px  var(--header-font);
-    --font-title0:       normal  normal  normal  normal  34px/43px  var(--header-font);
-    --font-title1:       normal  normal  normal  normal  28px/35px  var(--header-font);
-    --font-title2:       normal  normal  normal  normal  22px/29px  var(--header-font);
-    --font-title3:       normal  normal  normal  normal  20px/27px  var(--header-font);
-    --font-callout:      normal  normal  normal  normal  16px/23px  var(--header-font);
+    --font-body:         normal  normal  normal  normal  17px/26px  var(--font-family-sans-serif);
+    --font-headline:     normal  normal  500     normal  17px/24px  var(--font-family-sans-serif);
+    --font-subheadline:  normal  normal  normal  normal  15px/22px  var(--font-family-sans-serif);
+    --font-footnote:     normal  normal  normal  normal  14px/21px  var(--font-family-sans-serif);
+    --font-caption1:     normal  normal  normal  normal  13px/19px  var(--font-family-sans-serif);
+    --font-caption2:     normal  normal  normal  normal  12px/15px  var(--font-family-sans-serif);
+    --font-title0:       normal  normal  normal  normal  34px/43px  var(--font-family-sans-serif);
+    --font-title1:       normal  normal  normal  normal  28px/35px  var(--font-family-sans-serif);
+    --font-title2:       normal  normal  normal  normal  22px/29px  var(--font-family-sans-serif);
+    --font-title3:       normal  normal  normal  normal  20px/27px  var(--font-family-sans-serif);
+    --font-callout:      normal  normal  normal  normal  16px/23px  var(--font-family-sans-serif);
 }
 
 .xlargeText {
-    --font-body:         normal  normal  normal  normal  19px/28px  var(--text-font);
-    --font-headline:     normal  normal  500     normal  19px/26px  var(--header-font);
-    --font-subheadline:  normal  normal  normal  normal  17px/24px  var(--header-font);
-    --font-footnote:     normal  normal  normal  normal  15px/22px  var(--text-font);
-    --font-caption1:     normal  normal  normal  normal  15px/22px  var(--header-font);
-    --font-caption2:     normal  normal  normal  normal  14px/21px  var(--header-font);
-    --font-title0:       normal  normal  normal  normal  36px/45px  var(--header-font);
-    --font-title1:       normal  normal  normal  normal  30px/38px  var(--header-font);
-    --font-title2:       normal  normal  normal  normal  24px/31px  var(--header-font);
-    --font-title3:       normal  normal  normal  normal  22px/29px  var(--header-font);
-    --font-callout:      normal  normal  normal  normal  18px/25px  var(--header-font);
+    --font-body:         normal  normal  normal  normal  19px/28px  var(--font-family-sans-serif);
+    --font-headline:     normal  normal  500     normal  19px/26px  var(--font-family-sans-serif);
+    --font-subheadline:  normal  normal  normal  normal  17px/24px  var(--font-family-sans-serif);
+    --font-footnote:     normal  normal  normal  normal  15px/22px  var(--font-family-sans-serif);
+    --font-caption1:     normal  normal  normal  normal  15px/22px  var(--font-family-sans-serif);
+    --font-caption2:     normal  normal  normal  normal  14px/21px  var(--font-family-sans-serif);
+    --font-title0:       normal  normal  normal  normal  36px/45px  var(--font-family-sans-serif);
+    --font-title1:       normal  normal  normal  normal  30px/38px  var(--font-family-sans-serif);
+    --font-title2:       normal  normal  normal  normal  24px/31px  var(--font-family-sans-serif);
+    --font-title3:       normal  normal  normal  normal  22px/29px  var(--font-family-sans-serif);
+    --font-callout:      normal  normal  normal  normal  18px/25px  var(--font-family-sans-serif);
 }
 
 .xxlargeText {
-    --font-body:         normal  normal  normal  normal  21px/29px  var(--text-font);
-    --font-headline:     normal  normal  500     normal  21px/27px  var(--header-font);
-    --font-subheadline:  normal  normal  normal  normal  19px/26px  var(--header-font);
-    --font-footnote:     normal  normal  normal  normal  17px/24px  var(--text-font);
-    --font-caption1:     normal  normal  normal  normal  16px/22px  var(--header-font);
-    --font-caption2:     normal  normal  normal  normal  15px/22px  var(--header-font);
-    --font-title0:       normal  normal  normal  normal  38px/48px  var(--header-font);
-    --font-title1:       normal  normal  normal  normal  32px/39px  var(--header-font);
-    --font-title2:       normal  normal  normal  normal  26px/33px  var(--header-font);
-    --font-title3:       normal  normal  normal  normal  24px/31px  var(--header-font);
-    --font-callout:      normal  normal  normal  normal  20px/27px  var(--header-font);
+    --font-body:         normal  normal  normal  normal  21px/29px  var(--font-family-sans-serif);
+    --font-headline:     normal  normal  500     normal  21px/27px  var(--font-family-sans-serif);
+    --font-subheadline:  normal  normal  normal  normal  19px/26px  var(--font-family-sans-serif);
+    --font-footnote:     normal  normal  normal  normal  17px/24px  var(--font-family-sans-serif);
+    --font-caption1:     normal  normal  normal  normal  16px/22px  var(--font-family-sans-serif);
+    --font-caption2:     normal  normal  normal  normal  15px/22px  var(--font-family-sans-serif);
+    --font-title0:       normal  normal  normal  normal  38px/48px  var(--font-family-sans-serif);
+    --font-title1:       normal  normal  normal  normal  32px/39px  var(--font-family-sans-serif);
+    --font-title2:       normal  normal  normal  normal  26px/33px  var(--font-family-sans-serif);
+    --font-title3:       normal  normal  normal  normal  24px/31px  var(--font-family-sans-serif);
+    --font-callout:      normal  normal  normal  normal  20px/27px  var(--font-family-sans-serif);
 }
 
 body {
@@ -132,17 +136,32 @@ h4 { font: var(--font-headline); }
 h5 { font: var(--font-subheadline);  }
 h6 { font: var(--font-footnote); }
 
-h1, h2, h3, h4, h5, h6 {
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
   font-weight: 600;
   clear: both;
   color: var(--color-header-text);
 }
 
-tt, code, kbd, samp, pre, xmp, plaintext, listing {
-    font-family: ui-monospace, monospace;
+tt,
+code,
+kbd,
+samp,
+pre,
+xmp,
+plaintext,
+listing {
+    font-family: var(--font-family-monospace);
 }
 
-tt, code, kbd, samp {
+tt,
+code,
+kbd,
+samp {
     background-color: var(--color-pre-background);
 }
 
@@ -153,13 +172,17 @@ pre {
     border-radius: 8px;
     border: 1px solid var(--color-border);
     white-space: pre;
-	overflow: auto;
-	overflow-y: hidden;
-	word-wrap: normal;
-	word-break: normal;
+    overflow: auto;
+    overflow-y: hidden;
+    word-wrap: normal;
+    word-break: normal;
 }
 
-img, figure, video, div, object {
+img,
+figure,
+video,
+div,
+object {
     max-width: 100%;
     height: auto !important;
 }
@@ -178,13 +201,22 @@ header {
     margin-block-end: 1em;
 }
 
-footer, .articleFooter, .footnotes, .footnotes ~ * {
+footer,
+.articleFooter,
+div.footnote,
+.footnotes,
+.footnotes ~ *,
+ol.footnote,
+ol:has(li.footnote) {
     font: var(--font-footnote);
     margin-block-start: 1em;
     color: var(--color-secondary-label);
+    font-feature-settings: "ss06" 1;
+    font-variant-numeric: tabular-nums;
 }
 
-blockquote {
+blockquote,
+.wp-block-quote {
   margin-inline: 0;
   padding-inline: 15px;
   border-inline-start: 3px solid var(--color-border);
@@ -192,7 +224,8 @@ blockquote {
 }
 
 hr {
-    border: 1px solid var(--color-border);
+    border: 0;
+    border-block-end: 1px solid var(--color-border);
 }
 
 figure {
@@ -209,29 +242,32 @@ figure cite {
     color: var(--color-secondary-label);
 }
 
-figcaption, .caption {
+figcaption,
+.caption {
     font: var(--font-caption1);
     color: var(--color-secondary-label);
+    font-feature-settings: "ss06" 1;
+    font-variant-numeric: tabular-nums;
 }
 
-div, p, img, iframe {
+div,
+p,
+img,
+iframe {
     max-width: 100%;
 }
 
-img, iframe {
+img,
+iframe {
     margin: 0 auto;
-}
-
-table {
-    font: var(--font-body);
-    font-variant-numeric: tabular-nums;
 }
 
 .credit {
     font-style: italic;
 }
 
-.p-fullbleed-block, figure.e-image {
+.p-fullbleed-block,
+figure.e-image {
     text-align: center;
 }
 
@@ -250,7 +286,32 @@ article footer .dateline a:hover {
     color: var(--color-link);
 }
 
-article header .feedlink {
+.headerGrid {
+    display: grid;
+    grid-template-columns: auto 32px;
+    grid-row-gap: 8px;
+    margin-block: 8px;
+}
+
+.headerGrid > .feedlink {
+    border-block-end: 1px solid var(--color-border);
+}
+
+.headerGrid > h1.articleTitle {
+    grid-column: 1 / span 2;
+}
+
+.headerGrid .avatar {
+    max-width: 24px;
+    margin-inline-start: 0;
+    padding-inline-start: 8px;
+    margin-block-end: 0;
+    padding-block-end: 8px;
+    float: none;
+    border-block-end: 1px solid var(--color-border);
+}
+
+article header .feedlink.articleHidden {
     display: inline;
 }
 
@@ -262,7 +323,8 @@ article header .avatar {
     margin-block-end: 4px;
 }
 
-.articleDatelineTitle .postHidden, .articleDateline .articleHidden  {
+.articleDatelineTitle .postHidden,
+.articleDateline .articleHidden  {
     display: none !important;
 }
 
@@ -272,7 +334,7 @@ body.articleDatelineTitle article header .avatar {
 }
 
 article header h1.articleTitle {
-    display: inline;
+    margin-block: 0;
     color: var(--color-label);
 }
 
@@ -282,7 +344,9 @@ article header h1.articleTitle {
     white-space: pre-wrap;
 }
 
-@media screen and (max-width: 700px), screen and (max-height: 700px) {
+@media
+screen and (max-width: 700px),
+screen and (max-height: 700px) {
     .articleDatelineTitle article header :is(.feedlink)::before {
         content: "";
         white-space: initial;
@@ -317,7 +381,9 @@ article header .dateline {
     color: var(--color-secondary-label);
 }
 
-@media screen and (max-width: 700px), screen and (max-height: 700px) {
+@media
+screen and (max-width: 700px),
+screen and (max-height: 700px) {
     article header :is(div.byline, div.dateline, div.externalLink){
         display: block !important;
         float: none !important;
@@ -338,7 +404,8 @@ article header .externalLink {
 /* Newsfoot theme */
 .newsfoot-footnote-popover {
     background: var(--color-newsfoot-secondary-background);
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.5), 0 3px 6px rgba(0, 0, 0, 0.25);
+    box-shadow: 0 2px 4px var(--color-label) /*rgba(0, 0, 0, 0.5)*/, 0 3px 6px var(--color-label) /*rgba(0, 0, 0, 0.25)*/;
+    border: 1px solid var(--color-label);
     color: var(--color-body);
     padding: 1px;
     font: var(--font-footnote);
@@ -346,7 +413,9 @@ article header .externalLink {
 
 .newsfoot-footnote-popover-arrow {
     background: var(--color-newsfoot-background);
-    border: 1px solid var(--color-newsfoot-secondary-background);
+    border-left: 1px solid var(--color-label);
+    border-top: 1px solid var(--color-label);
+    z-index: 2;
 }
 
 .newsfoot-footnote-popover-inner {
@@ -356,14 +425,17 @@ article header .externalLink {
 body a.footnote,
 body a.footnote:visited,
 .newsfoot-footnote-popover + a.footnote:hover {
-    background: #aaa;
-    color: white;
+    margin-inline-start: 5px;
+    font: var(--font-footnote);
+    line-height: 1em;
+    background: var(--color-newsfoot-popover-hover-background);
+    color: var(--color-body);
     transition: background-color 200ms ease-out;
 }
 
 a.footnote:hover,
 .newsfoot-footnote-popover + a.footnote {
-    background: #666;
+    background: var(--color-newsfoot-popover-background);
     transition: background-color 200ms ease-out;
 }
 
@@ -429,16 +501,16 @@ a.footnote:hover,
     margin-block-end: .25em;
     /*
      * this looks bad when <h3> is followed immediately by <h4>
+     */
 
     border-block-end: thin solid var(--color-border);
-     */
 }
 .articleBody :is(h1, h2, h3, h4, h5, h6) + * {
     margin-block-start: .25em;
 }
 
 .debugging-table td {
-    font-family: ui-monospace;
+    font-family: var(--font-family-monospace);
 }
 
 .debugging-table td:nth-child(1) {
@@ -453,15 +525,52 @@ a.footnote:hover,
 }
 
 
+article table,
+article figure {
+    /* enable "high legibility" in SF font */
+    font: var(--font-body);
+    font-family: var(--font-family-sans-serif);
+    font-feature-settings: "ss06" 1;
+    font-variant-numeric: tabular-nums;
+}
+
+article table {
+    border: 1px solid var(--color-border);
+    border-collapse: collapse;
+    width: auto !important;
+}
+
+article table th {
+    color: var(--color-header-text);
+    background-color: var(--color-odd-alternating-content-background);
+}
+
+thead {
+    border-block-end: 1px solid var(--color-grid);
+}
+
+article table tbody tr:nth-child(odd) {
+    background-color: var(--color-odd-alternating-content-background);
+}
+
+article table tbody tr:nth-child(even) {
+    background-color: var(--color-even-alternating-content-background);
+}
+
+article table :is(td, th) {
+    padding-inline: 5px;
+    padding-block: 2px;
+}
 
 
 
-
-
-
-
-
-
+.appleinsider_com div[align="center"]:has( > img) {
+    font: var(--font-caption1);
+    color: var(--color-secondary-label);
+    margin-block: 1em;
+    font-feature-settings: "ss06" 1;
+    font-variant-numeric: tabular-nums;
+}
 
 .inputmag_com p>u {
     font: var(--font-headline);
@@ -486,11 +595,13 @@ a.footnote:hover,
     border-inline: inherit;
 }
 
-.inputmag_com blockquote[data-md-text-align=center] em, blockquote[data-md-text-align=center] i {
+.inputmag_com blockquote[data-md-text-align=center] em,
+blockquote[data-md-text-align=center] i {
     font-style: normal;
 }
 
-.inputmag_com blockquote[data-md-text-align=center] strong, blockquote[data-md-text-align=center] b {
+.inputmag_com blockquote[data-md-text-align=center] strong,
+blockquote[data-md-text-align=center] b {
     font-weight: 500;
 }
 
@@ -504,19 +615,47 @@ a.footnote:hover,
     font-style: italic;
 }
 
-.macrumors_com .linkback em, .linkback i {
+.macrumors_com .linkback em,
+.linkback i {
     font-style: normal;
 }
 
 
+/* TBD: macrumors-only or generaly useful? */
+img + center:has( > em) {
+    color: var(--color-secondary-label);
+    font: var(--font-caption1);
+    font-feature-settings: "ss06" 1;
+    font-variant-numeric: tabular-nums;
+}
+
+iframe[src*="video.startribune.com"] {
+    border: 0;
+    width: 640px;
+    aspect-ratio: 16/9;
+}
+
+.startribune_com aside.article-share,
+.startribune_com .l-article-topper,
 .startribune_com .l-article-downpage-left {
     display: none;
 }
 
+.startribune_com div.article-body > p:last-child:has(> em:first-child + a + em:last-child),
+.startribune_com div.article-body > p:last-child:has(> a:first-child + em:last-child),
+.startribune_com div.article-body > p:last-child:has(> em:only-child),
 .startribune_com .article-author-contact {
     border-block-start: 1px solid var(--color-border);
     font: var(--font-footnote);
+    color: var(--color-secondary-label);
 }
+
+.startribune_com div.article-body > h5 + h2 ~ p:last-child:has(> em:only-child) {
+    border-block-start: 0;
+    font: inherit;
+    color: inherit;
+}
+
 
 .startribune_com .article-author-headshot-sm {
     float: left;
@@ -525,9 +664,36 @@ a.footnote:hover,
     margin-right: 1.5em;
 }
 
+.startribune_com .article-body > p:first-child:has(> strong:first-child + a + em),
+.startribune_com .article-body > p:first-child:has(> strong:first-child + em + a) {
+    background-color: var(--color-pre-background);
+    border: 1px solid var(--color-border);
+    border-radius: 8px;
+    color: var(--color-label);
+    padding: 8px;
+    font: var(--font-footnote);
+}
+
+.startribune_com .article-body > p:first-child:has(> strong:first-child + a + em) + p,
+.startribune_com .article-body > p:first-child:has(> strong:first-child + em + a + em + a + em) + p {
+    display: none;
+}
+
+.startribune_com h5:has(+ h2) {
+    border-block-end: 0;
+    font: var(--font-footnote);
+    font-weight: 500;
+}
+
+/*
+.startribune_com h5 + h2 {
+    font: var(--font-title3);
+}
+*/
 
 /* The Verge */
-.theverge_com .p--has-dropcap:first-letter, .theverge_com p.has-drop-cap:first-letter {
+.theverge_com .p--has-dropcap:first-letter,
+.theverge_com p.has-drop-cap:first-letter {
     font-size: 4em;
     float: left;
     margin-block-start: .15em;
@@ -549,7 +715,8 @@ a.footnote:hover,
     margin-left: 5%;
 }
 
-.theverge_com .p-fullbleed-block, .theverge_com figure.e-image {
+.theverge_com .p-fullbleed-block,
+.theverge_com figure.e-image {
     text-align: center;
 }
 
@@ -571,16 +738,19 @@ a.footnote:hover,
     padding-block: 1em;
 }
 
-.theverge_com aside q::before, .theverge_com aside q::after {
+.theverge_com aside q::before,
+.theverge_com aside q::after {
     /* The Verge adds their own quotes if they want them */
     content: "";
 }
 
-.theverge_com aside q em, .theverge_com aside q i {
+.theverge_com aside q em,
+.theverge_com aside q i {
     font-style: normal;
 }
 
-.theverge_com aside q strong, .theverge_com aside q b {
+.theverge_com aside q strong,
+.theverge_com aside q b {
     font-weight: 500;
 }
 
@@ -593,6 +763,79 @@ a.footnote:hover,
 .theverge_com .c-end-para:after {
     content: " ■";
     font-size: 0.5em;
+    color: var(--color-accent);
+}
+
+body.alerts_weather_gov {
+   font-family: var(--font-family-monospace);
+}
+
+body.bringmethenews_com,
+body.npr_org,
+body.bbc_co_uk,
+body.minnpost_com,
+body.mprnews_org,
+body.twincities_com,
+body.startribune_com,
+body.minnesota_cbslocal_com,
+body.washingtonpost_com,
+body.nytimes_com {
+    font-family: var(--font-family-serif);
+}
+
+.nytimes_com article#story > div:first-child:has(> div > nav),
+.nytimes_com article#story #top-wrapper,
+.nytimes_com article#story #top-wrapper + div > div:first-child,
+.nytimes_com article#story header > div,
+.nytimes_com #fullBleedHeaderContent > div {
+    display: none;
+    /* opacity: 0.1; */
+}
+
+.nytimes_com article#story header > div:has(figure),
+.nytimes_com article#story header > div:nth-of-type(2) {
+    /* opacity: 1.0; */
+    display: block;
+}
+
+
+.nytimes_com article#story header,
+.nytimes_com #fullBleedHeaderContent header,
+.fastmail_blog .intro,
+.theverge_com p:has( + p.p--has-dropcap) {
+    font: var(--font-callout);
+    font-style: italic;
+    color: var(--color-secondary-label);
+    font-weight: 300;
+}
+
+/* TBD: theverge only, or global? */
+.articleBody p:last-child:has(> small) {
+    border-block-start: 1px solid red;
+    color: var(--color-secondary-label);
+    padding-block-start: 0.5em;
+}
+
+
+/* TOO BROAD */
+/*
+.theverge_com .articleBody > p:last-of-type:has(> em:only-child) {
+    border-block-start: 1px solid var(--color-border);
+    clear: both;
+    color: var(--color-secondary-label);
+    font: var(--font-footnote);
+    padding-block-start: 0.5em;
+}
+*/
+
+/* TBD: is this useful? */
+p:has( > em:only-child > strong:only-child) {
+    background-color: var(--color-pre-background);
+    border: 1px solid var(--color-border);
+    border-radius: 8px;
+    color: var(--color-label);
+    padding: 8px;
+    font: var(--font-footnote);
 }
 
 .boingboing_net .next-post-list-container {
@@ -613,12 +856,20 @@ p.alignright {
     text-align: center;
     margin-inline: auto;
 }
-.alignright, .float-right {
+
+img.aligncenter {
+    display:block;
+}
+
+.alignright,
+.float-right {
     float: right;
     margin-block-start: 0;
     margin-inline: 8px;
 }
-.alignleft, .float-left {
+
+.alignleft,
+.float-left {
     float: left;
     margin-block-start: 0;
     margin-inline: 8px;
@@ -628,9 +879,34 @@ p.alignright {
     text-align: initial;
     font: var(--font-caption1);
     color: var(--color-secondary-label);
+    font-feature-settings: "ss06" 1;
+    font-variant-numeric: tabular-nums;
 }
 
 
+/* TOO BROAD
+.arstechnica_com p:has(> em:only-child) {
+    font: var(--font-footnote);
+    color: var(--color-secondary-label);
+}
+*/
+
+.arstechnica_com ul.gallery {
+    font: var(--font-caption1);
+    color: var(--color-secondary-label);
+    font-feature-settings: "ss06" 1;
+    font-variant-numeric: tabular-nums;
+    list-style-type: none;
+}
+
+.bbc_co_uk .gel-pica-bold {
+    font-weight: 600;
+}
+
+.bbc_co_uk .story-body > span.gs-u-display-block,
+.bbc_co_uk article > section:last-child {
+    display: none;
+}
 
 .twincities_com aside.related {
     display: none;
@@ -648,13 +924,23 @@ p.alignright {
     max-width: 25%;
 }
 
+/* TBD: twincities.com only or generally useful */
+/* TOO BROAD
+p:has(> i:first-child, > i:only-child, > em:only-child) {
+    font: var(--font-footnote);
+    font-style: italic;
+    color: var(--color-secondary-label);
+}
+*/
+
 .cidrap_umn_edu .field-name-field-image-thumbnail {
     float: left;
     margin-block-start: 0;
     margin-inline-end: 8px;
 }
 
-.cidrap_umn_edu .field-name-field-byline, .cidrap_umn_edu .field-name-field-date {
+.cidrap_umn_edu .field-name-field-byline,
+.cidrap_umn_edu .field-name-field-date {
     display: none;
 }
 
@@ -674,6 +960,46 @@ p.alignright {
     display: none;
 }
 
+.mprnews_org .figure-right {
+    float: right;
+    width: 45%;
+    margin-left: 5%;
+}
+
+.mprnews_org .articleBody > img:first-child:has( + figure),
+.mprnews_org #bodyContainer > img[src*="media.npr.org"]:first-child {
+    display: none;
+}
+
+.mprnews_org div.apm-correction {
+    background-color: var(--color-pre-background);
+    padding: 1em 2ch;
+    max-width: 100%;
+    border-radius: 8px;
+    border: 1px solid var(--color-border);
+    font: var(--font-footnote);
+}
+
+.mprnews_org div.apm-correction-title {
+    font-weight: 500;
+    color: var(--color-label);
+    display: inline-block;
+}
+
+.mprnews_org div.apm-correction-timestamp {
+    font-weight: 300;
+    float: right;
+    color: var(--color-secondary-label);
+    display: inline-block;
+}
+
+.mprnews_org p:last-of-type:has(> em:only-child) {
+    font: var(--font-footnote);
+    border-block-start: 1px solid var(--color-border);
+    color: var(--color-secondary-label);
+    padding-block-start: 0.5em;
+}
+
 .macstories_net .media-wrapper {
     max-width: 100%;
     height: auto !important;
@@ -684,9 +1010,12 @@ p.alignright {
     text-align: initial;
     font: var(--font-caption1);
     color: var(--color-secondary-label);
+    font-feature-settings: "ss06" 1;
+    font-variant-numeric: tabular-nums;
 }
 
-.macstories_net .aside, .macstories_net .shortcuts-box {
+.macstories_net .aside,
+.macstories_net .shortcuts-box {
     margin: 1em auto;
     border: 1px solid var(--color-border);
     border-radius: 8px;
@@ -719,6 +1048,35 @@ p.alignright {
     margin-block-start: 0;
 }
 
+.mprnews_org p:has(> strong:only-child),
+.minnpost_com p:has(> b:only-child) {
+    font: var(--font-headline);
+    font-weight: 600;
+    clear: both;
+    color: var(--color-header-text);
+    margin-block-end: .25em;
+    border-block-end: thin solid var(--color-border);
+}
+
+.mprnews_org p:has(> strong:only-child) + *,
+.minnpost_com p:has(> b:only-child) + * {
+    margin-block-start: .25em;
+}
+
+.minnpost_com p:has(> i:only-child) {
+    font-family: var(--font-family-sans-serif);
+    color: var(--color-secondary-label);
+}
+
+.minnpost_com p:last-of-type:has(i:only-child > span:only-child),
+.minnpost_com p:last-of-type:has(em:only-child),
+.minnpost_com p:last-of-type:has(i:only-child) {
+    border-block-start: 1px solid var(--color-border);
+    clear: both;
+    color: var(--color-secondary-label);
+    font: var(--font-footnote);
+    padding-block-start: 0.5em;
+}
 
 .starwars_com .dplus-promo-container {
     display: none;
@@ -729,27 +1087,60 @@ p.alignright {
 }
 
 
-body.gocomics_com, body.kingfeatures_com, body.dieselsweeties_com, body.garfieldminusgarfield_neti, body.ohjoysextoy_com, body.smbc-comics_com, body.theoatmeal_com, body.xkcd_com {
+body.gocomics_com,
+body.comicskingdom_com,
+body.kingfeatures_com,
+body.dieselsweeties_com,
+body.garfieldminusgarfield_net,
+body.ohjoysextoy_com,
+body.smbc-comics_com,
+body.theoatmeal_com,
+body.xkcd_com {
     max-width: inherit;
 }
 
+.ohjoysextoy_com .post-mood {
+    display: inline-block;
+    float: inline-start;
+    margin-inline-end: 16px;
+    margin-block-end: 16px;
+}
 
+.ohjoysextoy_com .post-mood img {
+    border-radius: 4px;
+    padding: 2px 0 0;
+}
 
+.ohjoysextoy_com li[role="tab"] {
+    display: none;
+}
 
+.ohjoysextoy_com .post-extras {
+    font: var(--font-footnote);
+    opacity: 75%;
+}
 
+.ohjoysextoy_com div.ui-tabs ul {
+    column-count: 3;
+}
 
-
+.nilcoalescing_com .articleBody > h1:first-child {
+    display: none;
+}
 
 
 /* iOS-specific */
 @supports (-webkit-touch-callout: none) {
     :root {
         --color-accent: #086aee;
+        --color-even-alternating-content-background: #f4f5f5;
+        --color-odd-alternating-content-background: transparent;
     }
 
     @media(prefers-color-scheme: dark) {
         :root {
             --color-accent: #2d80f1;
+            --color-even-alternating-content-background: #292929;
         }
     }
 }
@@ -758,6 +1149,9 @@ body.gocomics_com, body.kingfeatures_com, body.dieselsweeties_com, body.garfield
 @supports not (-webkit-touch-callout: none) {
     :root {
         --color-accent: -apple-system-control-accent;
+        /* these are intentionally reversed */
+        --color-even-alternating-content-background: -apple-system-odd-alternating-content-background;
+        --color-odd-alternating-content-background: -apple-system-even-alternating-content-background;
     }
 
     .articleDatelineTitle article :is(.articleBody, footer) {
