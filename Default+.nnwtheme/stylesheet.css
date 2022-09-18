@@ -221,6 +221,11 @@ blockquote,
   padding-inline: 15px;
   border-inline-start: 3px solid var(--color-border);
   color: var(--color-label);
+  font-style: italic;
+}
+
+:is(blockquote, .wp-block-quote) :is(cite, em, i) {
+    font-style: normal;
 }
 
 hr {
@@ -235,6 +240,8 @@ figure {
 figure * {
     color: var(--color-secondary-label);
     font: var(--font-caption1);
+    font-feature-settings: "ss06" 1;
+    font-variant-numeric: tabular-nums;
 }
 
 figure cite {
@@ -509,6 +516,18 @@ a.footnote:hover,
     margin-block-start: .25em;
 }
 
+.articleBody :is(h1 + h2, h2 + h3, h3 + h4, h4 + h5, h5 + h6) {
+    border-block-end: initial !important;
+}
+
+.articleBody :is(h1:has(+h1), h2:has(+h2), h3:has(+h3), h4:has(+h4), h5:has(+h5), h6:has(+h6)) {
+    border-block-end: initial !important;
+}
+
+:is(h1, h2, h3, h4, h5, h6):has(+ figure) {
+    border-block-end: 0 !important;
+}
+
 .debugging-table td {
     font-family: var(--font-family-monospace);
 }
@@ -563,13 +582,29 @@ article table :is(td, th) {
 }
 
 
-
 .appleinsider_com div[align="center"]:has( > img) {
-    font: var(--font-caption1);
-    color: var(--color-secondary-label);
     margin-block: 1em;
+    text-align: inherit;
+}
+
+.appleinsider_com div[align="center"] > img {
+    display: inline-block;
+    margin-inline: auto;
+}
+
+.appleinsider_com .articleBody > a[href*="appleinsider.com"]:last-child,
+.appleinsider_com .articleBody > * > a[href*="appleinsider.com"]:last-child {
+    font: var(--font-footnote);
+}
+
+.appleinsider_com .small {
+    font: var(--font-caption1);
     font-feature-settings: "ss06" 1;
     font-variant-numeric: tabular-nums;
+}
+
+.appleinsider_com .gray {
+    color: var(--color-secondary-label);
 }
 
 .inputmag_com p>u {
@@ -705,14 +740,14 @@ iframe[src*="video.startribune.com"] {
 
 .theverge_com .c-float-left {
     float: left;
-    width: 45%;
-    margin-right: 5%;
+    width: calc(50% - 10px);
+    margin-right: 10px;
 }
 
 .theverge_com .c-float-right {
     float: right;
-    width: 45%;
-    margin-left: 5%;
+    width: calc(50% - 10px);
+    margin-left: 10px;
 }
 
 .theverge_com .p-fullbleed-block,
@@ -720,11 +755,9 @@ iframe[src*="video.startribune.com"] {
     text-align: center;
 }
 
-/*
 .theverge_com figure.e-image img {
     width: 100%;
 }
-*/
 
 .theverge_com aside q {
     /* pull quote */
@@ -799,6 +832,7 @@ body.nytimes_com {
 }
 
 
+.bringmethenews_com .subtitle,
 .nytimes_com article#story header,
 .nytimes_com #fullBleedHeaderContent header,
 .fastmail_blog .intro,
@@ -811,7 +845,7 @@ body.nytimes_com {
 
 /* TBD: theverge only, or global? */
 .articleBody p:last-child:has(> small) {
-    border-block-start: 1px solid red;
+    border-block-start: 1px solid var(--color-border);
     color: var(--color-secondary-label);
     padding-block-start: 0.5em;
 }
@@ -829,7 +863,7 @@ body.nytimes_com {
 */
 
 /* TBD: is this useful? */
-p:has( > em:only-child > strong:only-child) {
+body:not(.techdirt_com) p:has( > em:only-child > strong:only-child) {
     background-color: var(--color-pre-background);
     border: 1px solid var(--color-border);
     border-radius: 8px;
@@ -861,18 +895,25 @@ img.aligncenter {
     display:block;
 }
 
+img.size-full {
+    width: 100%;
+    height: auto;
+}
+
 .alignright,
 .float-right {
     float: right;
     margin-block-start: 0;
-    margin-inline: 8px;
+    margin-left: 10px;
+    margin-right: 0;
 }
 
 .alignleft,
 .float-left {
     float: left;
     margin-block-start: 0;
-    margin-inline: 8px;
+    margin-left: 0;
+    margin-right: 10px;
 }
 
 .wp-caption-text {
@@ -899,6 +940,28 @@ img.aligncenter {
     list-style-type: none;
 }
 
+.arstechnica_com .articleBody > :is(div, p):last-child:has(a[href*="comment"]) {
+    border-block-start: thin solid var(--color-border);
+    color: var(--color-secondary-label);
+    font: var(--font-footnote);
+    margin-block-start: 1em;
+    padding-block-start: 1em;
+}
+
+.arstechnica_com div.image.center {
+    text-align: center;
+}
+
+.arstechnica_com .ars-newsletter-callbox {
+    display: none;
+}
+
+p:has(a[href*="dois-and-their-discontents"]) {
+    color: var(--color-secondary-label);
+    font: var(--font-footnote);
+}
+
+
 .bbc_co_uk .gel-pica-bold {
     font-weight: 600;
 }
@@ -908,21 +971,68 @@ img.aligncenter {
     display: none;
 }
 
+.bringmethenews_com .articleBody > :is(section, iframe) {
+    font: var(--font-caption1);
+    color: var(--color-secondary-label);
+    font-feature-settings: "ss06" 1;
+    font-variant-numeric: tabular-nums;
+}
+
+.bringmethenews_com .articleBody > p:last-of-type:has(> em:only-child, > i:only-child) {
+    border-block-start: 1px solid var(--color-border);
+    font: var(--font-footnote);
+    color: var(--color-secondary-label);
+}
+
+.bringmethenews_com .articleBody > :not(blockquote) + blockquote:last-child:has(> p:only-child) {
+    background-color: var(--color-pre-background);
+    padding: 1em 2ch;
+    max-width: 100%;
+    border-radius: 8px;
+    border: 1px solid var(--color-border);
+    font: var(--font-footnote);
+}
+
 .twincities_com aside.related {
     display: none;
 }
 
 .twincities_com .size-article_inline_half {
-    max-width: 50%;
+    width: calc(50% - 10px);
 }
 
 .twincities_com .size-article_inline_third {
-    max-width: 33.33333%;
+    width: calc(33.33333% - 10px);
 }
 
 .twincities_com .size-article_inline_quarter {
-    max-width: 25%;
+    width: calc(25% - 10px);
 }
+
+.twincities_com .article-slideshow button.icon-close {
+    display: none;
+}
+
+.twincities_com .article-slideshow ul {
+    padding-inline-start: 0;
+}
+
+.twincities_com .article-slideshow li {
+    display: block;
+}
+
+.twincities_com .article-slideshow :is(.slide-caption, .slide-credit) {
+    color: var(--color-secondary-label);
+    font: var(--font-caption1);
+    font-feature-settings: "ss06" 1;
+    font-variant-numeric: tabular-nums;
+    margin-block-start: 0.5em;
+}
+
+.twincities_com .article-slideshow div.caption {
+    display: none;
+}
+
 
 /* TBD: twincities.com only or generally useful */
 /* TOO BROAD
@@ -962,8 +1072,25 @@ p:has(> i:first-child, > i:only-child, > em:only-child) {
 
 .mprnews_org .figure-right {
     float: right;
-    width: 45%;
-    margin-left: 5%;
+    margin-left: 10px;
+}
+
+.mprnews_org .figure-left {
+    float: left;
+    margin-right: 10px;
+}
+
+.mprnews_org .figure-half {
+    width: calc(50% - 10px);
+}
+
+.mprnews_org .figure-quarter {
+    width: calc(25% - 10px);
+}
+
+.mprnews_org .figure-full {
+    width: 100%;
+    margin-inline: 0 !important;
 }
 
 .mprnews_org .articleBody > img:first-child:has( + figure),
@@ -998,6 +1125,27 @@ p:has(> i:first-child, > i:only-child, > em:only-child) {
     border-block-start: 1px solid var(--color-border);
     color: var(--color-secondary-label);
     padding-block-start: 0.5em;
+}
+
+.mprnews_org figure.figure-full picture :is(source, img) {
+    width: 100%;
+}
+
+.mprnews_org .apm-gallery .apm-gallery_title {
+    font: var(--font-headline);
+    font-weight: 600;
+    clear: both;
+    color: var(--color-header-text);
+    margin-block-end: .25em;
+    margin-block-start: .25em;
+}
+
+.mprnews_org .apm-gallery .apm-gallery_slides .slideshow button {
+    display: none;
+}
+
+.mprnews_org .apm-gallery .apm-gallery_slides .slideshow_count {
+    display: none;
 }
 
 .macstories_net .media-wrapper {
@@ -1048,6 +1196,10 @@ p:has(> i:first-child, > i:only-child, > em:only-child) {
     margin-block-start: 0;
 }
 
+/*
+ *
+ * TOO BROAD. Anything with trailing text _should_ be excluded but no CSS selector for that
+
 .mprnews_org p:has(> strong:only-child),
 .minnpost_com p:has(> b:only-child) {
     font: var(--font-headline);
@@ -1062,6 +1214,7 @@ p:has(> i:first-child, > i:only-child, > em:only-child) {
 .minnpost_com p:has(> b:only-child) + * {
     margin-block-start: .25em;
 }
+*/
 
 .minnpost_com p:has(> i:only-child) {
     font-family: var(--font-family-sans-serif);
@@ -1128,6 +1281,17 @@ body.xkcd_com {
     display: none;
 }
 
+.om_co pre.wp-block-verse {
+    font-family: ui-serif;
+}
+
+.appleworld_today .articleBody p:last-child:has(a[rel="nofollow"][href*="archive"]) {
+    border-block-start: thin solid var(--color-border);
+    color: var(--color-secondary-label);
+    font: var(--font-footnote);
+    margin-block-start: 1em;
+    padding-block-start: 1em;
+}
 
 /* iOS-specific */
 @supports (-webkit-touch-callout: none) {
