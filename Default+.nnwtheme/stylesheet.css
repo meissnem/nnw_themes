@@ -816,6 +816,10 @@ body.nytimes_com {
     font-family: var(--font-family-serif);
 }
 
+:is(.npr_org, .mprnews_org) #bodyContainer *:first-child:is(img) {
+    width: 100% !important;
+}
+
 .nytimes_com article#story > div:first-child:has(> div > nav),
 .nytimes_com article#story #top-wrapper,
 .nytimes_com article#story #top-wrapper + div > div:first-child,
