@@ -1,124 +1,122 @@
 :root {
     color-scheme: light dark;
 
-    --font-family-sans-serif: ui-sans-serif,sans-serif;
-    --font-family-serif: ui-serif,serif;
-    --font-family-monospace: ui-monospace,monospace;
-
-    --font-body:        -apple-system-tall-body;
-    --font-headline:    -apple-system-headline;
+    --font-family-sans-serif: ui-sans-serif, sans-serif;
+    --font-family-serif: ui-serif, serif;
+    --font-family-monospace: ui-monospace, monospace;
+    --font-body: -apple-system-tall-body;
+    --font-headline: -apple-system-headline;
     --font-subheadline: -apple-system-subheadline;
-    --font-footnote:    -apple-system-footnote;
-    --font-caption1:    -apple-system-caption1;
-    --font-caption2:    -apple-system-caption2;
-    --font-title0:      -apple-system-title0;
-    --font-title1:      -apple-system-title1;
-    --font-title2:      -apple-system-title2;
-    --font-title3:      -apple-system-title3;
-    --font-title4:      -apple-system-title4;       /* big title -- not documented(?) */
-    --font-callout:     -apple-system-body;         /* approximation */
+    --font-footnote: -apple-system-footnote;
+    --font-caption1: -apple-system-caption1;
+    --font-caption2: -apple-system-caption2;
+    --font-title0: -apple-system-title0;
+    --font-title1: -apple-system-title1;
+    --font-title2: -apple-system-title2;
+    --font-title3: -apple-system-title3;
+    --font-title4: -apple-system-title4; /* big title -- not documented(?) */
+    --font-callout: -apple-system-body; /* approximation */
 
     /* -apple-system-container-border */
     --color-blockquote-background: -apple-system-grouped-background;
-    --color-body:                  -webkit-text;
-    --color-body-background:       -apple-system-text-background;
-    --color-border:                -apple-system-container-border;
-    --color-grid:                  -apple-system-grid;
-    --color-pre-background:        -apple-system-grid;
-    --color-header-text:           -apple-system-header-text;
-    --color-link:                  var(--color-accent);
-    --color-label:                 -apple-system-label;
-    --color-secondary-label:       -apple-system-secondary-label;
-    --color-tertiary-label:        -apple-system-tertiary-label;
-    --color-newsfoot-background:   -apple-system-background;
-    --color-newsfoot-secondary-background:   -apple-system-secondary-background;
+    --color-body: -webkit-text;
+    --color-body-background: -apple-system-text-background;
+    --color-border: -apple-system-container-border;
+    --color-grid: -apple-system-grid;
+    --color-pre-background: -apple-system-grid;
+    --color-header-text: -apple-system-header-text;
+    --color-link: var(--color-accent);
+    --color-label: -apple-system-label;
+    --color-secondary-label: -apple-system-secondary-label;
+    --color-tertiary-label: -apple-system-tertiary-label;
+    --color-newsfoot-background: -apple-system-background;
+    --color-newsfoot-secondary-background: -apple-system-secondary-background;
     --color-newsfoot-popover-background: -apple-system-tertiary-label;
     --color-newsfoot-popover-hover-background: -apple-system-quaternary-label;
-
 }
 
 .xsmallText {
-     --font-body:        normal  normal  normal  normal  15px/24px  var(--font-family-sans-serif);
-     --font-headline:    normal  normal  500     normal  15px/22px  var(--font-family-sans-serif);
-     --font-subheadline: normal  normal  normal  normal  13px/19px  var(--font-family-sans-serif);
-     --font-footnote:    normal  normal  normal  normal  13px/19px  var(--font-family-sans-serif);
-     --font-caption1:    normal  normal  normal  normal  12px/15px  var(--font-family-sans-serif);
-     --font-caption2:    normal  normal  normal  normal  12px/15px  var(--font-family-sans-serif);
-     --font-title0:      normal  normal  normal  normal  31px/40px  var(--font-family-sans-serif);
-     --font-title1:      normal  normal  normal  normal  25px/33px  var(--font-family-sans-serif);
-     --font-title2:      normal  normal  normal  normal  19px/26px  var(--font-family-sans-serif);
-     --font-title3:      normal  normal  normal  normal  17px/24px  var(--font-family-sans-serif);
-     --font-callout:     normal  normal  normal  normal  14px/20px  var(--font-family-sans-serif);
+    --font-body: normal normal normal normal 15px/24px var(--font-family-sans-serif);
+    --font-headline: normal normal 500 normal 15px/22px var(--font-family-sans-serif);
+    --font-subheadline: normal normal normal normal 13px/19px var(--font-family-sans-serif);
+    --font-footnote: normal normal normal normal 13px/19px var(--font-family-sans-serif);
+    --font-caption1: normal normal normal normal 12px/15px var(--font-family-sans-serif);
+    --font-caption2: normal normal normal normal 12px/15px var(--font-family-sans-serif);
+    --font-title0: normal normal normal normal 31px/40px var(--font-family-sans-serif);
+    --font-title1: normal normal normal normal 25px/33px var(--font-family-sans-serif);
+    --font-title2: normal normal normal normal 19px/26px var(--font-family-sans-serif);
+    --font-title3: normal normal normal normal 17px/24px var(--font-family-sans-serif);
+    --font-callout: normal normal normal normal 14px/20px var(--font-family-sans-serif);
 }
 
 .smallText {
-    --font-body:         normal  normal  normal  normal  15px/24px  var(--font-family-sans-serif);
-    --font-headline:     normal  normal  500     normal  15px/22px  var(--font-family-sans-serif);
-    --font-subheadline:  normal  normal  normal  normal  14px/21px  var(--font-family-sans-serif);
-    --font-footnote:     normal  normal  normal  normal  13px/19px  var(--font-family-sans-serif);
-    --font-caption1:     normal  normal  normal  normal  12px/15px  var(--font-family-sans-serif);
-    --font-caption2:     normal  normal  normal  normal  12px/15px  var(--font-family-sans-serif);
-    --font-title0:       normal  normal  normal  normal  32px/40px  var(--font-family-sans-serif);
-    --font-title1:       normal  normal  normal  normal  26px/33px  var(--font-family-sans-serif);
-    --font-title2:       normal  normal  normal  normal  20px/27px  var(--font-family-sans-serif);
-    --font-title3:       normal  normal  normal  normal  18px/25px  var(--font-family-sans-serif);
-    --font-callout:      normal  normal  normal  normal  15px/22px  var(--font-family-sans-serif);
+    --font-body: normal normal normal normal 15px/24px var(--font-family-sans-serif);
+    --font-headline: normal normal 500 normal 15px/22px var(--font-family-sans-serif);
+    --font-subheadline: normal normal normal normal 14px/21px var(--font-family-sans-serif);
+    --font-footnote: normal normal normal normal 13px/19px var(--font-family-sans-serif);
+    --font-caption1: normal normal normal normal 12px/15px var(--font-family-sans-serif);
+    --font-caption2: normal normal normal normal 12px/15px var(--font-family-sans-serif);
+    --font-title0: normal normal normal normal 32px/40px var(--font-family-sans-serif);
+    --font-title1: normal normal normal normal 26px/33px var(--font-family-sans-serif);
+    --font-title2: normal normal normal normal 20px/27px var(--font-family-sans-serif);
+    --font-title3: normal normal normal normal 18px/25px var(--font-family-sans-serif);
+    --font-callout: normal normal normal normal 15px/22px var(--font-family-sans-serif);
 }
 
 .mediumText {
-    --font-body:         normal  normal  normal  normal  16px/24px  var(--font-family-sans-serif);
-    --font-headline:     normal  normal  500     normal  16px/22px  var(--font-family-sans-serif);
-    --font-subheadline:  normal  normal  normal  normal  15px/22px  var(--font-family-sans-serif);
-    --font-footnote:     normal  normal  normal  normal  13px/19px  var(--font-family-sans-serif);
-    --font-caption1:     normal  normal  normal  normal  12px/15px  var(--font-family-sans-serif);
-    --font-caption2:     normal  normal  normal  normal  12px/15px  var(--font-family-sans-serif);
-    --font-title0:       normal  normal  normal  normal  33px/41px  var(--font-family-sans-serif);
-    --font-title1:       normal  normal  normal  normal  27px/34px  var(--font-family-sans-serif);
-    --font-title2:       normal  normal  normal  normal  21px/27px  var(--font-family-sans-serif);
-    --font-title3:       normal  normal  normal  normal  19px/26px  var(--font-family-sans-serif);
-    --font-callout:      normal  normal  normal  normal  16px/22px  var(--font-family-sans-serif);
+    --font-body: normal normal normal normal 16px/24px var(--font-family-sans-serif);
+    --font-headline: normal normal 500 normal 16px/22px var(--font-family-sans-serif);
+    --font-subheadline: normal normal normal normal 15px/22px var(--font-family-sans-serif);
+    --font-footnote: normal normal normal normal 13px/19px var(--font-family-sans-serif);
+    --font-caption1: normal normal normal normal 12px/15px var(--font-family-sans-serif);
+    --font-caption2: normal normal normal normal 12px/15px var(--font-family-sans-serif);
+    --font-title0: normal normal normal normal 33px/41px var(--font-family-sans-serif);
+    --font-title1: normal normal normal normal 27px/34px var(--font-family-sans-serif);
+    --font-title2: normal normal normal normal 21px/27px var(--font-family-sans-serif);
+    --font-title3: normal normal normal normal 19px/26px var(--font-family-sans-serif);
+    --font-callout: normal normal normal normal 16px/22px var(--font-family-sans-serif);
 }
 
 .largeText {
-    --font-body:         normal  normal  normal  normal  17px/26px  var(--font-family-sans-serif);
-    --font-headline:     normal  normal  500     normal  17px/24px  var(--font-family-sans-serif);
-    --font-subheadline:  normal  normal  normal  normal  15px/22px  var(--font-family-sans-serif);
-    --font-footnote:     normal  normal  normal  normal  14px/21px  var(--font-family-sans-serif);
-    --font-caption1:     normal  normal  normal  normal  13px/19px  var(--font-family-sans-serif);
-    --font-caption2:     normal  normal  normal  normal  12px/15px  var(--font-family-sans-serif);
-    --font-title0:       normal  normal  normal  normal  34px/43px  var(--font-family-sans-serif);
-    --font-title1:       normal  normal  normal  normal  28px/35px  var(--font-family-sans-serif);
-    --font-title2:       normal  normal  normal  normal  22px/29px  var(--font-family-sans-serif);
-    --font-title3:       normal  normal  normal  normal  20px/27px  var(--font-family-sans-serif);
-    --font-callout:      normal  normal  normal  normal  16px/23px  var(--font-family-sans-serif);
+    --font-body: normal normal normal normal 17px/26px var(--font-family-sans-serif);
+    --font-headline: normal normal 500 normal 17px/24px var(--font-family-sans-serif);
+    --font-subheadline: normal normal normal normal 15px/22px var(--font-family-sans-serif);
+    --font-footnote: normal normal normal normal 14px/21px var(--font-family-sans-serif);
+    --font-caption1: normal normal normal normal 13px/19px var(--font-family-sans-serif);
+    --font-caption2: normal normal normal normal 12px/15px var(--font-family-sans-serif);
+    --font-title0: normal normal normal normal 34px/43px var(--font-family-sans-serif);
+    --font-title1: normal normal normal normal 28px/35px var(--font-family-sans-serif);
+    --font-title2: normal normal normal normal 22px/29px var(--font-family-sans-serif);
+    --font-title3: normal normal normal normal 20px/27px var(--font-family-sans-serif);
+    --font-callout: normal normal normal normal 16px/23px var(--font-family-sans-serif);
 }
 
 .xlargeText {
-    --font-body:         normal  normal  normal  normal  19px/28px  var(--font-family-sans-serif);
-    --font-headline:     normal  normal  500     normal  19px/26px  var(--font-family-sans-serif);
-    --font-subheadline:  normal  normal  normal  normal  17px/24px  var(--font-family-sans-serif);
-    --font-footnote:     normal  normal  normal  normal  15px/22px  var(--font-family-sans-serif);
-    --font-caption1:     normal  normal  normal  normal  15px/22px  var(--font-family-sans-serif);
-    --font-caption2:     normal  normal  normal  normal  14px/21px  var(--font-family-sans-serif);
-    --font-title0:       normal  normal  normal  normal  36px/45px  var(--font-family-sans-serif);
-    --font-title1:       normal  normal  normal  normal  30px/38px  var(--font-family-sans-serif);
-    --font-title2:       normal  normal  normal  normal  24px/31px  var(--font-family-sans-serif);
-    --font-title3:       normal  normal  normal  normal  22px/29px  var(--font-family-sans-serif);
-    --font-callout:      normal  normal  normal  normal  18px/25px  var(--font-family-sans-serif);
+    --font-body: normal normal normal normal 19px/28px var(--font-family-sans-serif);
+    --font-headline: normal normal 500 normal 19px/26px var(--font-family-sans-serif);
+    --font-subheadline: normal normal normal normal 17px/24px var(--font-family-sans-serif);
+    --font-footnote: normal normal normal normal 15px/22px var(--font-family-sans-serif);
+    --font-caption1: normal normal normal normal 15px/22px var(--font-family-sans-serif);
+    --font-caption2: normal normal normal normal 14px/21px var(--font-family-sans-serif);
+    --font-title0: normal normal normal normal 36px/45px var(--font-family-sans-serif);
+    --font-title1: normal normal normal normal 30px/38px var(--font-family-sans-serif);
+    --font-title2: normal normal normal normal 24px/31px var(--font-family-sans-serif);
+    --font-title3: normal normal normal normal 22px/29px var(--font-family-sans-serif);
+    --font-callout: normal normal normal normal 18px/25px var(--font-family-sans-serif);
 }
 
 .xxlargeText {
-    --font-body:         normal  normal  normal  normal  21px/29px  var(--font-family-sans-serif);
-    --font-headline:     normal  normal  500     normal  21px/27px  var(--font-family-sans-serif);
-    --font-subheadline:  normal  normal  normal  normal  19px/26px  var(--font-family-sans-serif);
-    --font-footnote:     normal  normal  normal  normal  17px/24px  var(--font-family-sans-serif);
-    --font-caption1:     normal  normal  normal  normal  16px/22px  var(--font-family-sans-serif);
-    --font-caption2:     normal  normal  normal  normal  15px/22px  var(--font-family-sans-serif);
-    --font-title0:       normal  normal  normal  normal  38px/48px  var(--font-family-sans-serif);
-    --font-title1:       normal  normal  normal  normal  32px/39px  var(--font-family-sans-serif);
-    --font-title2:       normal  normal  normal  normal  26px/33px  var(--font-family-sans-serif);
-    --font-title3:       normal  normal  normal  normal  24px/31px  var(--font-family-sans-serif);
-    --font-callout:      normal  normal  normal  normal  20px/27px  var(--font-family-sans-serif);
+    --font-body: normal normal normal normal 21px/29px var(--font-family-sans-serif);
+    --font-headline: normal normal 500 normal 21px/27px var(--font-family-sans-serif);
+    --font-subheadline: normal normal normal normal 19px/26px var(--font-family-sans-serif);
+    --font-footnote: normal normal normal normal 17px/24px var(--font-family-sans-serif);
+    --font-caption1: normal normal normal normal 16px/22px var(--font-family-sans-serif);
+    --font-caption2: normal normal normal normal 15px/22px var(--font-family-sans-serif);
+    --font-title0: normal normal normal normal 38px/48px var(--font-family-sans-serif);
+    --font-title1: normal normal normal normal 32px/39px var(--font-family-sans-serif);
+    --font-title2: normal normal normal normal 26px/33px var(--font-family-sans-serif);
+    --font-title3: normal normal normal normal 24px/31px var(--font-family-sans-serif);
+    --font-callout: normal normal normal normal 20px/27px var(--font-family-sans-serif);
 }
 
 body {
@@ -129,39 +127,24 @@ body {
     padding-inline: clamp(20px, calc(calc(100vw - 700px) + 20px), 48px);
 }
 
-h1 { font: var(--font-title1);   }
-h2 { font: var(--font-title2);   }
-h3 { font: var(--font-title3);   }
-h4 { font: var(--font-headline); }
-h5 { font: var(--font-subheadline);  }
-h6 { font: var(--font-footnote); }
+h1 { font: var(--font-title1);      }
+h2 { font: var(--font-title2);      }
+h3 { font: var(--font-title3);      }
+h4 { font: var(--font-headline);    }
+h5 { font: var(--font-subheadline); }
+h6 { font: var(--font-footnote);    }
 
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
-  font-weight: 600;
-  clear: both;
-  color: var(--color-header-text);
+h1, h2, h3, h4, h5, h6 {
+    font-weight: 600;
+    clear: both;
+    color: var(--color-header-text);
 }
 
-tt,
-code,
-kbd,
-samp,
-pre,
-xmp,
-plaintext,
-listing {
+tt, code, kbd, samp, pre, xmp, plaintext, listing {
     font-family: var(--font-family-monospace);
 }
 
-tt,
-code,
-kbd,
-samp {
+tt, code, kbd, samp {
     background-color: var(--color-pre-background);
 }
 
@@ -178,11 +161,7 @@ pre {
     word-break: normal;
 }
 
-img,
-figure,
-video,
-div,
-object {
+img, figure, video, div, object {
     max-width: 100%;
     height: auto !important;
 }
@@ -190,6 +169,7 @@ object {
 a:link {
     color: var(--color-link);
     text-decoration: none;
+    overflow-wrap: break-word;
 }
 
 a:hover {
@@ -204,6 +184,7 @@ header {
 footer,
 .articleFooter,
 div.footnote,
+#footnotes,
 .footnotes,
 .footnotes ~ *,
 ol.footnote,
@@ -215,17 +196,40 @@ ol:has(li.footnote) {
     font-variant-numeric: tabular-nums;
 }
 
-blockquote,
-.wp-block-quote {
-  margin-inline: 0;
-  padding-inline: 15px;
-  border-inline-start: 3px solid var(--color-border);
-  color: var(--color-label);
-  font-style: italic;
+footer,
+.articleFooter,
+div.footnote,
+#footnotes,
+.footnotes,
+ol.footnote,
+ol:has(li.footnote) {
+    /* border-block-start: thin solid var(--color-border); */
 }
 
-:is(blockquote, .wp-block-quote) :is(cite, em, i) {
-    font-style: normal;
+:is(footer, .articleFooter, div.footnote, #footnotes, .footnotes) h1 {
+    font: var(--font-headline);
+}
+
+:is(footer, .articleFooter, div.footnote, #footnotes, .footnotes) h2 {
+    font: var(--font-subheadline);
+}
+
+:is(footer, .articleFooter, div.footnote, #footnotes, .footnotes) :is(h3, h4, h5, h6) {
+    font: var(--font-footnote);
+}
+
+:is(footer, .articleFooter, div.footnote, #footnotes, .footnotes) :is(h1, h2, h3, h4, h5, h6) {
+    border-block-end: none;
+    font-weight: 600;
+    color: var(--color-header-text);
+}
+
+blockquote,
+.wp-block-quote {
+    margin-inline: 0;
+    padding-inline: 15px;
+    border-inline-start: 3px solid var(--color-border);
+    color: var(--color-label);
 }
 
 hr {
@@ -237,11 +241,16 @@ figure {
     margin-inline: 0;
 }
 
-figure * {
+figure *,
+figure {
     color: var(--color-secondary-label);
     font: var(--font-caption1);
     font-feature-settings: "ss06" 1;
     font-variant-numeric: tabular-nums;
+}
+
+figure img {
+    display: block;
 }
 
 figure cite {
@@ -331,7 +340,7 @@ article header .avatar {
 }
 
 .articleDatelineTitle .postHidden,
-.articleDateline .articleHidden  {
+.articleDateline .articleHidden {
     display: none !important;
 }
 
@@ -351,9 +360,7 @@ article header h1.articleTitle {
     white-space: pre-wrap;
 }
 
-@media
-screen and (max-width: 700px),
-screen and (max-height: 700px) {
+@media screen and (max-width: 700px), screen and (max-height: 700px) {
     .articleDatelineTitle article header :is(.feedlink)::before {
         content: "";
         white-space: initial;
@@ -388,16 +395,13 @@ article header .dateline {
     color: var(--color-secondary-label);
 }
 
-@media
-screen and (max-width: 700px),
-screen and (max-height: 700px) {
-    article header :is(div.byline, div.dateline, div.externalLink){
+@media screen and (max-width: 700px), screen and (max-height: 700px) {
+    article header :is(div.byline, div.dateline, div.externalLink) {
         display: block !important;
         float: none !important;
         margin: 0 !important;
     }
 }
-
 
 article header .externalLink {
     font-style: italic;
@@ -411,7 +415,7 @@ article header .externalLink {
 /* Newsfoot theme */
 .newsfoot-footnote-popover {
     background: var(--color-newsfoot-secondary-background);
-    box-shadow: 0 2px 4px var(--color-label) /*rgba(0, 0, 0, 0.5)*/, 0 3px 6px var(--color-label) /*rgba(0, 0, 0, 0.25)*/;
+    box-shadow: 0 2px 4px var(--color-label), 0 3px 6px var(--color-label);
     border: 1px solid var(--color-label);
     color: var(--color-body);
     padding: 1px;
@@ -446,17 +450,25 @@ a.footnote:hover,
     transition: background-color 200ms ease-out;
 }
 
-
-/*****************************************************/
+/****************************************************   */
 
 .systemMessage {
     position: absolute;
     top: 45%;
     left: 50%;
     transform: translateX(-55%) translateY(-50%);
-    -webkit-user-select: none;
+    user-select: none;
     cursor: default;
     color: var(--color-tertiary-label);
+}
+
+/* Mastadon */
+.invisible {
+    display: none;
+}
+
+.ellipsis::after {
+    content: "…";
 }
 
 .twitter-tweet {
@@ -476,11 +488,12 @@ a.footnote:hover,
     vertical-align: middle;
     margin-inline-start: 8px;
     margin-block-end: 16px;
-
 }
+
 .twitterScreenName {
     font: var(--font-subheadline);
 }
+
 .twitterTimestamp {
     display: block;
     margin-block-start: 1em;
@@ -489,8 +502,9 @@ a.footnote:hover,
 }
 
 .twitterTimestamp:link {
-    color: inherit
+    color: inherit;
 }
+
 .twitterTimestamp:hover {
     color: var(--color-link);
 }
@@ -505,22 +519,24 @@ a.footnote:hover,
 }
 
 .articleBody :is(h1, h2, h3, h4, h5, h6) {
-    margin-block-end: .25em;
+    margin-block-end: 0.25em;
+
     /*
-     * this looks bad when <h3> is followed immediately by <h4>
-     */
+* this looks bad when <h3> is followed immediately by <h4>
+*/
 
     border-block-end: thin solid var(--color-border);
 }
+
 .articleBody :is(h1, h2, h3, h4, h5, h6) + * {
-    margin-block-start: .25em;
+    margin-block-start: 0.25em;
 }
 
 .articleBody :is(h1 + h2, h2 + h3, h3 + h4, h4 + h5, h5 + h6) {
     border-block-end: initial !important;
 }
 
-.articleBody :is(h1:has(+h1), h2:has(+h2), h3:has(+h3), h4:has(+h4), h5:has(+h5), h6:has(+h6)) {
+.articleBody :is(h1:has(+ h1), h2:has(+ h2), h3:has(+ h3), h4:has(+ h4), h5:has(+ h5), h6:has(+ h6)) {
     border-block-end: initial !important;
 }
 
@@ -543,11 +559,12 @@ a.footnote:hover,
     text-align: center;
 }
 
-
 article table,
 article figure {
+    color: var(--color-secondary-label);
+
     /* enable "high legibility" in SF font */
-    font: var(--font-body);
+    font: var(--font-caption1);
     font-family: var(--font-family-sans-serif);
     font-feature-settings: "ss06" 1;
     font-variant-numeric: tabular-nums;
@@ -581,33 +598,36 @@ article table :is(td, th) {
     padding-block: 2px;
 }
 
+article table[frame~="void"] {
+    border: none;
+}
 
-.appleinsider_com div[align="center"]:has( > img) {
+.appleinsider-com div[align="center"]:has(> img) {
     margin-block: 1em;
     text-align: inherit;
 }
 
-.appleinsider_com div[align="center"] > img {
+.appleinsider-com div[align="center"] > img {
     display: inline-block;
     margin-inline: auto;
 }
 
-.appleinsider_com .articleBody > a[href*="appleinsider.com"]:last-child,
-.appleinsider_com .articleBody > * > a[href*="appleinsider.com"]:last-child {
+.appleinsider-com .articleBody > a[href*="appleinsider.com"]:last-child,
+.appleinsider-com .articleBody > * > a[href*="appleinsider.com"]:last-child {
     font: var(--font-footnote);
 }
 
-.appleinsider_com .small {
+.appleinsider-com .small {
     font: var(--font-caption1);
     font-feature-settings: "ss06" 1;
     font-variant-numeric: tabular-nums;
 }
 
-.appleinsider_com .gray {
+.appleinsider-com .gray {
     color: var(--color-secondary-label);
 }
 
-.inputmag_com p>u {
+.inputmag-com p > u {
     font: var(--font-headline);
     font-weight: 800;
     letter-spacing: 0.75px;
@@ -615,7 +635,7 @@ article table :is(td, th) {
     text-transform: uppercase;
 }
 
-.inputmag_com blockquote[data-md-text-align=center] {
+.inputmag-com blockquote[data-md-text-align="center"] {
     /* pull quote */
     display: block;
     font: var(--font-callout);
@@ -630,34 +650,33 @@ article table :is(td, th) {
     border-inline: inherit;
 }
 
-.inputmag_com blockquote[data-md-text-align=center] em,
-blockquote[data-md-text-align=center] i {
+.inputmag-com blockquote[data-md-text-align="center"] em,
+blockquote[data-md-text-align="center"] i {
     font-style: normal;
 }
 
-.inputmag_com blockquote[data-md-text-align=center] strong,
-blockquote[data-md-text-align=center] b {
+.inputmag-com blockquote[data-md-text-align="center"] strong,
+blockquote[data-md-text-align="center"] b {
     font-weight: 500;
 }
 
-
-.macrumors_com .linkback:first-of-type {
+.macrumors-com .linkback:first-of-type {
     border-block-start: 1px solid var(--color-border);
     margin-block-start: 1.65em;
     padding-block-start: 1.65em;
 }
-.macrumors_com .linkback {
+
+.macrumors-com .linkback {
     font-style: italic;
 }
 
-.macrumors_com .linkback em,
+.macrumors-com .linkback em,
 .linkback i {
     font-style: normal;
 }
 
-
 /* TBD: macrumors-only or generaly useful? */
-img + center:has( > em) {
+img + center:has(> em) {
     color: var(--color-secondary-label);
     font: var(--font-caption1);
     font-feature-settings: "ss06" 1;
@@ -670,37 +689,36 @@ iframe[src*="video.startribune.com"] {
     aspect-ratio: 16/9;
 }
 
-.startribune_com aside.article-share,
-.startribune_com .l-article-topper,
-.startribune_com .l-article-downpage-left {
+.startribune-com aside.article-share,
+.startribune-com .l-article-topper,
+.startribune-com .l-article-downpage-left {
     display: none;
 }
 
-.startribune_com div.article-body > p:last-child:has(> em:first-child + a + em:last-child),
-.startribune_com div.article-body > p:last-child:has(> a:first-child + em:last-child),
-.startribune_com div.article-body > p:last-child:has(> em:only-child),
-.startribune_com .article-author-contact {
+.startribune-com div.articleBody > p:last-child:has(> em:first-child + a + em:last-child),
+.startribune-com div.articleBody > p:last-child:has(> a:first-child + em:last-child),
+.startribune-com div.articleBody > p:last-child:has(> em:only-child),
+.startribune-com .article-author-contact {
     border-block-start: 1px solid var(--color-border);
     font: var(--font-footnote);
     color: var(--color-secondary-label);
 }
 
-.startribune_com div.article-body > h5 + h2 ~ p:last-child:has(> em:only-child) {
+.startribune-com div.articleBody > h5 + h2 ~ p:last-child:has(> em:only-child) {
     border-block-start: 0;
     font: inherit;
     color: inherit;
 }
 
-
-.startribune_com .article-author-headshot-sm {
+.startribune-com .article-author-headshot-sm {
     float: left;
     width: 50px;
     height: 50px;
     margin-right: 1.5em;
 }
 
-.startribune_com .article-body > p:first-child:has(> strong:first-child + a + em),
-.startribune_com .article-body > p:first-child:has(> strong:first-child + em + a) {
+.startribune-com .articleBody > p:first-child:has(> strong:first-child + a + em),
+.startribune-com .articleBody > p:first-child:has(> strong:first-child + em + a) {
     background-color: var(--color-pre-background);
     border: 1px solid var(--color-border);
     border-radius: 8px;
@@ -709,59 +727,60 @@ iframe[src*="video.startribune.com"] {
     font: var(--font-footnote);
 }
 
-.startribune_com .article-body > p:first-child:has(> strong:first-child + a + em) + p,
-.startribune_com .article-body > p:first-child:has(> strong:first-child + em + a + em + a + em) + p {
+.startribune-com .articleBody > p:first-child:has(> strong:first-child + a + em) + p,
+.startribune-com .articleBody > p:first-child:has(> strong:first-child + em + a + em + a + em) + p {
     display: none;
 }
 
-.startribune_com h5:has(+ h2) {
+.startribune-com h5:has(+ h2) {
     border-block-end: 0;
     font: var(--font-footnote);
     font-weight: 500;
 }
 
 /*
-.startribune_com h5 + h2 {
-    font: var(--font-title3);
+.startribune-com h5 + h2 {
+font: var(--font-title3);
 }
 */
 
 /* The Verge */
-.theverge_com .p--has-dropcap:first-letter,
-.theverge_com p.has-drop-cap:first-letter {
+.theverge-com .p--has-dropcap::first-letter,
+.theverge-com p.has-drop-cap::first-letter {
     font-size: 4em;
     float: left;
-    margin-block-start: .15em;
+    margin-block-start: 0.15em;
 }
 
-.theverge_com .p-large-text {
+.theverge-com .p-large-text {
     font: var(--font-title3);
 }
 
-.theverge_com .c-float-left {
+.theverge-com .c-float-left {
     float: left;
     width: calc(50% - 10px);
     margin-right: 10px;
 }
 
-.theverge_com .c-float-right {
+.theverge-com .c-float-right {
     float: right;
     width: calc(50% - 10px);
     margin-left: 10px;
 }
 
-.theverge_com .p-fullbleed-block,
-.theverge_com figure.e-image {
+.theverge-com .p-fullbleed-block,
+.theverge-com figure.e-image {
     text-align: center;
 }
 
-.theverge_com figure.e-image img {
+.theverge-com figure.e-image img {
     width: 100%;
 }
 
-.theverge_com aside q {
+.theverge-com :is(aside, div):has(> q:only-child) {
     /* pull quote */
     display: block;
+    text-align: center;
     font: var(--font-callout);
     font-weight: 300;
     font-style: italic;
@@ -771,76 +790,75 @@ iframe[src*="video.startribune.com"] {
     padding-block: 1em;
 }
 
-.theverge_com aside q::before,
-.theverge_com aside q::after {
+.theverge-com :is(aside, div) > q:only-child::before,
+.theverge-com :is(aside, div) > q:only-child::after {
     /* The Verge adds their own quotes if they want them */
     content: "";
 }
 
-.theverge_com aside q em,
-.theverge_com aside q i {
+.theverge-com :is(aside, div) > q:only-child :is(em, i) {
     font-style: normal;
 }
 
-.theverge_com aside q strong,
-.theverge_com aside q b {
+.theverge-com :is(aside, div) > q:only-child :is(strong, b) {
     font-weight: 500;
 }
 
-.theverge_com figure cite {
+.theverge-com figure cite {
     font: var(--font-caption1);
     line-height: 1.3em;
     display: block;
 }
 
-.theverge_com .c-end-para:after {
+.theverge-com .c-end-para::after {
     content: " ■";
     font-size: 0.5em;
     color: var(--color-accent);
 }
 
-body.alerts_weather_gov {
-   font-family: var(--font-family-monospace);
+body.alerts-weather-gov {
+    font-family: var(--font-family-monospace);
 }
 
-body.bringmethenews_com,
-body.npr_org,
-body.bbc_co_uk,
-body.minnpost_com,
-body.mprnews_org,
-body.twincities_com,
-body.startribune_com,
-body.minnesota_cbslocal_com,
-body.washingtonpost_com,
-body.nytimes_com {
+body.bringmethenews-com,
+body.npr-org,
+body.bbc-co-uk,
+body.minnpost-com,
+body.mprnews-org,
+body.twincities-com,
+body.startribune-com,
+body.minnesota-cbslocal-com,
+body.washingtonpost-com,
+body.nytimes-com {
     font-family: var(--font-family-serif);
 }
 
-:is(.npr_org, .mprnews_org) #bodyContainer *:first-child:is(img) {
+:is(.npr-org, .mprnews-org) #bodyContainer *:first-child:is(img) {
     width: 100% !important;
 }
 
-.nytimes_com article#story > div:first-child:has(> div > nav),
-.nytimes_com article#story #top-wrapper,
-.nytimes_com article#story #top-wrapper + div > div:first-child,
-.nytimes_com article#story header > div,
-.nytimes_com #fullBleedHeaderContent > div {
+.nytimes-com article#story > div:first-child:has(> div > nav),
+.nytimes-com article#story #top-wrapper,
+.nytimes-com article#story #top-wrapper + div > div:first-child,
+.nytimes-com article#story header > div,
+.nytimes-com #fullBleedHeaderContent > div {
     display: none;
+
     /* opacity: 0.1; */
 }
 
-.nytimes_com article#story header > div:has(figure),
-.nytimes_com article#story header > div:nth-of-type(2) {
+.nytimes-com article#story header > div:has(figure),
+.nytimes-com article#story header > div:nth-of-type(2) {
     /* opacity: 1.0; */
     display: block;
 }
 
-
-.bringmethenews_com .subtitle,
-.nytimes_com article#story header,
-.nytimes_com #fullBleedHeaderContent header,
-.fastmail_blog .intro,
-.theverge_com p:has( + p.p--has-dropcap) {
+.bringmethenews-com .subtitle,
+.bringmethenews-com p:first-child,
+.nytimes-com article#story header,
+.nytimes-com #fullBleedHeaderContent header,
+.fastmail-blog .intro,
+.theverge-com p:has(+ p.p--has-dropcap) {
     font: var(--font-callout);
     font-style: italic;
     color: var(--color-secondary-label);
@@ -854,20 +872,20 @@ body.nytimes_com {
     padding-block-start: 0.5em;
 }
 
-
 /* TOO BROAD */
+
 /*
-.theverge_com .articleBody > p:last-of-type:has(> em:only-child) {
-    border-block-start: 1px solid var(--color-border);
-    clear: both;
-    color: var(--color-secondary-label);
-    font: var(--font-footnote);
-    padding-block-start: 0.5em;
+.theverge-com .articleBody > p:last-of-type:has(> em:only-child) {
+border-block-start: 1px solid var(--color-border);
+clear: both;
+color: var(--color-secondary-label);
+font: var(--font-footnote);
+padding-block-start: 0.5em;
 }
 */
 
 /* TBD: is this useful? */
-body:not(.techdirt_com) p:has( > em:only-child > strong:only-child) {
+body:not(.techdirt-com) p:has(> em:only-child > strong:only-child) {
     background-color: var(--color-pre-background);
     border: 1px solid var(--color-border);
     border-radius: 8px;
@@ -876,7 +894,7 @@ body:not(.techdirt_com) p:has( > em:only-child > strong:only-child) {
     font: var(--font-footnote);
 }
 
-.boingboing_net .next-post-list-container {
+.boingboing-net .next-post-list-container {
     display: none;
 }
 
@@ -896,7 +914,7 @@ p.alignright {
 }
 
 img.aligncenter {
-    display:block;
+    display: block;
 }
 
 img.size-full {
@@ -928,15 +946,14 @@ img.size-full {
     font-variant-numeric: tabular-nums;
 }
 
-
 /* TOO BROAD
-.arstechnica_com p:has(> em:only-child) {
-    font: var(--font-footnote);
-    color: var(--color-secondary-label);
+.arstechnica-com p:has(> em:only-child) {
+font: var(--font-footnote);
+color: var(--color-secondary-label);
 }
 */
 
-.arstechnica_com ul.gallery {
+.arstechnica-com ul.gallery {
     font: var(--font-caption1);
     color: var(--color-secondary-label);
     font-feature-settings: "ss06" 1;
@@ -944,7 +961,7 @@ img.size-full {
     list-style-type: none;
 }
 
-.arstechnica_com .articleBody > :is(div, p):last-child:has(a[href*="comment"]) {
+.arstechnica-com .articleBody > :is(div, p):last-child:has(a[href*="comment"]) {
     border-block-start: thin solid var(--color-border);
     color: var(--color-secondary-label);
     font: var(--font-footnote);
@@ -952,11 +969,11 @@ img.size-full {
     padding-block-start: 1em;
 }
 
-.arstechnica_com div.image.center {
+.arstechnica-com div.image.center {
     text-align: center;
 }
 
-.arstechnica_com .ars-newsletter-callbox {
+.arstechnica-com .ars-newsletter-callbox {
     display: none;
 }
 
@@ -965,30 +982,29 @@ p:has(a[href*="dois-and-their-discontents"]) {
     font: var(--font-footnote);
 }
 
-
-.bbc_co_uk .gel-pica-bold {
+.bbc-co-uk .gel-pica-bold {
     font-weight: 600;
 }
 
-.bbc_co_uk .story-body > span.gs-u-display-block,
-.bbc_co_uk article > section:last-child {
+.bbc-co-uk .story-body > span.gs-u-display-block,
+.bbc-co-uk article > section:last-child {
     display: none;
 }
 
-.bringmethenews_com .articleBody > :is(section, iframe) {
+.bringmethenews-com .articleBody > :is(section, iframe) {
     font: var(--font-caption1);
     color: var(--color-secondary-label);
     font-feature-settings: "ss06" 1;
     font-variant-numeric: tabular-nums;
 }
 
-.bringmethenews_com .articleBody > p:last-of-type:has(> em:only-child, > i:only-child) {
+.bringmethenews-com .articleBody > p:last-of-type:has(> em:only-child, > i:only-child) {
     border-block-start: 1px solid var(--color-border);
     font: var(--font-footnote);
     color: var(--color-secondary-label);
 }
 
-.bringmethenews_com .articleBody > :not(blockquote) + blockquote:last-child:has(> p:only-child) {
+.bringmethenews-com .articleBody > :not(blockquote) + blockquote:last-child:has(> p:only-child) {
     background-color: var(--color-pre-background);
     padding: 1em 2ch;
     max-width: 100%;
@@ -997,35 +1013,35 @@ p:has(a[href*="dois-and-their-discontents"]) {
     font: var(--font-footnote);
 }
 
-.twincities_com aside.related {
+.twincities-com aside.related {
     display: none;
 }
 
-.twincities_com .size-article_inline_half {
+.twincities-com .size-article-inline-half {
     width: calc(50% - 10px);
 }
 
-.twincities_com .size-article_inline_third {
+.twincities-com .size-article-inline-third {
     width: calc(33.33333% - 10px);
 }
 
-.twincities_com .size-article_inline_quarter {
+.twincities-com .size-article-inline-quarter {
     width: calc(25% - 10px);
 }
 
-.twincities_com .article-slideshow button.icon-close {
+.twincities-com .article-slideshow button.icon-close {
     display: none;
 }
 
-.twincities_com .article-slideshow ul {
+.twincities-com .article-slideshow ul {
     padding-inline-start: 0;
 }
 
-.twincities_com .article-slideshow li {
+.twincities-com .article-slideshow li {
     display: block;
 }
 
-.twincities_com .article-slideshow :is(.slide-caption, .slide-credit) {
+.twincities-com .article-slideshow :is(.slide-caption, .slide-credit) {
     color: var(--color-secondary-label);
     font: var(--font-caption1);
     font-feature-settings: "ss06" 1;
@@ -1033,76 +1049,81 @@ p:has(a[href*="dois-and-their-discontents"]) {
     margin-block-start: 0.5em;
 }
 
-.twincities_com .article-slideshow div.caption {
+.twincities-com .article-slideshow div.caption {
     display: none;
 }
 
+.twincities-com .articleBody > h2:has(~ ul:last-child),
+.twincities-com .articleBody > h2 ~ ul:last-child {
+    display: none;
+}
 
 /* TBD: twincities.com only or generally useful */
+
 /* TOO BROAD
 p:has(> i:first-child, > i:only-child, > em:only-child) {
-    font: var(--font-footnote);
-    font-style: italic;
-    color: var(--color-secondary-label);
+font: var(--font-footnote);
+font-style: italic;
+color: var(--color-secondary-label);
 }
 */
 
-.cidrap_umn_edu .field-name-field-image-thumbnail {
+.cidrap-umn-edu .field-name-field-image-thumbnail {
     float: left;
     margin-block-start: 0;
     margin-inline-end: 8px;
 }
 
-.cidrap_umn_edu .field-name-field-byline,
-.cidrap_umn_edu .field-name-field-date {
+.cidrap-umn-edu .field-name-field-byline,
+.cidrap-umn-edu .field-name-field-date {
     display: none;
 }
 
-.cidrap_umn_edu .field-name-field-bullet-points > .field-items {
+.cidrap-umn-edu .field-name-field-bullet-points > .field-items {
     display: block;
     list-style-type: disc;
     margin: 1em 0;
     padding-inline-start: 40px;
 }
 
-.cidrap_umn_edu .field-name-field-bullet-points > .field-items > .field-item {
+.cidrap-umn-edu .field-name-field-bullet-points > .field-items > .field-item {
     display: list-item;
     text-align: -webkit-match-parent;
 }
 
-.mprnews_org .apm-related-list {
+.mprnews-org .apm-related-list, .mprnews-org div:has(> div:first-child, + ul:last-child) {
     display: none;
 }
 
-.mprnews_org .figure-right {
+.mprnews-org .figure-right {
     float: right;
     margin-left: 10px;
 }
 
-.mprnews_org .figure-left {
+.mprnews-org .figure-left {
     float: left;
     margin-right: 10px;
 }
 
-.mprnews_org .figure-half {
+.mprnews-org .figure-half {
     width: calc(50% - 10px);
 }
 
-.mprnews_org .figure-quarter {
+.mprnews-org .figure-quarter {
     width: calc(25% - 10px);
 }
 
-.mprnews_org .figure-full {
+.mprnews-org .figure-full {
     width: 100%;
     margin-inline: 0 !important;
 }
 
-.mprnews_org .articleBody > img:first-child:has( + figure),
-.mprnews_org #bodyContainer > img[src*="media.npr.org"]:first-child {
+.mprnews-org .articleBody > img:first-child:has(+ figure),
+.mprnews-org #bodyContainer > img[src*="media.npr.org"]:first-child {
     display: none;
 }
 
-.mprnews_org div.apm-correction {
+.mprnews-org div.apm-correction {
     background-color: var(--color-pre-background);
     padding: 1em 2ch;
     max-width: 100%;
@@ -1111,54 +1132,54 @@ p:has(> i:first-child, > i:only-child, > em:only-child) {
     font: var(--font-footnote);
 }
 
-.mprnews_org div.apm-correction-title {
+.mprnews-org div.apm-correction-title {
     font-weight: 500;
     color: var(--color-label);
     display: inline-block;
 }
 
-.mprnews_org div.apm-correction-timestamp {
+.mprnews-org div.apm-correction-timestamp {
     font-weight: 300;
     float: right;
     color: var(--color-secondary-label);
     display: inline-block;
 }
 
-.mprnews_org p:last-of-type:has(> em:only-child) {
+.mprnews-org p:last-of-type:has(> em:only-child) {
     font: var(--font-footnote);
     border-block-start: 1px solid var(--color-border);
     color: var(--color-secondary-label);
     padding-block-start: 0.5em;
 }
 
-.mprnews_org figure.figure-full picture :is(source, img) {
+.mprnews-org figure.figure-full picture :is(source, img) {
     width: 100%;
 }
 
-.mprnews_org .apm-gallery .apm-gallery_title {
+.mprnews-org .apm-gallery .apm-gallery-title {
     font: var(--font-headline);
     font-weight: 600;
     clear: both;
     color: var(--color-header-text);
-    margin-block-end: .25em;
-    margin-block-start: .25em;
+    margin-block-end: 0.25em;
+    margin-block-start: 0.25em;
 }
 
-.mprnews_org .apm-gallery .apm-gallery_slides .slideshow button {
+.mprnews-org .apm-gallery .apm-gallery-slides .slideshow button {
     display: none;
 }
 
-.mprnews_org .apm-gallery .apm-gallery_slides .slideshow_count {
+.mprnews-org .apm-gallery .apm-gallery-slides .slideshow-count {
     display: none;
 }
 
-.macstories_net .media-wrapper {
+.macstories-net .media-wrapper {
     max-width: 100%;
     height: auto !important;
     margin-inline: 0;
 }
 
-.macstories_net .image-caption {
+.macstories-net .image-caption {
     text-align: initial;
     font: var(--font-caption1);
     color: var(--color-secondary-label);
@@ -1166,8 +1187,8 @@ p:has(> i:first-child, > i:only-child, > em:only-child) {
     font-variant-numeric: tabular-nums;
 }
 
-.macstories_net .aside,
-.macstories_net .shortcuts-box {
+.macstories-net .aside,
+.macstories-net .shortcuts-box {
     margin: 1em auto;
     border: 1px solid var(--color-border);
     border-radius: 8px;
@@ -1175,59 +1196,60 @@ p:has(> i:first-child, > i:only-child, > em:only-child) {
     padding: 8px;
 }
 
-.macstories_net .aside-narrow {
+.macstories-net .aside-narrow {
     max-width: 22em;
 }
 
-.macstories_net .shortcuts-box {
+.macstories-net .shortcuts-box {
     max-width: 33em;
 }
-.macstories_net .aside p {
+
+.macstories-net .aside p {
     text-align: initial;
 }
 
-.macstories_net .media-element-content {
+.macstories-net .media-element-content {
     display: grid;
     grid-template-columns: auto auto;
     grid-gap: 8px;
 }
 
-.macstories_net .shortcuts-box .media-element-image {
+.macstories-net .shortcuts-box .media-element-image {
     max-height: 80px;
 }
 
-.macstories_net .media-element-description .title {
+.macstories-net .media-element-description .title {
     margin-block-start: 0;
 }
 
 /*
- *
- * TOO BROAD. Anything with trailing text _should_ be excluded but no CSS selector for that
+*
+* TOO BROAD. Anything with trailing text -should- be excluded but no CSS selector for that
 
-.mprnews_org p:has(> strong:only-child),
-.minnpost_com p:has(> b:only-child) {
-    font: var(--font-headline);
-    font-weight: 600;
-    clear: both;
-    color: var(--color-header-text);
-    margin-block-end: .25em;
-    border-block-end: thin solid var(--color-border);
+.mprnews-org p:has(> strong:only-child),
+.minnpost-com p:has(> b:only-child) {
+font: var(--font-headline);
+font-weight: 600;
+clear: both;
+color: var(--color-header-text);
+margin-block-end: .25em;
+border-block-end: thin solid var(--color-border);
 }
 
-.mprnews_org p:has(> strong:only-child) + *,
-.minnpost_com p:has(> b:only-child) + * {
-    margin-block-start: .25em;
+.mprnews-org p:has(> strong:only-child) + *,
+.minnpost-com p:has(> b:only-child) + * {
+margin-block-start: .25em;
 }
 */
 
-.minnpost_com p:has(> i:only-child) {
+.minnpost-com p:has(> i:only-child) {
     font-family: var(--font-family-sans-serif);
     color: var(--color-secondary-label);
 }
 
-.minnpost_com p:last-of-type:has(i:only-child > span:only-child),
-.minnpost_com p:last-of-type:has(em:only-child),
-.minnpost_com p:last-of-type:has(i:only-child) {
+.minnpost-com p:last-of-type:has(i:only-child > span:only-child),
+.minnpost-com p:last-of-type:has(em:only-child),
+.minnpost-com p:last-of-type:has(i:only-child) {
     border-block-start: 1px solid var(--color-border);
     clear: both;
     color: var(--color-secondary-label);
@@ -1235,61 +1257,60 @@ p:has(> i:first-child, > i:only-child, > em:only-child) {
     padding-block-start: 0.5em;
 }
 
-.starwars_com .dplus-promo-container {
+.starwars-com .dplus-promo-container {
     display: none;
 }
 
-.vajenda_substack_com .articleBody > p.button-wrapper {
+.vajenda-substack-com .articleBody > p.button-wrapper {
     display: none;
 }
 
-
-body.gocomics_com,
-body.comicskingdom_com,
-body.kingfeatures_com,
-body.dieselsweeties_com,
-body.garfieldminusgarfield_net,
-body.ohjoysextoy_com,
-body.smbc-comics_com,
-body.theoatmeal_com,
-body.xkcd_com {
+body.gocomics-com,
+body.comicskingdom-com,
+body.kingfeatures-com,
+body.dieselsweeties-com,
+body.garfieldminusgarfield-net,
+body.ohjoysextoy-com,
+body.smbc-comics-com,
+body.theoatmeal-com,
+body.xkcd-com {
     max-width: inherit;
 }
 
-.ohjoysextoy_com .post-mood {
+.ohjoysextoy-com .post-mood {
     display: inline-block;
     float: inline-start;
     margin-inline-end: 16px;
     margin-block-end: 16px;
 }
 
-.ohjoysextoy_com .post-mood img {
+.ohjoysextoy-com .post-mood img {
     border-radius: 4px;
     padding: 2px 0 0;
 }
 
-.ohjoysextoy_com li[role="tab"] {
+.ohjoysextoy-com li[role="tab"] {
     display: none;
 }
 
-.ohjoysextoy_com .post-extras {
+.ohjoysextoy-com .post-extras {
     font: var(--font-footnote);
-    opacity: 75%;
+    opacity: 0.75;
 }
 
-.ohjoysextoy_com div.ui-tabs ul {
+.ohjoysextoy-com div.ui-tabs ul {
     column-count: 3;
 }
 
-.nilcoalescing_com .articleBody > h1:first-child {
+.nilcoalescing-com .articleBody > h1:first-child {
     display: none;
 }
 
-.om_co pre.wp-block-verse {
+.om-co pre.wp-block-verse {
     font-family: ui-serif;
 }
 
-.appleworld_today .articleBody p:last-child:has(a[rel="nofollow"][href*="archive"]) {
+.appleworld-today .articleBody p:last-child:has(a[rel="nofollow"][href*="archive"]) {
     border-block-start: thin solid var(--color-border);
     color: var(--color-secondary-label);
     font: var(--font-footnote);
@@ -1305,7 +1326,7 @@ body.xkcd_com {
         --color-odd-alternating-content-background: transparent;
     }
 
-    @media(prefers-color-scheme: dark) {
+    @media (prefers-color-scheme: dark) {
         :root {
             --color-accent: #2d80f1;
             --color-even-alternating-content-background: #292929;
@@ -1317,6 +1338,7 @@ body.xkcd_com {
 @supports not (-webkit-touch-callout: none) {
     :root {
         --color-accent: -apple-system-control-accent;
+
         /* these are intentionally reversed */
         --color-even-alternating-content-background: -apple-system-odd-alternating-content-background;
         --color-odd-alternating-content-background: -apple-system-even-alternating-content-background;

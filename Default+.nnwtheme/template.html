@@ -35,7 +35,7 @@ body: The body of the article.
         var feedDomain = "";
         try {
             let url = (new URL("[[feed_link]]"));
-            feedDomain = url.hostname.replace('www.','').replaceAll('.', '_');
+            feedDomain = url.hostname.replace('www.','').replaceAll('.', '-');
         } catch(e) {
             ;
         }
