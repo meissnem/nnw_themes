@@ -30,6 +30,9 @@ body: The body of the article.
 
 -->
 
+<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/11.7.0/styles/default.min.css">
+<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/11.7.0/highlight.min.js"></script>
+<script>hljs.highlightAll();</script>
 <script type="text/javascript">
     document.addEventListener("DOMContentLoaded", function(event) {
         var feedDomain = "";
@@ -43,8 +46,14 @@ body: The body of the article.
         //const article = document.getElementById("nnwArticle");
         //article.className += " " + feedDomain;
 
-        document.body.className += " [[dateline_style]]";
+        if (feedDomain == "unofficialbird-com") {
+            document.body.className += " articleDatelineTitle";
+        } else {
+            document.body.className += " [[dateline_style]]";
+        }
+
         document.body.className += " [[text_size_class]]";
+
         if (feedDomain != "") {
             document.body.className += " " + feedDomain;
         }

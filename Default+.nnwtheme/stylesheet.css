@@ -187,6 +187,7 @@ div.footnote,
 #footnotes,
 .footnotes,
 .footnotes ~ *,
+.twitterTimestamp,
 ol.footnote,
 ol:has(li.footnote) {
     font: var(--font-footnote);
@@ -241,8 +242,8 @@ figure {
     margin-inline: 0;
 }
 
-figure *,
-figure {
+figure:not([class~=code]) *,
+figure:not([class~=code]) {
     color: var(--color-secondary-label);
     font: var(--font-caption1);
     font-feature-settings: "ss06" 1;
@@ -381,6 +382,17 @@ article header :is(.feedlink, .byline) {
     font-weight: 400;
 }
 
+.articleDatelineTitle blockquote {
+    padding: 1em 2ch;
+    max-width: 100%;
+    border-radius: 8px;
+    border: 1px solid var(--color-border);
+    overflow: auto;
+    overflow-y: hidden;
+    word-wrap: normal;
+    word-break: normal;
+}
+
 article header :is(.byline, .dateline) {
     display: inline-block;
 }
@@ -462,6 +474,34 @@ a.footnote:hover,
     color: var(--color-tertiary-label);
 }
 
+/* Feedbin stuff */
+.feedbin--article-wrap {
+    background-color: var(--color-pre-background);
+    border: 1px solid var(--color-border);
+    border-radius: 8px;
+    color: var(--color-label);
+    padding: 8px;
+}
+
+.feedbin--article-header {}
+
+.feedbin--article-meta {
+    font: var(--font-footnote);
+    color: var(--color-secondary-label);
+}
+
+.feedbin--article-header h2 {
+    border: 0;
+    font: var(--font-title3);
+    font-weight: 500;
+}
+
+.feedbin--host {}
+.feedbin--author {}
+.feedbin--article-content {}
+
+
+
 /* Mastadon */
 .invisible {
     display: none;
@@ -497,12 +537,14 @@ a.footnote:hover,
 .twitterTimestamp {
     display: block;
     margin-block-start: 1em;
+/*
     font: var(--font-footnote);
     color: var(--color-secondary-label);
+*/
 }
 
 .twitterTimestamp:link {
-    color: inherit;
+    color: var(--color-secondary-label);
 }
 
 .twitterTimestamp:hover {
@@ -525,7 +567,7 @@ a.footnote:hover,
 * this looks bad when <h3> is followed immediately by <h4>
 */
 
-    border-block-end: thin solid var(--color-border);
+    border-block-end: thin dotted var(--color-border);
 }
 
 .articleBody :is(h1, h2, h3, h4, h5, h6) + * {
@@ -560,7 +602,7 @@ a.footnote:hover,
 }
 
 article table,
-article figure {
+article figure:not([class~=code]) {
     color: var(--color-secondary-label);
 
     /* enable "high legibility" in SF font */
@@ -617,13 +659,13 @@ article table[frame~="void"] {
     font: var(--font-footnote);
 }
 
-.appleinsider-com .small {
+.appleinsider-com :is(.small, .hero-caption) {
     font: var(--font-caption1);
     font-feature-settings: "ss06" 1;
     font-variant-numeric: tabular-nums;
 }
 
-.appleinsider-com .gray {
+.appleinsider-com :is(.gray, .hero-caption) {
     color: var(--color-secondary-label);
 }
 
@@ -820,16 +862,18 @@ body.alerts-weather-gov {
     font-family: var(--font-family-monospace);
 }
 
-body.bringmethenews-com,
-body.npr-org,
 body.bbc-co-uk,
+body.bringmethenews-com,
+body.cbsnews-com,
+body.minnesota-cbslocal-com,
 body.minnpost-com,
 body.mprnews-org,
-body.twincities-com,
+body.npr-org,
+body.nytimes-com,
 body.startribune-com,
-body.minnesota-cbslocal-com,
-body.washingtonpost-com,
-body.nytimes-com {
+body.talkingpointsmemo-com,
+body.twincities-com,
+body.washingtonpost-com {
     font-family: var(--font-family-serif);
 }
 
@@ -841,6 +885,7 @@ body.nytimes-com {
 .nytimes-com article#story #top-wrapper,
 .nytimes-com article#story #top-wrapper + div > div:first-child,
 .nytimes-com article#story header > div,
+.nytimes-com div#NYT_MAIN_CONTENT_2_REGION,
 .nytimes-com #fullBleedHeaderContent > div {
     display: none;
 
@@ -969,6 +1014,20 @@ color: var(--color-secondary-label);
     padding-block-start: 1em;
 }
 
+.arstechnica-com aside.pullbox {
+    background-color: var(--color-pre-background);
+    padding: 1em 2ch;
+    max-width: 100%;
+    border-radius: 8px;
+    border: 1px solid var(--color-border);
+    font: var(--font-footnote);
+    font-style: italic;
+}
+
+.arstechnica-com aside.pullbox :is(em, cite, i) {
+    font-style: normal;
+}
+
 .arstechnica-com div.image.center {
     text-align: center;
 }
@@ -986,8 +1045,11 @@ p:has(a[href*="dois-and-their-discontents"]) {
     font-weight: 600;
 }
 
-.bbc-co-uk .story-body > span.gs-u-display-block,
-.bbc-co-uk article > section:last-child {
+/*.bbc-co-uk .story-body > span.gs-u-display-block,*/
+.bbc-co-uk article > section:last-child,
+.bbc-co-uk [class*="-TopicListWrapper"],
+.bbc-co-uk ul:has(.story-body__internal-link),
+.bbc-co-uk .visually-hidden {
     display: none;
 }
 
@@ -1013,19 +1075,23 @@ p:has(a[href*="dois-and-their-discontents"]) {
     font: var(--font-footnote);
 }
 
+.bringmethenews-com blockquote:has(a[href*=mailchi]) {
+    display: none;
+}
+
 .twincities-com aside.related {
     display: none;
 }
 
-.twincities-com .size-article-inline-half {
+.twincities-com :is(.size-article-inline-half, .size-article_infline_half) {
     width: calc(50% - 10px);
 }
 
-.twincities-com .size-article-inline-third {
+.twincities-com :is(.size-article-inline-third, .size-article_inline_third) {
     width: calc(33.33333% - 10px);
 }
 
-.twincities-com .size-article-inline-quarter {
+.twincities-com :is(.size-article-inline-quarter, .size-article_inline_quarter) {
     width: calc(25% - 10px);
 }
 
@@ -1091,7 +1157,7 @@ color: var(--color-secondary-label);
     text-align: -webkit-match-parent;
 }
 
-.mprnews-org .apm-related-list, .mprnews-org div:has(> div:first-child, + ul:last-child) {
+.mprnews-org .apm-related-list, .mprnews-org div:has(> div:first-child + ul:last-child) {
     display: none;
 }
 
@@ -1257,11 +1323,11 @@ margin-block-start: .25em;
     padding-block-start: 0.5em;
 }
 
-.starwars-com .dplus-promo-container {
+.minnpost-com .acm-ad-container {
     display: none;
 }
 
-.vajenda-substack-com .articleBody > p.button-wrapper {
+.starwars-com .dplus-promo-container {
     display: none;
 }
 
@@ -1317,6 +1383,90 @@ body.xkcd-com {
     margin-block-start: 1em;
     padding-block-start: 1em;
 }
+
+.talkingpointsmemo-com .is-style-sans-serif {
+    font-family: var(--font-family-sans-serif);
+    color: var(--color-secondary-label);
+}
+
+.talkingpointsmemo-com .has-drop-cap::first-letter {
+    float: left;
+    font-size: 4em;
+    margin-block-start: 0.15em;
+}
+
+.eclecticlight-co code {
+    word-wrap: break-word;
+    background-color: inherit;
+}
+.eclecticlight-co br + code {
+    display: block;
+    margin-block-start: 0.5em;
+}
+
+.cbsnews-com .content__topic-link {
+    display: none;
+}
+
+.cbsnews-com ul.content__tags {
+    padding-inline: 0;
+
+    /* enable "high legibility" in SF font */
+    font: var(--font-footnote);
+    font-feature-settings: "ss06" 1;
+    font-variant-numeric: tabular-nums;
+}
+
+.cbsnews-com ul.content__tags li {
+    display: inline;
+    padding-inline: 15px;
+    border: 1px solid var(--color-tertiary-label);
+    border-radius: 10px;
+    background: var(--color-even-alternating-content-background);
+}
+
+.cbsnews-com ul.content__tags li:has(a:hover) {
+    background: var(--color-odd-alternating-content-background);
+}
+
+.cbsnews-com ul.content__tags li :is(a:link, a:hover) {
+    color: inherit;
+    font-weight: 500;
+}
+
+.cbsnews-com ul.content__tags li a:hover {
+    text-decoration: none;
+}
+
+.cbsnews-com .content-author {
+    /* enable "high legibility" in SF font */
+    font: var(--font-footnote);
+    font-feature-settings: "ss06" 1;
+    font-variant-numeric: tabular-nums;
+}
+
+.cbsnews-com .content-author__bio  {
+    display: inline-flex;
+}
+
+
+.vajenda-substack-com .articleBody p.button-wrapper {
+    display: none;
+}
+
+.vajenda-substack-com .cta-caption {
+    /* pull quote */
+    display: block;
+    text-align: center;
+    font: var(--font-callout);
+    font-weight: 300;
+    font-style: italic;
+    color: var(--color-secondary-label);
+    border-block: 1px solid var(--color-border);
+    margin-block: 1em;
+    padding-block: 1em;
+}
+
 
 /* iOS-specific */
 @supports (-webkit-touch-callout: none) {
