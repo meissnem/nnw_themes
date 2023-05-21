@@ -30,9 +30,6 @@ body: The body of the article.
 
 -->
 
-<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/11.7.0/styles/default.min.css">
-<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/11.7.0/highlight.min.js"></script>
-<script>hljs.highlightAll();</script>
 <script type="text/javascript">
     document.addEventListener("DOMContentLoaded", function(event) {
         var feedDomain = "";
@@ -59,14 +56,20 @@ body: The body of the article.
         }
     })
 </script>
+<nav class="postHidden" id="navbar">
+    <a href="[[feed_link]]" class="feedlink">
+        <img class="favicon" id="navbar_favicon" src="[[avatar_src]]" />
+        <span>[[feed_link_title]]</span>
+    </a>
+</nav>
 <article id="nnwArticle" class="topContainer">
     <header class="headerContainer">
         <div class="avatar articleHidden"><img id="nnwImageIcon" src="[[avatar_src]]" height="48" /></div>
         <div class="byline articleHidden">[[byline]]</div>
         <div class="feedlink articleHidden"><a href="[[feed_link]]">[[feed_link_title]]</a></div>
         <div class="headerGrid postHidden">
-            <div class="feedlink"><a href="[[feed_link]]">[[feed_link_title]]</a></div>
-            <div class="avatar"><img id="nnwImageIcon" src="[[avatar_src]]" height="24" /></div>
+            <div class="feedlink articleHidden"><a href="[[feed_link]]">[[feed_link_title]]</a></div>
+            <div class="avatar articleHidden"><img id="nnwImageIcon" src="[[avatar_src]]" height="24" /></div>
             <h1 class="articleTitle"><a href="[[preferred_link]]">[[title]]</a></h1>
         </div>
         <div class="byline postHidden">[[byline]]</div>
