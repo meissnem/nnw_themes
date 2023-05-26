@@ -126,24 +126,56 @@ body {
     margin-block: 20px 64px;
 }
 
-h1 { font: var(--font-title1);      }
-h2 { font: var(--font-title2);      }
-h3 { font: var(--font-title3);      }
-h4 { font: var(--font-headline);    }
-h5 { font: var(--font-subheadline); }
-h6 { font: var(--font-footnote);    }
+h1 {
+    font: var(--font-title1);
+}
 
-h1, h2, h3, h4, h5, h6 {
+h2 {
+    font: var(--font-title2);
+}
+
+h3 {
+    font: var(--font-title3);
+}
+
+h4 {
+    font: var(--font-headline);
+}
+
+h5 {
+    font: var(--font-subheadline);
+}
+
+h6 {
+    font: var(--font-footnote);
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
     font-weight: 600;
     clear: both;
     color: var(--color-header-text);
 }
 
-tt, code, kbd, samp, pre, xmp, plaintext, listing {
+tt,
+code,
+kbd,
+samp,
+pre,
+xmp,
+plaintext,
+listing {
     font-family: var(--font-family-monospace);
 }
 
-tt, code, kbd, samp {
+tt,
+code,
+kbd,
+samp {
     background-color: var(--color-pre-background);
 }
 
@@ -160,7 +192,11 @@ pre {
     word-break: normal;
 }
 
-img, figure, video, div, object {
+img,
+figure,
+video,
+div,
+object {
     max-width: 100%;
     height: auto !important;
 }
@@ -180,8 +216,8 @@ header {
     margin-block-end: 1em;
 }
 
-
-:is(.comicskingdom-com, .gocomics-com, .ohjoysextoy-com, .smbc-comics-com, .xkcd-com) :is(#navbar, #nnwArticle) {
+:is(.comicskingdom-com, .gocomics-com, .ohjoysextoy-com, .smbc-comics-com, .xkcd-com)
+    :is(#navbar, #nnwArticle) {
     max-width: 100%;
 }
 
@@ -211,12 +247,12 @@ ol:has(li.footnote) {
     /* border-block-start: thin solid var(--color-border); */
 }
 
-:is(footer, .articleFooter, div.footnote, #footnotes, .footnotes) h1 {
-    font: var(--font-headline);
+.nilcoalescing-com .articleBody > h1:first-child {
+    display: none;
 }
 
-:is(footer, .articleFooter, div.footnote, #footnotes, .footnotes) h2 {
-    font: var(--font-subheadline);
+:is(footer, .articleFooter, div.footnote, #footnotes, .footnotes) h1 {
+    font: var(--font-headline);
 }
 
 :is(footer, .articleFooter, div.footnote, #footnotes, .footnotes) :is(h3, h4, h5, h6) {
@@ -246,21 +282,12 @@ figure {
     margin-inline: 0;
 }
 
-figure:not([class~=code]) *,
-figure:not([class~=code]) {
+figure:not([class~="code"]) *,
+figure:not([class~="code"]) {
     color: var(--color-secondary-label);
     font: var(--font-caption1);
     font-feature-settings: "ss06" 1;
     font-variant-numeric: tabular-nums;
-}
-
-figure img {
-    display: block;
-}
-
-figure cite {
-    display: block;
-    color: var(--color-secondary-label);
 }
 
 figcaption,
@@ -292,6 +319,16 @@ figure.e-image {
     text-align: center;
 }
 
+figure img {
+    display: block;
+}
+
+figure cite {
+    color: var(--color-secondary-label);
+    display: block;
+    text-align: initial;
+}
+
 article {
     margin-inline: auto;
     max-width: 42em;
@@ -303,16 +340,28 @@ article header {
     font: var(--font-subheadline);
 }
 
-nav a:link,
-article header a:link,
-article footer .dateline a:link {
+nav a:hover {
+    color: var(--color-link);
+}
+
+nav a:link {
     color: inherit;
 }
 
-nav a:hover,
-article header a:hover,
+article header a:hover {
+    color: var(--color-link);
+}
+
+article header a:link {
+    color: inherit;
+}
+
 article footer .dateline a:hover {
     color: var(--color-link);
+}
+
+article footer .dateline a:link {
+    color: inherit;
 }
 
 .headerGrid {
@@ -320,24 +369,6 @@ article footer .dateline a:hover {
     grid-template-columns: auto 32px;
     grid-row-gap: 8px;
     margin-block: 8px;
-}
-
-.headerGrid > .feedlink {
-    border-block-end: 1px solid var(--color-border);
-}
-
-.headerGrid > h1.articleTitle {
-    grid-column: 1 / span 2;
-}
-
-.headerGrid .avatar {
-    max-width: 24px;
-    margin-inline-start: 0;
-    padding-inline-start: 8px;
-    margin-block-end: 0;
-    padding-block-end: 8px;
-    float: none;
-    border-block-end: 1px solid var(--color-border);
 }
 
 nav {
@@ -357,6 +388,9 @@ nav .feedlink {
     display: inline-flex;
 }
 
+.headerGrid > .feedlink {
+    border-block-end: 1px solid var(--color-border);
+}
 
 article header .feedlink.articleHidden {
     display: inline;
@@ -368,6 +402,16 @@ article header .avatar {
     max-width: 48px;
     margin-inline-start: 8px;
     margin-block-end: 4px;
+}
+
+.headerGrid .avatar {
+    max-width: 24px;
+    margin-inline-start: 0;
+    padding-inline-start: 8px;
+    margin-block-end: 0;
+    padding-block-end: 8px;
+    float: none;
+    border-block-end: 1px solid var(--color-border);
 }
 
 .articleDatelineTitle .postHidden,
@@ -385,13 +429,17 @@ article header h1.articleTitle {
     color: var(--color-label);
 }
 
+.headerGrid > h1.articleTitle {
+    grid-column: 1 / span 2;
+}
+
 .articleDateline article header :is(.feedlink, .articleTitle)::after,
 .articleDatelineTitle article header :is(.feedlink)::before {
     content: "\a";
     white-space: pre-wrap;
 }
 
-@media screen and (max-width: 700px), screen and (max-height: 700px) {
+@media screen and (width <= 700px), screen and (height <= 700px) {
     .articleDatelineTitle article header :is(.feedlink)::before {
         content: "";
         white-space: initial;
@@ -400,10 +448,6 @@ article header h1.articleTitle {
 
 article header :is(.feedlink, .byline) {
     font-weight: 500;
-}
-
-.articleDatelineTitle article header .byline {
-    font: var(--font-headline);
 }
 
 .articleDatelineTitle article header .feedlink {
@@ -431,13 +475,17 @@ article header .byline {
     margin-inline-end: 8px;
 }
 
+.articleDatelineTitle article header .byline {
+    font: var(--font-headline);
+}
+
 article header .dateline {
     float: inline-end;
     margin-inline-start: 8px;
     color: var(--color-secondary-label);
 }
 
-@media screen and (max-width: 700px), screen and (max-height: 700px) {
+@media screen and (width <= 700px), screen and (height <= 700px) {
     article header :is(div.byline, div.dateline, div.externalLink) {
         display: block !important;
         float: none !important;
@@ -455,9 +503,48 @@ article header .externalLink {
 }
 
 /* Newsfoot theme */
+body a.footnote {
+    margin-inline-start: 5px;
+    font: var(--font-footnote);
+    line-height: 1em;
+    background: var(--color-newsfoot-popover-hover-background);
+    color: var(--color-body);
+    transition: background-color 200ms ease-out;
+}
+
+.newsfoot-footnote-popover + a.footnote {
+    background: var(--color-newsfoot-popover-background);
+    transition: background-color 200ms ease-out;
+}
+
+body a.footnote:visited {
+    margin-inline-start: 5px;
+    font: var(--font-footnote);
+    line-height: 1em;
+    background: var(--color-newsfoot-popover-hover-background);
+    color: var(--color-body);
+    transition: background-color 200ms ease-out;
+}
+
+body a.footnote:hover {
+    background: var(--color-newsfoot-popover-background);
+    transition: background-color 200ms ease-out;
+}
+
+.newsfoot-footnote-popover + a.footnote:hover {
+    margin-inline-start: 5px;
+    font: var(--font-footnote);
+    line-height: 1em;
+    background: var(--color-newsfoot-popover-hover-background);
+    color: var(--color-body);
+    transition: background-color 200ms ease-out;
+}
+
 .newsfoot-footnote-popover {
     background: var(--color-newsfoot-secondary-background);
-    box-shadow: 0 2px 4px var(--color-label), 0 3px 6px var(--color-label);
+    box-shadow:
+        0 2px 4px var(--color-label),
+        0 3px 6px var(--color-label);
     border: 1px solid var(--color-label);
     color: var(--color-body);
     padding: 1px;
@@ -473,23 +560,6 @@ article header .externalLink {
 
 .newsfoot-footnote-popover-inner {
     background: var(--color-newsfoot-background);
-}
-
-body a.footnote,
-body a.footnote:visited,
-.newsfoot-footnote-popover + a.footnote:hover {
-    margin-inline-start: 5px;
-    font: var(--font-footnote);
-    line-height: 1em;
-    background: var(--color-newsfoot-popover-hover-background);
-    color: var(--color-body);
-    transition: background-color 200ms ease-out;
-}
-
-a.footnote:hover,
-.newsfoot-footnote-popover + a.footnote {
-    background: var(--color-newsfoot-popover-background);
-    transition: background-color 200ms ease-out;
 }
 
 /****************************************************   */
@@ -513,8 +583,6 @@ a.footnote:hover,
     padding: 8px;
 }
 
-.feedbin--article-header {}
-
 .feedbin--article-meta {
     font: var(--font-footnote);
     color: var(--color-secondary-label);
@@ -526,11 +594,13 @@ a.footnote:hover,
     font-weight: 500;
 }
 
-.feedbin--host {}
-.feedbin--author {}
-.feedbin--article-content {}
+.twincities-com .articleBody > h2:has(~ ul:last-child) {
+    display: none;
+}
 
-
+:is(footer, .articleFooter, div.footnote, #footnotes, .footnotes) h2 {
+    font: var(--font-subheadline);
+}
 
 /* Mastadon */
 .invisible {
@@ -567,7 +637,8 @@ a.footnote:hover,
 .twitterTimestamp {
     display: block;
     margin-block-start: 1em;
-/*
+
+    /*
     font: var(--font-footnote);
     color: var(--color-secondary-label);
 */
@@ -610,7 +681,8 @@ a.footnote:hover,
     border-block-end: initial !important;
 }
 
-.articleBody :is(h1:has(+ h1), h2:has(+ h2), h3:has(+ h3), h4:has(+ h4), h5:has(+ h5), h6:has(+ h6)) {
+.articleBody
+    :is(h1:has(+ h1), h2:has(+ h2), h3:has(+ h3), h4:has(+ h4), h5:has(+ h5), h6:has(+ h6)) {
     border-block-end: initial !important;
 }
 
@@ -634,7 +706,7 @@ a.footnote:hover,
 }
 
 article table,
-article figure:not([class~=code]) {
+article figure:not([class~="code"]) {
     color: var(--color-secondary-label);
 
     /* enable "high legibility" in SF font */
@@ -674,6 +746,11 @@ article table :is(td, th) {
 
 article table[frame~="void"] {
     border: none;
+}
+
+.ohjoysextoy-com .post-mood img {
+    border-radius: 4px;
+    padding: 2px 0 0;
 }
 
 .appleinsider-com div[align="center"]:has(> img) {
@@ -724,14 +801,13 @@ article table[frame~="void"] {
     border-inline: inherit;
 }
 
-.inputmag-com blockquote[data-md-text-align="center"] em,
-blockquote[data-md-text-align="center"] i {
-    font-style: normal;
-}
-
 .inputmag-com blockquote[data-md-text-align="center"] strong,
 blockquote[data-md-text-align="center"] b {
     font-weight: 500;
+}
+
+.macrumors-com .linkback {
+    font-style: italic;
 }
 
 .macrumors-com .linkback:first-of-type {
@@ -740,12 +816,16 @@ blockquote[data-md-text-align="center"] b {
     padding-block-start: 1.65em;
 }
 
-.macrumors-com .linkback {
-    font-style: italic;
+.macrumors-com .linkback em {
+    font-style: normal;
 }
 
-.macrumors-com .linkback em,
 .linkback i {
+    font-style: normal;
+}
+
+.inputmag-com blockquote[data-md-text-align="center"] em,
+blockquote[data-md-text-align="center"] i {
     font-style: normal;
 }
 
@@ -762,15 +842,19 @@ img + center:has(> em) {
     padding: 15px;
     border-radius: 4px;
     color: #fff;
-    text-shadow: -1px 1px 0 #696969, 1px 1px 0 #696969, 1px -1px 0 #696969, -1px -1px 0 #696969;
+    text-shadow:
+        -1px 1px 0 #696969,
+        1px 1px 0 #696969,
+        1px -1px 0 #696969,
+        -1px -1px 0 #696969;
     font-weight: 700;
     position: relative;
     display: inline-block;
-    background-color:#00ad00
+    background-color: #00ad00;
 }
 
 .macrumors-com .fancybutton:hover {
-    background-color:#009400
+    background-color: #009400;
 }
 
 .macrumors-com .fancybadge {
@@ -779,16 +863,82 @@ img + center:has(> em) {
     color: #fff;
     text-align: center;
     line-height: 18px;
-    -ms-transform: rotate(-15deg);
     transform: rotate(-15deg);
-    -webkit-transform: rotate(-15deg);
     background-color: #b21b1b;
     position: absolute;
     top: -5px;
     left: -15px;
     border-radius: 5px;
     margin-bottom: -18px;
-    padding:0 6px
+    padding: 0 6px;
+}
+
+p:has(a[href*="dois-and-their-discontents"]) {
+    color: var(--color-secondary-label);
+    font: var(--font-footnote);
+}
+
+.macstories-net .aside p {
+    text-align: initial;
+}
+
+.theverge-com p:has(+ p.p--has-dropcap) {
+    font: var(--font-callout);
+    font-style: italic;
+    color: var(--color-secondary-label);
+    font-weight: 300;
+}
+
+/* TBD: theverge only, or global? */
+.articleBody p:last-child:has(> small) {
+    border-block-start: 1px solid var(--color-border);
+    color: var(--color-secondary-label);
+    padding-block-start: 0.5em;
+}
+
+.minnpost-com p:has(> i:only-child) {
+    font-family: var(--font-family-sans-serif);
+    color: var(--color-secondary-label);
+}
+
+.mprnews-org p:last-of-type:has(> em:only-child) {
+    font: var(--font-footnote);
+    border-block-start: 1px solid var(--color-border);
+    color: var(--color-secondary-label);
+    padding-block-start: 0.5em;
+}
+
+.minnpost-com p:last-of-type:has(em:only-child),
+.minnpost-com p:last-of-type:has(i:only-child) {
+    border-block-start: 1px solid var(--color-border);
+    clear: both;
+    color: var(--color-secondary-label);
+    font: var(--font-footnote);
+    padding-block-start: 0.5em;
+}
+
+/* TBD: is this useful? */
+body:not(.techdirt-com) p:has(> em:only-child > strong:only-child) {
+    background-color: var(--color-pre-background);
+    border: 1px solid var(--color-border);
+    border-radius: 8px;
+    color: var(--color-label);
+    padding: 8px;
+    font: var(--font-footnote);
+}
+
+.bringmethenews-com .articleBody > p:last-of-type:has(> em:only-child, > i:only-child) {
+    border-block-start: 1px solid var(--color-border);
+    font: var(--font-footnote);
+    color: var(--color-secondary-label);
+}
+
+.minnpost-com p:last-of-type:has(i:only-child > span:only-child) {
+    border-block-start: 1px solid var(--color-border);
+    clear: both;
+    color: var(--color-secondary-label);
+    font: var(--font-footnote);
+    padding-block-start: 0.5em;
 }
 
 iframe[src*="video.startribune.com"] {
@@ -803,26 +953,11 @@ iframe[src*="video.startribune.com"] {
     display: none;
 }
 
-.startribune-com div.articleBody > p:last-child:has(> em:first-child + a + em:last-child),
-.startribune-com div.articleBody > p:last-child:has(> a:first-child + em:last-child),
 .startribune-com div.articleBody > p:last-child:has(> em:only-child),
 .startribune-com .article-author-contact {
     border-block-start: 1px solid var(--color-border);
     font: var(--font-footnote);
     color: var(--color-secondary-label);
-}
-
-.startribune-com div.articleBody > h5 + h2 ~ p:last-child:has(> em:only-child) {
-    border-block-start: 0;
-    font: inherit;
-    color: inherit;
-}
-
-.startribune-com .article-author-headshot-sm {
-    float: left;
-    width: 50px;
-    height: 50px;
-    margin-right: 1.5em;
 }
 
 .startribune-com .articleBody > p:first-child:has(> strong:first-child + a + em),
@@ -835,9 +970,37 @@ iframe[src*="video.startribune.com"] {
     font: var(--font-footnote);
 }
 
+.startribune-com div.articleBody > h5 + h2 ~ p:last-child:has(> em:only-child) {
+    border-block-start: 0;
+    font: inherit;
+    color: inherit;
+}
+
 .startribune-com .articleBody > p:first-child:has(> strong:first-child + a + em) + p,
 .startribune-com .articleBody > p:first-child:has(> strong:first-child + em + a + em + a + em) + p {
     display: none;
+}
+
+.appleworld-today .articleBody p:last-child:has(a[rel="nofollow"][href*="archive"]) {
+    border-block-start: thin solid var(--color-border);
+    color: var(--color-secondary-label);
+    font: var(--font-footnote);
+    margin-block-start: 1em;
+    padding-block-start: 1em;
+}
+
+.startribune-com div.articleBody > p:last-child:has(> a:first-child + em:last-child),
+.startribune-com div.articleBody > p:last-child:has(> em:first-child + a + em:last-child) {
+    border-block-start: 1px solid var(--color-border);
+    font: var(--font-footnote);
+    color: var(--color-secondary-label);
+}
+
+.startribune-com .article-author-headshot-sm {
+    float: left;
+    width: 50px;
+    height: 50px;
+    margin-right: 1.5em;
 }
 
 .startribune-com h5:has(+ h2) {
@@ -947,15 +1110,22 @@ body.washingtonpost-com {
     width: 100% !important;
 }
 
-.nytimes-com article#story > div:first-child:has(> div > nav),
-.nytimes-com article#story #top-wrapper,
-.nytimes-com article#story #top-wrapper + div > div:first-child,
-.nytimes-com article#story header > div,
-.nytimes-com div#NYT_MAIN_CONTENT_2_REGION,
-.nytimes-com #fullBleedHeaderContent > div {
+.mprnews-org .apm-related-list,
+.mprnews-org div:has(> div:first-child + ul:last-child) {
     display: none;
+}
 
-    /* opacity: 0.1; */
+.nytimes-com #fullBleedHeaderContent header,
+.nytimes-com article#story header {
+    font: var(--font-callout);
+    font-style: italic;
+    color: var(--color-secondary-label);
+    font-weight: 300;
+}
+
+.nytimes-com #fullBleedHeaderContent > div,
+.nytimes-com article#story header > div {
+    display: none;
 }
 
 .nytimes-com article#story header > div:has(figure),
@@ -964,23 +1134,21 @@ body.washingtonpost-com {
     display: block;
 }
 
+.nytimes-com article#story > div:first-child:has(> div > nav),
+.nytimes-com article#story #top-wrapper,
+.nytimes-com article#story #top-wrapper + div > div:first-child,
+.nytimes-com div#NYT_MAIN_CONTENT_2_REGION {
+    display: none;
+
+    /* opacity: 0.1; */
+}
+
 .bringmethenews-com .subtitle,
-.bringmethenews-com p:first-child,
-.nytimes-com article#story header,
-.nytimes-com #fullBleedHeaderContent header,
-.fastmail-blog .intro,
-.theverge-com p:has(+ p.p--has-dropcap) {
+.fastmail-blog .intro {
     font: var(--font-callout);
     font-style: italic;
     color: var(--color-secondary-label);
     font-weight: 300;
-}
-
-/* TBD: theverge only, or global? */
-.articleBody p:last-child:has(> small) {
-    border-block-start: 1px solid var(--color-border);
-    color: var(--color-secondary-label);
-    padding-block-start: 0.5em;
 }
 
 /* TOO BROAD */
@@ -995,22 +1163,8 @@ padding-block-start: 0.5em;
 }
 */
 
-/* TBD: is this useful? */
-body:not(.techdirt-com) p:has(> em:only-child > strong:only-child) {
-    background-color: var(--color-pre-background);
-    border: 1px solid var(--color-border);
-    border-radius: 8px;
-    color: var(--color-label);
-    padding: 8px;
-    font: var(--font-footnote);
-}
-
 .boingboing-net .next-post-list-container {
     display: none;
-}
-
-figure cite {
-    text-align: initial;
 }
 
 p.alignright {
@@ -1102,16 +1256,11 @@ color: var(--color-secondary-label);
     display: none;
 }
 
-p:has(a[href*="dois-and-their-discontents"]) {
-    color: var(--color-secondary-label);
-    font: var(--font-footnote);
-}
-
 .bbc-co-uk .gel-pica-bold {
     font-weight: 600;
 }
 
-/*.bbc-co-uk .story-body > span.gs-u-display-block,*/
+/* .bbc-co-uk .story-body > span.gs-u-display-block, */
 .bbc-co-uk article > section:last-child,
 .bbc-co-uk [class*="-TopicListWrapper"],
 .bbc-co-uk ul:has(.story-body__internal-link),
@@ -1126,10 +1275,8 @@ p:has(a[href*="dois-and-their-discontents"]) {
     font-variant-numeric: tabular-nums;
 }
 
-.bringmethenews-com .articleBody > p:last-of-type:has(> em:only-child, > i:only-child) {
-    border-block-start: 1px solid var(--color-border);
-    font: var(--font-footnote);
-    color: var(--color-secondary-label);
+.bringmethenews-com blockquote:has(a[href*="mailchi"]) {
+    display: none;
 }
 
 .bringmethenews-com .articleBody > :not(blockquote) + blockquote:last-child:has(> p:only-child) {
@@ -1141,10 +1288,6 @@ p:has(a[href*="dois-and-their-discontents"]) {
     font: var(--font-footnote);
 }
 
-.bringmethenews-com blockquote:has(a[href*=mailchi]) {
-    display: none;
-}
-
 .twincities-com aside.related {
     display: none;
 }
@@ -1154,7 +1297,7 @@ p:has(a[href*="dois-and-their-discontents"]) {
 }
 
 .twincities-com :is(.size-article-inline-third, .size-article_inline_third) {
-    width: calc(33.33333% - 10px);
+    width: calc(33.3333% - 10px);
 }
 
 .twincities-com :is(.size-article-inline-quarter, .size-article_inline_quarter) {
@@ -1169,6 +1312,10 @@ p:has(a[href*="dois-and-their-discontents"]) {
     padding-inline-start: 0;
 }
 
+.ohjoysextoy-com div.ui-tabs ul {
+    column-count: 3;
+}
+
 .twincities-com .article-slideshow li {
     display: block;
 }
@@ -1181,11 +1328,7 @@ p:has(a[href*="dois-and-their-discontents"]) {
     margin-block-start: 0.5em;
 }
 
-.twincities-com .article-slideshow div.caption {
-    display: none;
-}
-
-.twincities-com .articleBody > h2:has(~ ul:last-child),
+.twincities-com .article-slideshow div.caption,
 .twincities-com .articleBody > h2 ~ ul:last-child {
     display: none;
 }
@@ -1221,10 +1364,6 @@ color: var(--color-secondary-label);
 .cidrap-umn-edu .field-name-field-bullet-points > .field-items > .field-item {
     display: list-item;
     text-align: -webkit-match-parent;
-}
-
-.mprnews-org .apm-related-list, .mprnews-org div:has(> div:first-child + ul:last-child) {
-    display: none;
 }
 
 .mprnews-org .figure-right {
@@ -1275,13 +1414,6 @@ color: var(--color-secondary-label);
     float: right;
     color: var(--color-secondary-label);
     display: inline-block;
-}
-
-.mprnews-org p:last-of-type:has(> em:only-child) {
-    font: var(--font-footnote);
-    border-block-start: 1px solid var(--color-border);
-    color: var(--color-secondary-label);
-    padding-block-start: 0.5em;
 }
 
 .mprnews-org figure.figure-full picture :is(source, img) {
@@ -1336,10 +1468,6 @@ color: var(--color-secondary-label);
     max-width: 33em;
 }
 
-.macstories-net .aside p {
-    text-align: initial;
-}
-
 .macstories-net .media-element-content {
     display: grid;
     grid-template-columns: auto auto;
@@ -1374,21 +1502,6 @@ margin-block-start: .25em;
 }
 */
 
-.minnpost-com p:has(> i:only-child) {
-    font-family: var(--font-family-sans-serif);
-    color: var(--color-secondary-label);
-}
-
-.minnpost-com p:last-of-type:has(i:only-child > span:only-child),
-.minnpost-com p:last-of-type:has(em:only-child),
-.minnpost-com p:last-of-type:has(i:only-child) {
-    border-block-start: 1px solid var(--color-border);
-    clear: both;
-    color: var(--color-secondary-label);
-    font: var(--font-footnote);
-    padding-block-start: 0.5em;
-}
-
 .minnpost-com .acm-ad-container {
     display: none;
 }
@@ -1416,11 +1529,6 @@ body.xkcd-com {
     margin-block-end: 16px;
 }
 
-.ohjoysextoy-com .post-mood img {
-    border-radius: 4px;
-    padding: 2px 0 0;
-}
-
 .ohjoysextoy-com li[role="tab"] {
     display: none;
 }
@@ -1430,24 +1538,8 @@ body.xkcd-com {
     opacity: 0.75;
 }
 
-.ohjoysextoy-com div.ui-tabs ul {
-    column-count: 3;
-}
-
-.nilcoalescing-com .articleBody > h1:first-child {
-    display: none;
-}
-
 .om-co pre.wp-block-verse {
     font-family: ui-serif;
-}
-
-.appleworld-today .articleBody p:last-child:has(a[rel="nofollow"][href*="archive"]) {
-    border-block-start: thin solid var(--color-border);
-    color: var(--color-secondary-label);
-    font: var(--font-footnote);
-    margin-block-start: 1em;
-    padding-block-start: 1em;
 }
 
 .talkingpointsmemo-com .is-style-sans-serif {
@@ -1465,6 +1557,7 @@ body.xkcd-com {
     word-wrap: break-word;
     background-color: inherit;
 }
+
 .eclecticlight-co br + code {
     display: block;
     margin-block-start: 0.5em;
@@ -1511,10 +1604,9 @@ body.xkcd-com {
     font-variant-numeric: tabular-nums;
 }
 
-.cbsnews-com .content-author__bio  {
+.cbsnews-com .content-author__bio {
     display: inline-flex;
 }
-
 
 .vajenda-substack-com .articleBody p.button-wrapper {
     display: none;
@@ -1532,7 +1624,6 @@ body.xkcd-com {
     margin-block: 1em;
     padding-block: 1em;
 }
-
 
 /* iOS-specific */
 @supports (-webkit-touch-callout: none) {
