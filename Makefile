@@ -8,30 +8,34 @@
 #
 ##
 
-all: zip/Default+.nnwtheme.zip
+BUILDDIR = .build
+THEMES = $(shell ls -d *.nnwtheme)
+ZIPS = $(foreach theme,$(THEMES),$(BUILDDIR)/$(theme).zip)
 
-ZIPS = zip/Default+.nnwtheme.zip
+.PHONY: all
+all: $(ZIPS)
 
-zip/Default+.nnwtheme.zip: Default+.nnwtheme/Info.plist Default+.nnwtheme/stylesheet.css Default+.nnwtheme/template.html
+$(BUILDDIR):
+	install -d $@
+
+$(BUILDDIR)/%.zip: %/Info.plist %/stylesheet.css %/template.html | $(BUILDDIR)
 	zip -u $@ $^
 
-
-zip/%.zip: %/Info.plist %/stylesheet.css %/template.html
-zip/%z: %/Info.plist %/stylesheet.css %/template.html
-
-zip/%.zip zip/%z:
-	cd src && zip -u ../$@ $*
-	#cd $(<D) && zip -u ../../$@ $^
-
+.PHONY: clean
 clean:
 	$(RM) $(ZIPS)
 
+.PHONY: clobber
 clobber: clean
+	$(RM) -r $(BUILDDIR)/
 
 .PHONY: install
 install: $(ZIPS)
-	cp zip/Default+.nnwtheme.zip ~/Sites
-	open 'netnewswire://theme/add?url=http://link.local/~matt/Default%2b.nnwtheme.zip'
+	for zip in $(ZIPS); do \
+		bname=$$(basename $${zip} | sed 's/\+/%2b/g'); \
+		cp $${zip} ~/Sites; \
+		open "netnewswire://theme/add?url=http://$$(hostname -s).local/~matt/$${bname}"; \
+	done
 
 
 # vi: set tw=80 ts=4 sw=4 noet:

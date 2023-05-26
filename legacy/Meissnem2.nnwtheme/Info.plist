@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>Name</key>
+	<string>Meissnem2</string>
+	<key>ThemeIdentifer</key>
+	<string>net.mmeiss.themes.meissnem2</string>
+	<key>CreatorHomePage</key>
+    <string>https://github.com/meissnem/nnw-themes/</string>
+	<key>CreatorName</key>
+	<string>Matt Meissner</string>
+	<key>Version</key>
+	<integer>1</integer>
+</dict>
+</plist>
