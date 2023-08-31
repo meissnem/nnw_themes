@@ -19,6 +19,7 @@ $(BUILDDIR):
 	install -d $@
 
 $(BUILDDIR)/%.zip: %/Info.plist %/stylesheet.css %/template.html | $(BUILDDIR)
+	stylelint --formatter unix $*/stylesheet.css
 	zip -u $@ $^
 
 .PHONY: clean

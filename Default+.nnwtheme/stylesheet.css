@@ -748,6 +748,10 @@ article table[frame~="void"] {
     border: none;
 }
 
+:is(.comicskingdom-com, .gocomics-com, .ohjoysextoy-com, .smbc-comics-com, .xkcd-com) figure img {
+    margin: auto 0;
+}
+
 .ohjoysextoy-com .post-mood img {
     border-radius: 4px;
     padding: 2px 0 0;
