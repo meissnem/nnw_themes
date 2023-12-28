@@ -25,7 +25,7 @@
     --color-grid: -apple-system-grid;
     --color-pre-background: -apple-system-grid;
     --color-header-text: -apple-system-header-text;
-    --color-link: var(--color-accent);
+    --color-link: rgb(0 104 218);
     --color-label: -apple-system-label;
     --color-secondary-label: -apple-system-secondary-label;
     --color-tertiary-label: -apple-system-tertiary-label;
@@ -34,6 +34,8 @@
     --color-newsfoot-popover-background: -apple-system-tertiary-label;
     --color-newsfoot-popover-hover-background: -apple-system-quaternary-label;
     --color-navbar: -apple-control-background;
+
+    /* --color-link: var(--color-primary-accent); */
 }
 
 .xsmallText {
@@ -122,8 +124,7 @@
 
 body {
     font: var(--font-body);
-    margin-inline: auto;
-    margin-block: 20px 64px;
+    margin: 20px auto 64px;
 }
 
 h1 {
@@ -290,12 +291,24 @@ figure:not([class~="code"]) {
     font-variant-numeric: tabular-nums;
 }
 
+figure:not([class~="code"]) :is(em, i, cite) {
+    font-style: italic;
+}
+
+figure audio {
+    width: 100%;
+}
+
 figcaption,
 .caption {
     font: var(--font-caption1);
     color: var(--color-secondary-label);
     font-feature-settings: "ss06" 1;
     font-variant-numeric: tabular-nums;
+}
+
+figure figcaption {
+    margin-block-start: 8px;
 }
 
 div,
@@ -310,6 +323,10 @@ iframe {
     margin: 0 auto;
 }
 
+iframe[src*="youtube.com"] {
+    display: block;
+}
+
 .credit {
     font-style: italic;
 }
@@ -317,6 +334,10 @@ iframe {
 .p-fullbleed-block,
 figure.e-image {
     text-align: center;
+}
+
+figure.e-image figcaption {
+    text-align: initial;
 }
 
 figure img {
@@ -332,7 +353,7 @@ figure cite {
 article {
     margin-inline: auto;
     max-width: 42em;
-    padding-inline: clamp(20px, calc(calc(100vw - 700px) + 20px), 48px);
+    padding-inline: clamp(20px, calc(calc(100vw - 42em) + 20px), 48px);
 }
 
 article header {
@@ -376,7 +397,7 @@ nav {
     font: var(--font-headline);
     font-weight: 800;
     overflow: hidden;
-    margin-block: 20px;
+    margin: 20px;
 }
 
 nav .favicon {
@@ -922,7 +943,7 @@ p:has(a[href*="dois-and-their-discontents"]) {
 }
 
 /* TBD: is this useful? */
-body:not(.techdirt-com) p:has(> em:only-child > strong:only-child) {
+body:not(.techdirt-com, .badastronomy-substack-com) p:has(> em:only-child > strong:only-child) {
     background-color: var(--color-pre-background);
     border: 1px solid var(--color-border);
     border-radius: 8px;
@@ -1088,7 +1109,7 @@ font: var(--font-title3);
 .theverge-com .c-end-para::after {
     content: " ■";
     font-size: 0.5em;
-    color: var(--color-accent);
+    color: var(--color-primary-accent);
 }
 
 body.alerts-weather-gov {
@@ -1117,6 +1138,27 @@ body.washingtonpost-com {
 .mprnews-org .apm-related-list,
 .mprnews-org div:has(> div:first-child + ul:last-child) {
     display: none;
+}
+
+.mprnews-org .figure_caption .figure_text,
+.npr-org .image_data .caption {
+    color: var(--color-label);
+}
+
+.mprnews-org .figure_caption .figure_credit,
+.npr-org .image_data .credit {
+    font: var(--font-caption2);
+    font-style: italic;
+}
+
+.npr-org .disclaimer {
+    color: var(--color-secondary-label);
+    font: var(--font-footnote);
+}
+
+.npr-org .disclaimer:not(.disclaimer ~ .disclaimer) {
+    padding-block-start: 10px;
+    border-block-start: 1px solid var(--color-border);
 }
 
 .nytimes-com #fullBleedHeaderContent header,
@@ -1171,6 +1213,7 @@ padding-block-start: 0.5em;
     display: none;
 }
 
+p.has-text-align-right,
 p.alignright {
     float: none;
     text-align: right;
@@ -1260,6 +1303,13 @@ color: var(--color-secondary-label);
     display: none;
 }
 
+.arstechnica-com .right {
+    float: right;
+    clear: both;
+    max-width: 65%;
+    margin: 0 0 20px 20px;
+}
+
 .bbc-co-uk .gel-pica-bold {
     font-weight: 600;
 }
@@ -1290,6 +1340,10 @@ color: var(--color-secondary-label);
     border-radius: 8px;
     border: 1px solid var(--color-border);
     font: var(--font-footnote);
+}
+
+:is(footer, .articleFooter, div.footnote, #footnotes, .footnotes) blockquote {
+    color: var(--color-secondary-label);
 }
 
 .twincities-com aside.related {
@@ -1330,6 +1384,11 @@ color: var(--color-secondary-label);
     font-feature-settings: "ss06" 1;
     font-variant-numeric: tabular-nums;
     margin-block-start: 0.5em;
+}
+
+.twincities-com .article-slideshow .slide-credit {
+    font: var(--font-caption2);
+    font-style: italic;
 }
 
 .twincities-com .article-slideshow div.caption,
@@ -1429,8 +1488,7 @@ color: var(--color-secondary-label);
     font-weight: 600;
     clear: both;
     color: var(--color-header-text);
-    margin-block-end: 0.25em;
-    margin-block-start: 0.25em;
+    margin-block: 0.25em;
 }
 
 .mprnews-org .apm-gallery .apm-gallery-slides .slideshow button {
@@ -1526,6 +1584,10 @@ body.xkcd-com {
     max-width: inherit;
 }
 
+pre.wp-block-verse {
+    white-space: pre-wrap;
+}
+
 .ohjoysextoy-com .post-mood {
     display: inline-block;
     float: inline-start;
@@ -1540,10 +1602,6 @@ body.xkcd-com {
 .ohjoysextoy-com .post-extras {
     font: var(--font-footnote);
     opacity: 0.75;
-}
-
-.om-co pre.wp-block-verse {
-    font-family: ui-serif;
 }
 
 .talkingpointsmemo-com .is-style-sans-serif {
@@ -1612,6 +1670,10 @@ body.xkcd-com {
     display: inline-flex;
 }
 
+.om-co .wp-block-embed-on-my-om {
+    display: none;
+}
+
 .vajenda-substack-com .articleBody p.button-wrapper {
     display: none;
 }
@@ -1629,18 +1691,27 @@ body.xkcd-com {
     padding-block: 1em;
 }
 
+.badastronomy-substack-com .subscription-widget-wrap {
+    display: none;
+}
+
 /* iOS-specific */
 @supports (-webkit-touch-callout: none) {
     :root {
-        --color-accent: #086aee;
+        --color-primary-accent: #086aee;
+        --color-secondary-accent: #086aee;
         --color-even-alternating-content-background: #f4f5f5;
         --color-odd-alternating-content-background: transparent;
     }
 
     @media (prefers-color-scheme: dark) {
         :root {
-            --color-accent: #2d80f1;
+            --color-primary-accent: #2d80f1;
+            --color-secondary-accent: #5e9ef4;
             --color-even-alternating-content-background: #292929;
+
+            /* --color-link: #2997ff; */
+            --color-link: rgb(65 156 255);
         }
     }
 }
@@ -1648,11 +1719,22 @@ body.xkcd-com {
 /* macOS-specific */
 @supports not (-webkit-touch-callout: none) {
     :root {
-        --color-accent: -apple-system-control-accent;
+        --color-primary-accent: #086aee;
+        --color-secondary-accent: #086aee;
+
+        /* --color-primary-accent: -apple-system-control-accent; */
 
         /* these are intentionally reversed */
         --color-even-alternating-content-background: -apple-system-odd-alternating-content-background;
         --color-odd-alternating-content-background: -apple-system-even-alternating-content-background;
+    }
+
+    @media (prefers-color-scheme: dark) {
+        :root {
+            --color-primary-accent: #2d80f1;
+            --color-secondary-accent: #5e9ef4;
+            --color-link: rgb(65 156 255);
+        }
     }
 
     .articleDatelineTitle article :is(.articleBody, footer) {

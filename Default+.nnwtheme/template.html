@@ -43,7 +43,7 @@ body: The body of the article.
         //const article = document.getElementById("nnwArticle");
         //article.className += " " + feedDomain;
 
-        if (feedDomain == "unofficialbird-com") {
+        if ((feedDomain == "unofficialbird-com") || /nitter/.test(feedDomain)) {
             document.body.className += " articleDatelineTitle";
         } else {
             document.body.className += " [[dateline_style]]";
