@@ -124,6 +124,7 @@
 
 body {
     font: var(--font-body);
+    font-feature-settings: "ss01", "ss02", "ss04"; /* Straight-sided 6 and 9, Open four, Open currencies */
     margin: 20px auto 64px;
 }
 
@@ -234,7 +235,7 @@ ol:has(li.footnote) {
     font: var(--font-footnote);
     margin-block-start: 1em;
     color: var(--color-secondary-label);
-    font-feature-settings: "ss06" 1;
+    font-feature-settings: "ss06";
     font-variant-numeric: tabular-nums;
 }
 
@@ -287,7 +288,7 @@ figure:not([class~="code"]) *,
 figure:not([class~="code"]) {
     color: var(--color-secondary-label);
     font: var(--font-caption1);
-    font-feature-settings: "ss06" 1;
+    font-feature-settings: "ss06";
     font-variant-numeric: tabular-nums;
 }
 
@@ -303,7 +304,7 @@ figcaption,
 .caption {
     font: var(--font-caption1);
     color: var(--color-secondary-label);
-    font-feature-settings: "ss06" 1;
+    font-feature-settings: "ss06";
     font-variant-numeric: tabular-nums;
 }
 
@@ -733,7 +734,7 @@ article figure:not([class~="code"]) {
     /* enable "high legibility" in SF font */
     font: var(--font-caption1);
     font-family: var(--font-family-sans-serif);
-    font-feature-settings: "ss06" 1;
+    font-feature-settings: "ss06";
     font-variant-numeric: tabular-nums;
 }
 
@@ -795,7 +796,7 @@ article table[frame~="void"] {
 
 .appleinsider-com :is(.small, .hero-caption) {
     font: var(--font-caption1);
-    font-feature-settings: "ss06" 1;
+    font-feature-settings: "ss06";
     font-variant-numeric: tabular-nums;
 }
 
@@ -858,7 +859,7 @@ blockquote[data-md-text-align="center"] i {
 img + center:has(> em) {
     color: var(--color-secondary-label);
     font: var(--font-caption1);
-    font-feature-settings: "ss06" 1;
+    font-feature-settings: "ss06";
     font-variant-numeric: tabular-nums;
 }
 
@@ -1129,6 +1130,8 @@ body.talkingpointsmemo-com,
 body.twincities-com,
 body.washingtonpost-com {
     font-family: var(--font-family-serif);
+    font-feature-settings: normal;
+    font-variant-numeric: oldstyle-nums diagonal-fractions;
 }
 
 :is(.npr-org, .mprnews-org) #bodyContainer *:first-child:is(img) {
@@ -1254,7 +1257,7 @@ img.size-full {
     text-align: initial;
     font: var(--font-caption1);
     color: var(--color-secondary-label);
-    font-feature-settings: "ss06" 1;
+    font-feature-settings: "ss06";
     font-variant-numeric: tabular-nums;
 }
 
@@ -1268,7 +1271,7 @@ color: var(--color-secondary-label);
 .arstechnica-com ul.gallery {
     font: var(--font-caption1);
     color: var(--color-secondary-label);
-    font-feature-settings: "ss06" 1;
+    font-feature-settings: "ss06";
     font-variant-numeric: tabular-nums;
     list-style-type: none;
 }
@@ -1325,7 +1328,7 @@ color: var(--color-secondary-label);
 .bringmethenews-com .articleBody > :is(section, iframe) {
     font: var(--font-caption1);
     color: var(--color-secondary-label);
-    font-feature-settings: "ss06" 1;
+    font-feature-settings: "ss06";
     font-variant-numeric: tabular-nums;
 }
 
@@ -1381,7 +1384,7 @@ color: var(--color-secondary-label);
 .twincities-com .article-slideshow :is(.slide-caption, .slide-credit) {
     color: var(--color-secondary-label);
     font: var(--font-caption1);
-    font-feature-settings: "ss06" 1;
+    font-feature-settings: "ss06";
     font-variant-numeric: tabular-nums;
     margin-block-start: 0.5em;
 }
@@ -1509,7 +1512,7 @@ color: var(--color-secondary-label);
     text-align: initial;
     font: var(--font-caption1);
     color: var(--color-secondary-label);
-    font-feature-settings: "ss06" 1;
+    font-feature-settings: "ss06";
     font-variant-numeric: tabular-nums;
 }
 
@@ -1625,7 +1628,7 @@ pre.wp-block-verse {
     margin-block-start: 0.5em;
 }
 
-.cbsnews-com .content__topic-link {
+.cbsnews-com :is(.content__topic-link, aside.recirculation) {
     display: none;
 }
 
@@ -1634,7 +1637,7 @@ pre.wp-block-verse {
 
     /* enable "high legibility" in SF font */
     font: var(--font-footnote);
-    font-feature-settings: "ss06" 1;
+    font-feature-settings: "ss06";
     font-variant-numeric: tabular-nums;
 }
 
@@ -1662,7 +1665,7 @@ pre.wp-block-verse {
 .cbsnews-com .content-author {
     /* enable "high legibility" in SF font */
     font: var(--font-footnote);
-    font-feature-settings: "ss06" 1;
+    font-feature-settings: "ss06";
     font-variant-numeric: tabular-nums;
 }
 

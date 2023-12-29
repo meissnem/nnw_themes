@@ -51,6 +51,18 @@ body: The body of the article.
 
         document.body.className += " [[text_size_class]]";
 
+        if (feedDomain == "mprnews-org") {
+            /* some <img> tags have bad `src` attributes */
+            for (const x of document.getElementsByTagName('img')) {
+                if (x.hasAttribute("url")) {
+                    x.setAttribute("orig-src", x.getAttribute("src"));
+                    x.setAttribute("src", x.getAttribute("url"));
+                    console.debug("Changed img src from <" + x.getAttribute("orig-src") + "> to <" + x.getAttribute("src") + ">");
+                    console.debug(x);
+                }
+            }
+        }
+
         if (feedDomain != "") {
             document.body.className += " " + feedDomain;
         }
