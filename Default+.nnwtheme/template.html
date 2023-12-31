@@ -37,7 +37,7 @@ body: The body of the article.
         var feedDomain = "";
         try {
             let url = (new URL("[[feed_link]]"));
-            feedDomain = url.hostname.replace('www.','').replaceAll('.', '-');
+            feedDomain = url.hostname.replace("www.","").replaceAll(".", "-");
         } catch(e) {
             ;
         }
@@ -71,7 +71,7 @@ body: The body of the article.
 
         if (feedDomain == "mprnews-org") {
             /* some <img> tags have bad `src` attributes */
-            for (const x of document.getElementsByTagName('img')) {
+            for (const x of document.getElementsByTagName("img")) {
                 if (x.hasAttribute("url")) {
                     x.setAttribute("orig-src", x.getAttribute("src"));
                     x.setAttribute("src", x.getAttribute("url"));

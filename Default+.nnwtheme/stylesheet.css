@@ -2,10 +2,7 @@
     color-scheme: light dark;
 
     /* font families */
-    --font-family-monospace: ui-monospace, monospace;
-    --font-family-rounded: ui-rounded, sans-serif;
-    --font-family-sans-serif: ui-sans-serif, sans-serif;
-    --font-family-serif: ui-serif, serif;
+    --font-family-monospace: ui-monospace;
 
     /* colors */
     --color-blockquote-background: rgba(0 0 0 / 5%);
@@ -29,58 +26,73 @@
 }
 
 html {
-    font-family: var(--font-family-default);
+    --font-family-callout: var(--font-family-title);
+    --font-family-caption: var(--font-family-title);
+    --font-family-footnote: var(--font-family-title);
+    --font-family-headline: var(--font-family-title);
+    --font-family-subheadline: var(--font-family-title);
+    --font-family-title: var(--font-family-body);
+
+    font-family: var(--font-family-body);
     font-size: 16px;
 }
 
 html.nnwArticle {
-    --font-default: var(--font-family-sans-serif);
-    --font-header: var(--font-family-sans-serif);
+    --font-family-body: ui-sans-serif;
 }
 
 html.nnwNewsArticle {
-    --font-default: var(--font-family-serif);
-    --font-header: var(--font-family-sans-serif);
+    --font-family-body: ui-serif;
+    --font-family-title: ui-sans-serif;
 }
 
 html.nnwPost {
-    --font-default: var(--font-family-rounded);
-    --font-header: var(--font-family-rounded);
+    --font-family-body: ui-rounded;
 }
 
 body {
     font: var(--font-body);
-    font-feature-settings: "ss01", "ss02", "ss04"; /* Straight-sided 6 and 9, Open four, Open currencies */
+    font-family: var(--font-family-body);
     margin: 20px auto 64px;
+}
+
+.nnwArticle body {
+    font-feature-settings: "ss01", "ss02", "ss04"; /* Straight-sided 6 and 9, Open four, Open currencies */
 }
 
 .nnwNewsArticle body {
     font-feature-settings: normal;
-    font-variant-numeric: oldstyle-nums diagonal-fractions;
+    font-variant-numeric: oldstyle-nums;
 }
 
 h1 {
     font: var(--font-title1);
+    font-family: var(--font-family-title);
 }
 
 h2 {
     font: var(--font-title2);
+    font-family: var(--font-family-title);
 }
 
 h3 {
     font: var(--font-title3);
+    font-family: var(--font-family-title);
 }
 
 h4 {
     font: var(--font-headline);
+    font-family: var(--font-family-title);
 }
 
 h5 {
     font: var(--font-subheadline);
+    font-family: var(--font-family-title);
 }
 
 h6 {
     font: var(--font-footnote);
+    font-family: var(--font-family-title);
 }
 
 h1,
@@ -146,6 +158,7 @@ a:hover {
 
 header {
     font: var(--font-headline);
+    font-family: var(--font-family-headline);
     margin-block-end: 1em;
 }
 
@@ -164,6 +177,7 @@ div.footnote,
 ol.footnote,
 ol:has(li.footnote) {
     font: var(--font-footnote);
+    font-family: var(--font-family-footnote);
     margin-block-start: 1em;
     color: var(--color-secondary-label);
     font-feature-settings: "ss06";
@@ -186,10 +200,12 @@ ol:has(li.footnote) {
 
 :is(footer, .articleFooter, div.footnote, #footnotes, .footnotes) h1 {
     font: var(--font-headline);
+    font-family: var(--font-family-headline);
 }
 
 :is(footer, .articleFooter, div.footnote, #footnotes, .footnotes) :is(h3, h4, h5, h6) {
     font: var(--font-footnote);
+    font-family: var(--font-family-footnote);
 }
 
 :is(footer, .articleFooter, div.footnote, #footnotes, .footnotes) :is(h1, h2, h3, h4, h5, h6) {
@@ -222,6 +238,7 @@ figcaption,
 .caption {
     color: var(--color-secondary-label);
     font: var(--font-caption1);
+    font-family: var(--font-family-caption);
     font-feature-settings: "ss06";
     font-variant-numeric: tabular-nums;
 }
@@ -290,6 +307,7 @@ article {
 article header {
     color: var(--color-label);
     font: var(--font-subheadline);
+    font-family: var(--font-family-subheadline);
 }
 
 nav a:hover {
@@ -326,6 +344,7 @@ article footer .dateline a:link {
 nav {
     text-align: center;
     font: var(--font-headline);
+    font-family: var(--font-family-headline);
     font-weight: 800;
     overflow: hidden;
     margin: 20px;
@@ -404,6 +423,7 @@ article header :is(.feedlink, .byline) {
 
 .nnwPost article header .feedlink {
     font: var(--font-subheadline);
+    font-family: var(--font-family-subheadline);
     color: var(--color-secondary-label);
     font-weight: 400;
 }
@@ -429,6 +449,7 @@ article header .byline {
 
 .nnwPost article header .byline {
     font: var(--font-headline);
+    font-family: var(--font-family-headline);
 }
 
 article header .dateline {
@@ -459,6 +480,7 @@ article header .externalLink {
 body a.footnote {
     margin-inline-start: 5px;
     font: var(--font-footnote);
+    font-family: var(--font-family-footnote);
     line-height: 1em;
     background: var(--color-newsfoot-popover-hover-background);
     color: var(--color-body);
@@ -473,6 +495,7 @@ body a.footnote {
 body a.footnote:visited {
     margin-inline-start: 5px;
     font: var(--font-footnote);
+    font-family: var(--font-family-footnote);
     line-height: 1em;
     background: var(--color-newsfoot-popover-hover-background);
     color: var(--color-body);
@@ -487,6 +510,7 @@ body a.footnote:hover {
 .newsfoot-footnote-popover + a.footnote:hover {
     margin-inline-start: 5px;
     font: var(--font-footnote);
+    font-family: var(--font-family-footnote);
     line-height: 1em;
     background: var(--color-newsfoot-popover-hover-background);
     color: var(--color-body);
@@ -502,6 +526,7 @@ body a.footnote:hover {
     color: var(--color-body);
     padding: 1px;
     font: var(--font-footnote);
+    font-family: var(--font-family-footnote);
 }
 
 .newsfoot-footnote-popover-arrow {
@@ -538,12 +563,14 @@ body a.footnote:hover {
 
 .feedbin--article-meta {
     font: var(--font-footnote);
+    font-family: var(--font-family-footnote);
     color: var(--color-secondary-label);
 }
 
 .feedbin--article-header h2 {
     border: 0;
     font: var(--font-title3);
+    font-family: var(--font-family-title);
     font-weight: 500;
 }
 
@@ -553,6 +580,7 @@ body a.footnote:hover {
 
 :is(footer, .articleFooter, div.footnote, #footnotes, .footnotes) h2 {
     font: var(--font-subheadline);
+    font-family: var(--font-family-subheadline);
 }
 
 /* Mastadon */
@@ -577,6 +605,7 @@ body a.footnote:hover {
 
 .twitterUsername {
     font: var(--font-headline);
+    font-family: var(--font-family-headline);
     display: inline-block;
     vertical-align: middle;
     margin-inline-start: 8px;
@@ -585,6 +614,7 @@ body a.footnote:hover {
 
 .twitterScreenName {
     font: var(--font-subheadline);
+    font-family: var(--font-family-subheadline);
 }
 
 .twitterTimestamp {
@@ -593,6 +623,7 @@ body a.footnote:hover {
 
     /*
     font: var(--font-footnote);
+    font-family: var(--font-family-footnote);
     color: var(--color-secondary-label);
 */
 }
@@ -664,6 +695,7 @@ article figure:not([class~="code"]) {
 
     /* enable "high legibility" in SF font */
     font: var(--font-caption1);
+    font-family: var(--font-family-caption);
     font-feature-settings: "ss06";
     font-variant-numeric: tabular-nums;
 }
@@ -722,10 +754,12 @@ article table[frame~="void"] {
 .appleinsider-com .articleBody > a[href*="appleinsider.com"]:last-child,
 .appleinsider-com .articleBody > * > a[href*="appleinsider.com"]:last-child {
     font: var(--font-footnote);
+    font-family: var(--font-family-footnote);
 }
 
 .appleinsider-com :is(.small, .hero-caption) {
     font: var(--font-caption1);
+    font-family: var(--font-family-caption1);
     font-feature-settings: "ss06";
     font-variant-numeric: tabular-nums;
 }
@@ -736,6 +770,7 @@ article table[frame~="void"] {
 
 .inputmag-com p > u {
     font: var(--font-headline);
+    font-family: var(--font-family-headline);
     font-weight: 800;
     letter-spacing: 0.75px;
     text-decoration: none;
@@ -746,6 +781,7 @@ article table[frame~="void"] {
     /* pull quote */
     display: block;
     font: var(--font-callout);
+    font-family: var(--font-family-callout);
     font-weight: 300;
     font-style: italic;
     text-align: center;
@@ -789,6 +825,7 @@ blockquote[data-md-text-align="center"] i {
 img + center:has(> em) {
     color: var(--color-secondary-label);
     font: var(--font-caption1);
+    font-family: var(--font-family-caption);
     font-feature-settings: "ss06";
     font-variant-numeric: tabular-nums;
 }
@@ -832,6 +869,7 @@ img + center:has(> em) {
 p:has(a[href*="dois-and-their-discontents"]) {
     color: var(--color-secondary-label);
     font: var(--font-footnote);
+    font-family: var(--font-family-footnote);
 }
 
 .macstories-net .aside p {
@@ -840,6 +878,7 @@ p:has(a[href*="dois-and-their-discontents"]) {
 
 .theverge-com p:has(+ p.p--has-dropcap) {
     font: var(--font-callout);
+    font-family: var(--font-family-callout);
     font-style: italic;
     color: var(--color-secondary-label);
     font-weight: 300;
@@ -858,6 +897,7 @@ p:has(a[href*="dois-and-their-discontents"]) {
 
 .mprnews-org p:last-of-type:has(> em:only-child) {
     font: var(--font-footnote);
+    font-family: var(--font-family-footnote);
     border-block-start: 1px solid var(--color-border);
     color: var(--color-secondary-label);
     padding-block-start: 0.5em;
@@ -869,6 +909,7 @@ p:has(a[href*="dois-and-their-discontents"]) {
     clear: both;
     color: var(--color-secondary-label);
     font: var(--font-footnote);
+    font-family: var(--font-family-footnote);
     padding-block-start: 0.5em;
 }
 
@@ -880,11 +921,13 @@ body:not(.techdirt-com, .badastronomy-substack-com) p:has(> em:only-child > stro
     color: var(--color-label);
     padding: 8px;
     font: var(--font-footnote);
+    font-family: var(--font-family-footnote);
 }
 
 .bringmethenews-com .articleBody > p:last-of-type:has(> em:only-child, > i:only-child) {
     border-block-start: 1px solid var(--color-border);
     font: var(--font-footnote);
+    font-family: var(--font-family-footnote);
     color: var(--color-secondary-label);
 }
 
@@ -893,6 +936,7 @@ body:not(.techdirt-com, .badastronomy-substack-com) p:has(> em:only-child > stro
     clear: both;
     color: var(--color-secondary-label);
     font: var(--font-footnote);
+    font-family: var(--font-family-footnote);
     padding-block-start: 0.5em;
 }
 
@@ -911,7 +955,7 @@ iframe[src*="video.startribune.com"] {
 .startribune-com div.articleBody > p:last-child:has(> em:only-child),
 .startribune-com .article-author-contact {
     border-block-start: 1px solid var(--color-border);
-    font: var(--font-footnote);
+    font-family: var(--font-family-footnote);
     color: var(--color-secondary-label);
 }
 
@@ -923,6 +967,7 @@ iframe[src*="video.startribune.com"] {
     color: var(--color-label);
     padding: 8px;
     font: var(--font-footnote);
+    font-family: var(--font-family-footnote);
 }
 
 .startribune-com div.articleBody > h5 + h2 ~ p:last-child:has(> em:only-child) {
@@ -940,6 +985,7 @@ iframe[src*="video.startribune.com"] {
     border-block-start: thin solid var(--color-border);
     color: var(--color-secondary-label);
     font: var(--font-footnote);
+    font-family: var(--font-family-footnote);
     margin-block-start: 1em;
     padding-block-start: 1em;
 }
@@ -948,6 +994,7 @@ iframe[src*="video.startribune.com"] {
 .startribune-com div.articleBody > p:last-child:has(> em:first-child + a + em:last-child) {
     border-block-start: 1px solid var(--color-border);
     font: var(--font-footnote);
+    font-family: var(--font-family-footnote);
     color: var(--color-secondary-label);
 }
 
@@ -961,12 +1008,14 @@ iframe[src*="video.startribune.com"] {
 .startribune-com h5:has(+ h2) {
     border-block-end: 0;
     font: var(--font-footnote);
+    font-family: var(--font-family-footnote);
     font-weight: 500;
 }
 
 /*
 .startribune-com h5 + h2 {
 font: var(--font-title3);
+font-family: var(--font-family-title);
 }
 */
 
@@ -980,6 +1029,7 @@ font: var(--font-title3);
 
 .theverge-com .p-large-text {
     font: var(--font-title3);
+    font-family: var(--font-family-title);
 }
 
 .theverge-com .c-float-left {
@@ -1008,6 +1058,7 @@ font: var(--font-title3);
     display: block;
     text-align: center;
     font: var(--font-callout);
+    font-family: var(--font-family-callout);
     font-weight: 300;
     font-style: italic;
     color: var(--color-secondary-label);
@@ -1032,6 +1083,7 @@ font: var(--font-title3);
 
 .theverge-com figure cite {
     font: var(--font-caption1);
+    font-family: var(--font-family-caption);
     line-height: 1.3em;
     display: block;
 }
@@ -1063,12 +1115,14 @@ body.alerts-weather-gov {
 .mprnews-org .figure_caption .figure_credit,
 .npr-org .image_data .credit {
     font: var(--font-caption2);
+    font-family: var(--font-family-caption);
     font-style: italic;
 }
 
 .npr-org .disclaimer {
     color: var(--color-secondary-label);
     font: var(--font-footnote);
+    font-family: var(--font-family-footnote);
 }
 
 .npr-org .disclaimer:not(.disclaimer ~ .disclaimer) {
@@ -1079,6 +1133,7 @@ body.alerts-weather-gov {
 .nytimes-com #fullBleedHeaderContent header,
 .nytimes-com article#story header {
     font: var(--font-callout);
+    font-family: var(--font-family-callout);
     font-style: italic;
     color: var(--color-secondary-label);
     font-weight: 300;
@@ -1107,6 +1162,7 @@ body.alerts-weather-gov {
 .bringmethenews-com .subtitle,
 .fastmail-blog .intro {
     font: var(--font-callout);
+    font-family: var(--font-family-callout);
     font-style: italic;
     color: var(--color-secondary-label);
     font-weight: 300;
@@ -1120,6 +1176,7 @@ border-block-start: 1px solid var(--color-border);
 clear: both;
 color: var(--color-secondary-label);
 font: var(--font-footnote);
+font-family: var(--font-family-footnote);
 padding-block-start: 0.5em;
 }
 */
@@ -1168,6 +1225,7 @@ img.size-full {
 .wp-caption-text {
     text-align: initial;
     font: var(--font-caption1);
+    font-family: var(--font-family-caption);
     color: var(--color-secondary-label);
     font-feature-settings: "ss06";
     font-variant-numeric: tabular-nums;
@@ -1176,12 +1234,14 @@ img.size-full {
 /* TOO BROAD
 .arstechnica-com p:has(> em:only-child) {
 font: var(--font-footnote);
+font-family: var(--font-family-footnote);
 color: var(--color-secondary-label);
 }
 */
 
 .arstechnica-com ul.gallery {
     font: var(--font-caption1);
+    font-family: var(--font-family-caption);
     color: var(--color-secondary-label);
     font-feature-settings: "ss06";
     font-variant-numeric: tabular-nums;
@@ -1192,6 +1252,7 @@ color: var(--color-secondary-label);
     border-block-start: thin solid var(--color-border);
     color: var(--color-secondary-label);
     font: var(--font-footnote);
+    font-family: var(--font-family-footnote);
     margin-block-start: 1em;
     padding-block-start: 1em;
 }
@@ -1203,6 +1264,7 @@ color: var(--color-secondary-label);
     border-radius: 8px;
     border: 1px solid var(--color-border);
     font: var(--font-footnote);
+    font-family: var(--font-family-footnote);
     font-style: italic;
 }
 
@@ -1239,6 +1301,7 @@ color: var(--color-secondary-label);
 
 .bringmethenews-com .articleBody > :is(section, iframe) {
     font: var(--font-caption1);
+    font-family: var(--font-family-caption);
     color: var(--color-secondary-label);
     font-feature-settings: "ss06";
     font-variant-numeric: tabular-nums;
@@ -1255,6 +1318,7 @@ color: var(--color-secondary-label);
     border-radius: 8px;
     border: 1px solid var(--color-border);
     font: var(--font-footnote);
+    font-family: var(--font-family-footnote);
 }
 
 :is(footer, .articleFooter, div.footnote, #footnotes, .footnotes) blockquote {
@@ -1296,6 +1360,7 @@ color: var(--color-secondary-label);
 .twincities-com .article-slideshow :is(.slide-caption, .slide-credit) {
     color: var(--color-secondary-label);
     font: var(--font-caption1);
+    font-family: var(--font-family-caption);
     font-feature-settings: "ss06";
     font-variant-numeric: tabular-nums;
     margin-block-start: 0.5em;
@@ -1303,6 +1368,7 @@ color: var(--color-secondary-label);
 
 .twincities-com .article-slideshow .slide-credit {
     font: var(--font-caption2);
+    font-family: var(--font-family-caption);
     font-style: italic;
 }
 
@@ -1316,6 +1382,7 @@ color: var(--color-secondary-label);
 /* TOO BROAD
 p:has(> i:first-child, > i:only-child, > em:only-child) {
 font: var(--font-footnote);
+font-family: var(--font-family-footnote);
 font-style: italic;
 color: var(--color-secondary-label);
 }
@@ -1379,6 +1446,7 @@ color: var(--color-secondary-label);
     border-radius: 8px;
     border: 1px solid var(--color-border);
     font: var(--font-footnote);
+    font-family: var(--font-family-footnote);
 }
 
 .mprnews-org div.apm-correction-title {
@@ -1400,6 +1468,7 @@ color: var(--color-secondary-label);
 
 .mprnews-org .apm-gallery .apm-gallery-title {
     font: var(--font-headline);
+    font-family: var(--font-family-headline);
     font-weight: 600;
     clear: both;
     color: var(--color-header-text);
@@ -1423,6 +1492,7 @@ color: var(--color-secondary-label);
 .macstories-net .image-caption {
     text-align: initial;
     font: var(--font-caption1);
+    font-family: var(--font-family-caption1);
     color: var(--color-secondary-label);
     font-feature-settings: "ss06";
     font-variant-numeric: tabular-nums;
@@ -1434,6 +1504,7 @@ color: var(--color-secondary-label);
     border: 1px solid var(--color-border);
     border-radius: 8px;
     font: var(--font-subheadline);
+    font-family: var(--font-family-subheadline);
     padding: 8px;
 }
 
@@ -1466,6 +1537,7 @@ color: var(--color-secondary-label);
 .mprnews-org p:has(> strong:only-child),
 .minnpost-com p:has(> b:only-child) {
 font: var(--font-headline);
+font-family: var(--font-family-headline);
 font-weight: 600;
 clear: both;
 color: var(--color-header-text);
@@ -1516,11 +1588,12 @@ pre.wp-block-verse {
 
 .ohjoysextoy-com .post-extras {
     font: var(--font-footnote);
+    font-family: var(--font-family-footnote);
     opacity: 0.75;
 }
 
 .talkingpointsmemo-com .is-style-sans-serif {
-    font-family: var(--font-family-sans-serif);
+    font-family: ui-sans-serif;
     color: var(--color-secondary-label);
 }
 
@@ -1549,6 +1622,7 @@ pre.wp-block-verse {
 
     /* enable "high legibility" in SF font */
     font: var(--font-footnote);
+    font-family: var(--font-family-footnote);
     font-feature-settings: "ss06";
     font-variant-numeric: tabular-nums;
 }
@@ -1577,6 +1651,7 @@ pre.wp-block-verse {
 .cbsnews-com .content-author {
     /* enable "high legibility" in SF font */
     font: var(--font-footnote);
+    font-family: var(--font-family-footnote);
     font-feature-settings: "ss06";
     font-variant-numeric: tabular-nums;
 }
@@ -1598,6 +1673,7 @@ pre.wp-block-verse {
     display: block;
     text-align: center;
     font: var(--font-callout);
+    font-family: var(--font-family-callout);
     font-weight: 300;
     font-style: italic;
     color: var(--color-secondary-label);
@@ -1661,86 +1737,86 @@ pre.wp-block-verse {
     }
 
     .xsmallText {
-        --font-body: normal normal normal normal 15px/24px var(--font-default);
-        --font-headline: normal normal 500 normal 15px/22px var(--font-header);
-        --font-subheadline: normal normal normal normal 13px/19px var(--font-header);
-        --font-footnote: normal normal normal normal 13px/19px var(--font-header);
-        --font-caption1: normal normal normal normal 12px/15px var(--font-header);
-        --font-caption2: normal normal 510 normal 12px/15px var(--font-header);
-        --font-title0: normal normal normal normal 31px/40px var(--font-header);
-        --font-title1: normal normal normal normal 25px/33px var(--font-header);
-        --font-title2: normal normal normal normal 19px/26px var(--font-header);
-        --font-title3: normal normal normal normal 17px/24px var(--font-header);
-        --font-callout: normal normal normal normal 14px/20px var(--font-header);
+        --font-body: normal normal normal normal 15px/24px var(--font-family-body);
+        --font-headline: normal normal 500 normal 15px/22px var(--font-family-headline);
+        --font-subheadline: normal normal normal normal 13px/19px var(--font-family-subheadline);
+        --font-footnote: normal normal normal normal 13px/19px var(--font-family-footnote);
+        --font-caption1: normal normal normal normal 12px/15px var(--font-family-caption);
+        --font-caption2: normal normal 510 normal 12px/15px var(--font-family-caption);
+        --font-title0: normal normal normal normal 31px/40px var(--font-family-title);
+        --font-title1: normal normal normal normal 25px/33px var(--font-family-title);
+        --font-title2: normal normal normal normal 19px/26px var(--font-family-title);
+        --font-title3: normal normal normal normal 17px/24px var(--font-family-title);
+        --font-callout: normal normal normal normal 14px/20px var(--font-family-callout);
     }
 
     .smallText {
-        --font-body: normal normal normal normal 15px/24px var(--font-default);
-        --font-headline: normal normal 500 normal 15px/22px var(--font-header);
-        --font-subheadline: normal normal normal normal 14px/21px var(--font-header);
-        --font-footnote: normal normal normal normal 13px/19px var(--font-header);
-        --font-caption1: normal normal normal normal 12px/15px var(--font-header);
-        --font-caption2: normal normal 510 normal 12px/15px var(--font-header);
-        --font-title0: normal normal normal normal 32px/40px var(--font-header);
-        --font-title1: normal normal normal normal 26px/33px var(--font-header);
-        --font-title2: normal normal normal normal 20px/27px var(--font-header);
-        --font-title3: normal normal normal normal 18px/25px var(--font-header);
-        --font-callout: normal normal normal normal 15px/22px var(--font-header);
+        --font-body: normal normal normal normal 15px/24px var(--font-family-body);
+        --font-headline: normal normal 500 normal 15px/22px var(--font-family-headline);
+        --font-subheadline: normal normal normal normal 14px/21px var(--font-family-subheadline);
+        --font-footnote: normal normal normal normal 13px/19px var(--font-family-footnote);
+        --font-caption1: normal normal normal normal 12px/15px var(--font-family-caption);
+        --font-caption2: normal normal 510 normal 12px/15px var(--font-family-caption);
+        --font-title0: normal normal normal normal 32px/40px var(--font-family-title);
+        --font-title1: normal normal normal normal 26px/33px var(--font-family-title);
+        --font-title2: normal normal normal normal 20px/27px var(--font-family-title);
+        --font-title3: normal normal normal normal 18px/25px var(--font-family-title);
+        --font-callout: normal normal normal normal 15px/22px var(--font-family-callout);
     }
 
     .mediumText {
-        --font-body: normal normal normal normal 16px/24px var(--font-default);
-        --font-headline: normal normal 500 normal 16px/22px var(--font-header);
-        --font-subheadline: normal normal normal normal 15px/22px var(--font-header);
-        --font-footnote: normal normal normal normal 13px/19px var(--font-header);
-        --font-caption1: normal normal normal normal 12px/15px var(--font-header);
-        --font-caption2: normal normal 510 normal 12px/15px var(--font-header);
-        --font-title0: normal normal normal normal 33px/41px var(--font-header);
-        --font-title1: normal normal normal normal 27px/34px var(--font-header);
-        --font-title2: normal normal normal normal 21px/27px var(--font-header);
-        --font-title3: normal normal normal normal 19px/26px var(--font-header);
-        --font-callout: normal normal normal normal 16px/22px var(--font-header);
+        --font-body: normal normal normal normal 16px/24px var(--font-family-body);
+        --font-headline: normal normal 500 normal 16px/22px var(--font-family-headline);
+        --font-subheadline: normal normal normal normal 15px/22px var(--font-family-subheadline);
+        --font-footnote: normal normal normal normal 13px/19px var(--font-family-footnote);
+        --font-caption1: normal normal normal normal 12px/15px var(--font-family-caption);
+        --font-caption2: normal normal 510 normal 12px/15px var(--font-family-caption);
+        --font-title0: normal normal normal normal 33px/41px var(--font-family-title);
+        --font-title1: normal normal normal normal 27px/34px var(--font-family-title);
+        --font-title2: normal normal normal normal 21px/27px var(--font-family-title);
+        --font-title3: normal normal normal normal 19px/26px var(--font-family-title);
+        --font-callout: normal normal normal normal 16px/22px var(--font-family-callout);
     }
 
     .largeText {
-        --font-body: 17px/26px var(--font-default);
-        --font-headline: 500 17px/24px var(--font-header);
-        --font-subheadline: 15px/22px var(--font-header);
-        --font-footnote: 14px/21px var(--font-header);
-        --font-caption1: 13px/19px var(--font-header);
-        --font-caption2: 510 12px/15px var(--font-header);
-        --font-title0: 34px/43px var(--font-header);
-        --font-title1: 28px/35px var(--font-header);
-        --font-title2: 22px/29px var(--font-header);
-        --font-title3: 20px/27px var(--font-header);
-        --font-callout: 16px/23px var(--font-header);
+        --font-body: 17px/26px var(--font-family-body);
+        --font-headline: 500 17px/24px var(--font-family-headline);
+        --font-subheadline: 15px/22px var(--font-family-subheadline);
+        --font-footnote: 14px/21px var(--font-family-footnote);
+        --font-caption1: 13px/19px var(--font-family-caption);
+        --font-caption2: 510 12px/15px var(--font-family-caption);
+        --font-title0: 34px/43px var(--font-family-title);
+        --font-title1: 28px/35px var(--font-family-title);
+        --font-title2: 22px/29px var(--font-family-title);
+        --font-title3: 20px/27px var(--font-family-title);
+        --font-callout: 16px/23px var(--font-family-callout);
     }
 
     .xlargeText {
-        --font-body: normal normal normal normal 19px/28px var(--font-default);
-        --font-headline: normal normal 500 normal 19px/26px var(--font-header);
-        --font-subheadline: normal normal normal normal 17px/24px var(--font-header);
-        --font-footnote: normal normal normal normal 15px/22px var(--font-header);
-        --font-caption1: normal normal normal normal 15px/22px var(--font-header);
-        --font-caption2: normal normal 510 normal 14px/21px var(--font-header);
-        --font-title0: normal normal normal normal 36px/45px var(--font-header);
-        --font-title1: normal normal normal normal 30px/38px var(--font-header);
-        --font-title2: normal normal normal normal 24px/31px var(--font-header);
-        --font-title3: normal normal normal normal 22px/29px var(--font-header);
-        --font-callout: normal normal normal normal 18px/25px var(--font-header);
+        --font-body: normal normal normal normal 19px/28px var(--font-family-body);
+        --font-headline: normal normal 500 normal 19px/26px var(--font-family-headline);
+        --font-subheadline: normal normal normal normal 17px/24px var(--font-family-subheadline);
+        --font-footnote: normal normal normal normal 15px/22px var(--font-family-footnote);
+        --font-caption1: normal normal normal normal 15px/22px var(--font-family-caption);
+        --font-caption2: normal normal 510 normal 14px/21px var(--font-family-caption);
+        --font-title0: normal normal normal normal 36px/45px var(--font-family-title);
+        --font-title1: normal normal normal normal 30px/38px var(--font-family-title);
+        --font-title2: normal normal normal normal 24px/31px var(--font-family-title);
+        --font-title3: normal normal normal normal 22px/29px var(--font-family-title);
+        --font-callout: normal normal normal normal 18px/25px var(--font-family-callout);
     }
 
     .xxlargeText {
-        --font-body: normal normal normal normal 21px/29px var(--font-default);
-        --font-headline: normal normal 500 normal 21px/27px var(--font-header);
-        --font-subheadline: normal normal normal normal 19px/26px var(--font-header);
-        --font-footnote: normal normal normal normal 17px/24px var(--font-header);
-        --font-caption1: normal normal normal normal 16px/22px var(--font-header);
-        --font-caption2: normal normal 510 normal 15px/22px var(--font-header);
-        --font-title0: normal normal normal normal 38px/48px var(--font-header);
-        --font-title1: normal normal normal normal 32px/39px var(--font-header);
-        --font-title2: normal normal normal normal 26px/33px var(--font-header);
-        --font-title3: normal normal normal normal 24px/31px var(--font-header);
-        --font-callout: normal normal normal normal 20px/27px var(--font-header);
+        --font-body: normal normal normal normal 21px/29px var(--font-family-body);
+        --font-headline: normal normal 500 normal 21px/27px var(--font-family-headline);
+        --font-subheadline: normal normal normal normal 19px/26px var(--font-family-subheadline);
+        --font-footnote: normal normal normal normal 17px/24px var(--font-family-footnote);
+        --font-caption1: normal normal normal normal 16px/22px var(--font-family-caption);
+        --font-caption2: normal normal 510 normal 15px/22px var(--font-family-caption);
+        --font-title0: normal normal normal normal 38px/48px var(--font-family-title);
+        --font-title1: normal normal normal normal 32px/39px var(--font-family-title);
+        --font-title2: normal normal normal normal 26px/33px var(--font-family-title);
+        --font-title3: normal normal normal normal 24px/31px var(--font-family-title);
+        --font-callout: normal normal normal normal 20px/27px var(--font-family-callout);
     }
 }
