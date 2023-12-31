@@ -32,6 +32,8 @@ body: The body of the article.
 
 <script type="text/javascript">
     document.addEventListener("DOMContentLoaded", function(event) {
+        document.documentElement.className += " [[text_size_class]]";
+
         var feedDomain = "";
         try {
             let url = (new URL("[[feed_link]]"));
@@ -40,16 +42,32 @@ body: The body of the article.
             ;
         }
 
-        //const article = document.getElementById("nnwArticle");
-        //article.className += " " + feedDomain;
+        const news_sites = [
+            "bbc-co-uk",
+            "bringmethenews-com",
+            "cbsnews-com",
+            "minnesota-cbslocal-com",
+            "minnpost-com",
+            "mprnews-org",
+            "npr-org",
+            "nytimes-com",
+            "startribune-com",
+            "talkingpointsmemo-com",
+            "twincities-com",
+            "washingtonpost-com",
+        ];
 
-        if ((feedDomain == "unofficialbird-com") || /nitter/.test(feedDomain)) {
-            document.body.className += " articleDatelineTitle";
+        if (("[[dateline_style]]" == "articleDatelineTitle") || (feedDomain == "unofficialbird-com") || /nitter/.test(feedDomain)) {
+            document.documentElement.className += " nnwPost";
+        } else if (news_sites.includes(feedDomain)) {
+            document.documentElement.className += " nnwNewsArticle";
         } else {
-            document.body.className += " [[dateline_style]]";
+            document.documentElement.className += " nnwArticle";
         }
 
-        document.body.className += " [[text_size_class]]";
+        if (feedDomain != "") {
+            document.documentElement.className += " " + feedDomain;
+        }
 
         if (feedDomain == "mprnews-org") {
             /* some <img> tags have bad `src` attributes */
@@ -61,10 +79,6 @@ body: The body of the article.
                     console.debug(x);
                 }
             }
-        }
-
-        if (feedDomain != "") {
-            document.body.className += " " + feedDomain;
         }
     })
 </script>

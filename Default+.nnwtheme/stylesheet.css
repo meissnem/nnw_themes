@@ -1,24 +1,14 @@
 :root {
     color-scheme: light dark;
 
+    /* font families */
+    --font-family-monospace: ui-monospace, monospace;
+    --font-family-rounded: ui-rounded, sans-serif;
     --font-family-sans-serif: ui-sans-serif, sans-serif;
     --font-family-serif: ui-serif, serif;
-    --font-family-monospace: ui-monospace, monospace;
-    --font-body: -apple-system-tall-body;
-    --font-headline: -apple-system-headline;
-    --font-subheadline: -apple-system-subheadline;
-    --font-footnote: -apple-system-footnote;
-    --font-caption1: -apple-system-caption1;
-    --font-caption2: -apple-system-caption2;
-    --font-title0: -apple-system-title0;
-    --font-title1: -apple-system-title1;
-    --font-title2: -apple-system-title2;
-    --font-title3: -apple-system-title3;
-    --font-title4: -apple-system-title4; /* big title -- not documented(?) */
-    --font-callout: -apple-system-body; /* approximation */
 
-    /* -apple-system-container-border */
-    --color-blockquote-background: -apple-system-grouped-background;
+    /* colors */
+    --color-blockquote-background: rgba(0 0 0 / 5%);
     --color-body: -webkit-text;
     --color-body-background: -apple-system-text-background;
     --color-border: -apple-system-container-border;
@@ -34,98 +24,39 @@
     --color-newsfoot-popover-background: -apple-system-tertiary-label;
     --color-newsfoot-popover-hover-background: -apple-system-quaternary-label;
     --color-navbar: -apple-control-background;
-
-    /* --color-link: var(--color-primary-accent); */
+    --color-primary-accent: #086aee;
+    --color-secondary-accent: #086aee;
 }
 
-.xsmallText {
-    --font-body: normal normal normal normal 15px/24px var(--font-family-sans-serif);
-    --font-headline: normal normal 500 normal 15px/22px var(--font-family-sans-serif);
-    --font-subheadline: normal normal normal normal 13px/19px var(--font-family-sans-serif);
-    --font-footnote: normal normal normal normal 13px/19px var(--font-family-sans-serif);
-    --font-caption1: normal normal normal normal 12px/15px var(--font-family-sans-serif);
-    --font-caption2: normal normal normal normal 12px/15px var(--font-family-sans-serif);
-    --font-title0: normal normal normal normal 31px/40px var(--font-family-sans-serif);
-    --font-title1: normal normal normal normal 25px/33px var(--font-family-sans-serif);
-    --font-title2: normal normal normal normal 19px/26px var(--font-family-sans-serif);
-    --font-title3: normal normal normal normal 17px/24px var(--font-family-sans-serif);
-    --font-callout: normal normal normal normal 14px/20px var(--font-family-sans-serif);
+html {
+    font-family: var(--font-family-default);
+    font-size: 16px;
 }
 
-.smallText {
-    --font-body: normal normal normal normal 15px/24px var(--font-family-sans-serif);
-    --font-headline: normal normal 500 normal 15px/22px var(--font-family-sans-serif);
-    --font-subheadline: normal normal normal normal 14px/21px var(--font-family-sans-serif);
-    --font-footnote: normal normal normal normal 13px/19px var(--font-family-sans-serif);
-    --font-caption1: normal normal normal normal 12px/15px var(--font-family-sans-serif);
-    --font-caption2: normal normal normal normal 12px/15px var(--font-family-sans-serif);
-    --font-title0: normal normal normal normal 32px/40px var(--font-family-sans-serif);
-    --font-title1: normal normal normal normal 26px/33px var(--font-family-sans-serif);
-    --font-title2: normal normal normal normal 20px/27px var(--font-family-sans-serif);
-    --font-title3: normal normal normal normal 18px/25px var(--font-family-sans-serif);
-    --font-callout: normal normal normal normal 15px/22px var(--font-family-sans-serif);
+html.nnwArticle {
+    --font-default: var(--font-family-sans-serif);
+    --font-header: var(--font-family-sans-serif);
 }
 
-.mediumText {
-    --font-body: normal normal normal normal 16px/24px var(--font-family-sans-serif);
-    --font-headline: normal normal 500 normal 16px/22px var(--font-family-sans-serif);
-    --font-subheadline: normal normal normal normal 15px/22px var(--font-family-sans-serif);
-    --font-footnote: normal normal normal normal 13px/19px var(--font-family-sans-serif);
-    --font-caption1: normal normal normal normal 12px/15px var(--font-family-sans-serif);
-    --font-caption2: normal normal normal normal 12px/15px var(--font-family-sans-serif);
-    --font-title0: normal normal normal normal 33px/41px var(--font-family-sans-serif);
-    --font-title1: normal normal normal normal 27px/34px var(--font-family-sans-serif);
-    --font-title2: normal normal normal normal 21px/27px var(--font-family-sans-serif);
-    --font-title3: normal normal normal normal 19px/26px var(--font-family-sans-serif);
-    --font-callout: normal normal normal normal 16px/22px var(--font-family-sans-serif);
+html.nnwNewsArticle {
+    --font-default: var(--font-family-serif);
+    --font-header: var(--font-family-sans-serif);
 }
 
-.largeText {
-    --font-body: normal normal normal normal 17px/26px var(--font-family-sans-serif);
-    --font-headline: normal normal 500 normal 17px/24px var(--font-family-sans-serif);
-    --font-subheadline: normal normal normal normal 15px/22px var(--font-family-sans-serif);
-    --font-footnote: normal normal normal normal 14px/21px var(--font-family-sans-serif);
-    --font-caption1: normal normal normal normal 13px/19px var(--font-family-sans-serif);
-    --font-caption2: normal normal normal normal 12px/15px var(--font-family-sans-serif);
-    --font-title0: normal normal normal normal 34px/43px var(--font-family-sans-serif);
-    --font-title1: normal normal normal normal 28px/35px var(--font-family-sans-serif);
-    --font-title2: normal normal normal normal 22px/29px var(--font-family-sans-serif);
-    --font-title3: normal normal normal normal 20px/27px var(--font-family-sans-serif);
-    --font-callout: normal normal normal normal 16px/23px var(--font-family-sans-serif);
-}
-
-.xlargeText {
-    --font-body: normal normal normal normal 19px/28px var(--font-family-sans-serif);
-    --font-headline: normal normal 500 normal 19px/26px var(--font-family-sans-serif);
-    --font-subheadline: normal normal normal normal 17px/24px var(--font-family-sans-serif);
-    --font-footnote: normal normal normal normal 15px/22px var(--font-family-sans-serif);
-    --font-caption1: normal normal normal normal 15px/22px var(--font-family-sans-serif);
-    --font-caption2: normal normal normal normal 14px/21px var(--font-family-sans-serif);
-    --font-title0: normal normal normal normal 36px/45px var(--font-family-sans-serif);
-    --font-title1: normal normal normal normal 30px/38px var(--font-family-sans-serif);
-    --font-title2: normal normal normal normal 24px/31px var(--font-family-sans-serif);
-    --font-title3: normal normal normal normal 22px/29px var(--font-family-sans-serif);
-    --font-callout: normal normal normal normal 18px/25px var(--font-family-sans-serif);
-}
-
-.xxlargeText {
-    --font-body: normal normal normal normal 21px/29px var(--font-family-sans-serif);
-    --font-headline: normal normal 500 normal 21px/27px var(--font-family-sans-serif);
-    --font-subheadline: normal normal normal normal 19px/26px var(--font-family-sans-serif);
-    --font-footnote: normal normal normal normal 17px/24px var(--font-family-sans-serif);
-    --font-caption1: normal normal normal normal 16px/22px var(--font-family-sans-serif);
-    --font-caption2: normal normal normal normal 15px/22px var(--font-family-sans-serif);
-    --font-title0: normal normal normal normal 38px/48px var(--font-family-sans-serif);
-    --font-title1: normal normal normal normal 32px/39px var(--font-family-sans-serif);
-    --font-title2: normal normal normal normal 26px/33px var(--font-family-sans-serif);
-    --font-title3: normal normal normal normal 24px/31px var(--font-family-sans-serif);
-    --font-callout: normal normal normal normal 20px/27px var(--font-family-sans-serif);
+html.nnwPost {
+    --font-default: var(--font-family-rounded);
+    --font-header: var(--font-family-rounded);
 }
 
 body {
     font: var(--font-body);
     font-feature-settings: "ss01", "ss02", "ss04"; /* Straight-sided 6 and 9, Open four, Open currencies */
     margin: 20px auto 64px;
+}
+
+.nnwNewsArticle body {
+    font-feature-settings: normal;
+    font-variant-numeric: oldstyle-nums diagonal-fractions;
 }
 
 h1 {
@@ -271,8 +202,9 @@ blockquote,
 .wp-block-quote {
     margin-inline: 0;
     padding-inline: 15px;
-    border-inline-start: 3px solid var(--color-border);
+    border-inline: 3px solid var(--color-border);
     color: var(--color-label);
+    background-color: var(--color-blockquote-background);
 }
 
 hr {
@@ -285,7 +217,9 @@ figure {
 }
 
 figure:not([class~="code"]) *,
-figure:not([class~="code"]) {
+figure:not([class~="code"]),
+figcaption,
+.caption {
     color: var(--color-secondary-label);
     font: var(--font-caption1);
     font-feature-settings: "ss06";
@@ -296,20 +230,16 @@ figure:not([class~="code"]) :is(em, i, cite) {
     font-style: italic;
 }
 
-figure audio {
+audio {
     width: 100%;
-}
-
-figcaption,
-.caption {
-    font: var(--font-caption1);
-    color: var(--color-secondary-label);
-    font-feature-settings: "ss06";
-    font-variant-numeric: tabular-nums;
 }
 
 figure figcaption {
     margin-block-start: 8px;
+}
+
+.caption:has(+ .credit) {
+    margin-block-end: calc(1lh - 1em);
 }
 
 div,
@@ -436,12 +366,12 @@ article header .avatar {
     border-block-end: 1px solid var(--color-border);
 }
 
-.articleDatelineTitle .postHidden,
-.articleDateline .articleHidden {
+.nnwPost .postHidden,
+:is(.nnwArticle, .nnwNewsArticle) .articleHidden {
     display: none !important;
 }
 
-body.articleDatelineTitle article header .avatar {
+.nnwPost article header .avatar {
     float: inline-start;
     margin: 0 8px 0 0;
 }
@@ -455,14 +385,14 @@ article header h1.articleTitle {
     grid-column: 1 / span 2;
 }
 
-.articleDateline article header :is(.feedlink, .articleTitle)::after,
-.articleDatelineTitle article header :is(.feedlink)::before {
+:is(.nnwArticle, .nnwNewsArticle) article header :is(.feedlink, .articleTitle)::after,
+.nnwPost article header :is(.feedlink)::before {
     content: "\a";
     white-space: pre-wrap;
 }
 
 @media screen and (width <= 700px), screen and (height <= 700px) {
-    .articleDatelineTitle article header :is(.feedlink)::before {
+    .nnwPost article header :is(.feedlink)::before {
         content: "";
         white-space: initial;
     }
@@ -472,13 +402,13 @@ article header :is(.feedlink, .byline) {
     font-weight: 500;
 }
 
-.articleDatelineTitle article header .feedlink {
+.nnwPost article header .feedlink {
     font: var(--font-subheadline);
     color: var(--color-secondary-label);
     font-weight: 400;
 }
 
-.articleDatelineTitle blockquote {
+.nnwPost blockquote {
     padding: 1em 2ch;
     max-width: 100%;
     border-radius: 8px;
@@ -497,7 +427,7 @@ article header .byline {
     margin-inline-end: 8px;
 }
 
-.articleDatelineTitle article header .byline {
+.nnwPost article header .byline {
     font: var(--font-headline);
 }
 
@@ -516,12 +446,13 @@ article header .dateline {
 }
 
 article header .externalLink {
-    font-style: italic;
-    white-space: nowrap;
-    overflow: hidden;
-    text-overflow: ellipsis;
     clear: both;
     color: var(--color-secondary-label);
+    font-style: italic;
+    font-weight: 200;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
 }
 
 /* Newsfoot theme */
@@ -733,7 +664,6 @@ article figure:not([class~="code"]) {
 
     /* enable "high legibility" in SF font */
     font: var(--font-caption1);
-    font-family: var(--font-family-sans-serif);
     font-feature-settings: "ss06";
     font-variant-numeric: tabular-nums;
 }
@@ -923,7 +853,6 @@ p:has(a[href*="dois-and-their-discontents"]) {
 }
 
 .minnpost-com p:has(> i:only-child) {
-    font-family: var(--font-family-sans-serif);
     color: var(--color-secondary-label);
 }
 
@@ -1115,23 +1044,6 @@ font: var(--font-title3);
 
 body.alerts-weather-gov {
     font-family: var(--font-family-monospace);
-}
-
-body.bbc-co-uk,
-body.bringmethenews-com,
-body.cbsnews-com,
-body.minnesota-cbslocal-com,
-body.minnpost-com,
-body.mprnews-org,
-body.npr-org,
-body.nytimes-com,
-body.startribune-com,
-body.talkingpointsmemo-com,
-body.twincities-com,
-body.washingtonpost-com {
-    font-family: var(--font-family-serif);
-    font-feature-settings: normal;
-    font-variant-numeric: oldstyle-nums diagonal-fractions;
 }
 
 :is(.npr-org, .mprnews-org) #bodyContainer *:first-child:is(img) {
@@ -1698,23 +1610,40 @@ pre.wp-block-verse {
     display: none;
 }
 
+/* Dark mode-specific */
+@media (prefers-color-scheme: dark) {
+    :root {
+        --color-blockquote-background: rgba(255 255 255 / 5%);
+        --color-link: rgb(65 156 255);
+        --color-primary-accent: #2d80f1;
+        --color-secondary-accent: #5e9ef4;
+    }
+}
+
 /* iOS-specific */
 @supports (-webkit-touch-callout: none) {
     :root {
-        --color-primary-accent: #086aee;
-        --color-secondary-accent: #086aee;
         --color-even-alternating-content-background: #f4f5f5;
         --color-odd-alternating-content-background: transparent;
+
+        /* fonts */
+        --font-body: -apple-system-tall-body;
+        --font-headline: -apple-system-headline;
+        --font-subheadline: -apple-system-subheadline;
+        --font-footnote: -apple-system-footnote;
+        --font-caption1: -apple-system-caption1;
+        --font-caption2: -apple-system-caption2;
+        --font-title0: -apple-system-title0;
+        --font-title1: -apple-system-title1;
+        --font-title2: -apple-system-title2;
+        --font-title3: -apple-system-title3;
+        --font-title4: -apple-system-title4; /* big title -- not documented(?) */
+        --font-callout: -apple-system-body; /* approximation */
     }
 
     @media (prefers-color-scheme: dark) {
         :root {
-            --color-primary-accent: #2d80f1;
-            --color-secondary-accent: #5e9ef4;
             --color-even-alternating-content-background: #292929;
-
-            /* --color-link: #2997ff; */
-            --color-link: rgb(65 156 255);
         }
     }
 }
@@ -1722,25 +1651,96 @@ pre.wp-block-verse {
 /* macOS-specific */
 @supports not (-webkit-touch-callout: none) {
     :root {
-        --color-primary-accent: #086aee;
-        --color-secondary-accent: #086aee;
-
-        /* --color-primary-accent: -apple-system-control-accent; */
-
         /* these are intentionally reversed */
         --color-even-alternating-content-background: -apple-system-odd-alternating-content-background;
         --color-odd-alternating-content-background: -apple-system-even-alternating-content-background;
     }
 
-    @media (prefers-color-scheme: dark) {
-        :root {
-            --color-primary-accent: #2d80f1;
-            --color-secondary-accent: #5e9ef4;
-            --color-link: rgb(65 156 255);
-        }
+    .nnwPost article :is(.articleBody, footer) {
+        padding-inline-start: 56px;
     }
 
-    .articleDatelineTitle article :is(.articleBody, footer) {
-        padding-inline-start: 56px;
+    .xsmallText {
+        --font-body: normal normal normal normal 15px/24px var(--font-default);
+        --font-headline: normal normal 500 normal 15px/22px var(--font-header);
+        --font-subheadline: normal normal normal normal 13px/19px var(--font-header);
+        --font-footnote: normal normal normal normal 13px/19px var(--font-header);
+        --font-caption1: normal normal normal normal 12px/15px var(--font-header);
+        --font-caption2: normal normal 510 normal 12px/15px var(--font-header);
+        --font-title0: normal normal normal normal 31px/40px var(--font-header);
+        --font-title1: normal normal normal normal 25px/33px var(--font-header);
+        --font-title2: normal normal normal normal 19px/26px var(--font-header);
+        --font-title3: normal normal normal normal 17px/24px var(--font-header);
+        --font-callout: normal normal normal normal 14px/20px var(--font-header);
+    }
+
+    .smallText {
+        --font-body: normal normal normal normal 15px/24px var(--font-default);
+        --font-headline: normal normal 500 normal 15px/22px var(--font-header);
+        --font-subheadline: normal normal normal normal 14px/21px var(--font-header);
+        --font-footnote: normal normal normal normal 13px/19px var(--font-header);
+        --font-caption1: normal normal normal normal 12px/15px var(--font-header);
+        --font-caption2: normal normal 510 normal 12px/15px var(--font-header);
+        --font-title0: normal normal normal normal 32px/40px var(--font-header);
+        --font-title1: normal normal normal normal 26px/33px var(--font-header);
+        --font-title2: normal normal normal normal 20px/27px var(--font-header);
+        --font-title3: normal normal normal normal 18px/25px var(--font-header);
+        --font-callout: normal normal normal normal 15px/22px var(--font-header);
+    }
+
+    .mediumText {
+        --font-body: normal normal normal normal 16px/24px var(--font-default);
+        --font-headline: normal normal 500 normal 16px/22px var(--font-header);
+        --font-subheadline: normal normal normal normal 15px/22px var(--font-header);
+        --font-footnote: normal normal normal normal 13px/19px var(--font-header);
+        --font-caption1: normal normal normal normal 12px/15px var(--font-header);
+        --font-caption2: normal normal 510 normal 12px/15px var(--font-header);
+        --font-title0: normal normal normal normal 33px/41px var(--font-header);
+        --font-title1: normal normal normal normal 27px/34px var(--font-header);
+        --font-title2: normal normal normal normal 21px/27px var(--font-header);
+        --font-title3: normal normal normal normal 19px/26px var(--font-header);
+        --font-callout: normal normal normal normal 16px/22px var(--font-header);
+    }
+
+    .largeText {
+        --font-body: 17px/26px var(--font-default);
+        --font-headline: 500 17px/24px var(--font-header);
+        --font-subheadline: 15px/22px var(--font-header);
+        --font-footnote: 14px/21px var(--font-header);
+        --font-caption1: 13px/19px var(--font-header);
+        --font-caption2: 510 12px/15px var(--font-header);
+        --font-title0: 34px/43px var(--font-header);
+        --font-title1: 28px/35px var(--font-header);
+        --font-title2: 22px/29px var(--font-header);
+        --font-title3: 20px/27px var(--font-header);
+        --font-callout: 16px/23px var(--font-header);
+    }
+
+    .xlargeText {
+        --font-body: normal normal normal normal 19px/28px var(--font-default);
+        --font-headline: normal normal 500 normal 19px/26px var(--font-header);
+        --font-subheadline: normal normal normal normal 17px/24px var(--font-header);
+        --font-footnote: normal normal normal normal 15px/22px var(--font-header);
+        --font-caption1: normal normal normal normal 15px/22px var(--font-header);
+        --font-caption2: normal normal 510 normal 14px/21px var(--font-header);
+        --font-title0: normal normal normal normal 36px/45px var(--font-header);
+        --font-title1: normal normal normal normal 30px/38px var(--font-header);
+        --font-title2: normal normal normal normal 24px/31px var(--font-header);
+        --font-title3: normal normal normal normal 22px/29px var(--font-header);
+        --font-callout: normal normal normal normal 18px/25px var(--font-header);
+    }
+
+    .xxlargeText {
+        --font-body: normal normal normal normal 21px/29px var(--font-default);
+        --font-headline: normal normal 500 normal 21px/27px var(--font-header);
+        --font-subheadline: normal normal normal normal 19px/26px var(--font-header);
+        --font-footnote: normal normal normal normal 17px/24px var(--font-header);
+        --font-caption1: normal normal normal normal 16px/22px var(--font-header);
+        --font-caption2: normal normal 510 normal 15px/22px var(--font-header);
+        --font-title0: normal normal normal normal 38px/48px var(--font-header);
+        --font-title1: normal normal normal normal 32px/39px var(--font-header);
+        --font-title2: normal normal normal normal 26px/33px var(--font-header);
+        --font-title3: normal normal normal normal 24px/31px var(--font-header);
+        --font-callout: normal normal normal normal 20px/27px var(--font-header);
     }
 }
