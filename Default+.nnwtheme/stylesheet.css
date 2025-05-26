@@ -24,7 +24,7 @@
     --color-label: -apple-system-label;
     --color-secondary-label: -apple-system-secondary-label;
     --color-tertiary-label: -apple-system-tertiary-label;
-    --color-newsfoot-background: background;
+    --color-newsfoot-background: canvas;
     --color-newsfoot-secondary-background: -apple-system-secondary-background;
     --color-newsfoot-popover-background: -apple-system-tertiary-label;
     --color-newsfoot-popover-hover-background: -apple-system-quaternary-label;
@@ -1236,7 +1236,7 @@ font-family: var(--font-family-title);
 .theverge-com .p--has-dropcap::first-letter,
 .theverge-com p.has-drop-cap::first-letter {
     padding-inline-end: 4px;
-    -webkit-initial-letter: 2;
+    initial-letter: 2;
 }
 
 .theverge-com .p-large-text {
@@ -1575,7 +1575,7 @@ color: var(--color-secondary-label);
 
 .cidrap-umn-edu .field-name-field-bullet-points > .field-items > .field-item {
     display: list-item;
-    text-align: -webkit-match-parent;
+    text-align: match-parent;
 }
 
 .mprnews-org .figure-right {
@@ -1766,7 +1766,7 @@ pre.wp-block-verse {
 
 .talkingpointsmemo-com .has-drop-cap::first-letter {
     padding-inline-end: 4px;
-    -webkit-initial-letter: 2;
+    initial-letter: 2;
 }
 
 .eclecticlight-co code {
