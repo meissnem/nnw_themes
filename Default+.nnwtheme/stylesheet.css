@@ -359,6 +359,15 @@ nav div.byline {
     float: right;
 }
 
+.nnwComicStrip nav #comicDateline {
+    text-align: end;
+    font: var(--font-caption1);
+    font-family: var(--font-family-caption);
+    font-stretch: expanded;
+    font-weight: 300;
+    color: var(--color-secondary-label);
+}
+
 article header a:hover {
     color: var(--color-link);
 }
@@ -390,10 +399,6 @@ article footer .dateline a:hover {
 
 article footer .dateline a:link {
     color: inherit;
-}
-
-article footer #comicDateline {
-    display: none;
 }
 
 .headerGrid {
