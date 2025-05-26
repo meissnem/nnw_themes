@@ -1,6 +1,6 @@
 repos:
     - repo: https://github.com/pre-commit/pre-commit-hooks
-      rev: v4.4.0
+      rev: v5.0.0
       hooks:
           - id: check-added-large-files
           - id: check-case-conflict
@@ -18,17 +18,12 @@ repos:
           - id: stylelint
             name: stylelint CSS linter
             language: node
-            additional_dependencies:
-                - stylelint@15.6.2
-                - stylelint-config-standard@33.0.0
-            entry:
-                stylelint
-                #args: [--formatter, unix, --fix]
-            args: [--formatter, unix, --fix]
+            entry: stylelint
+            args: [--fix]
             types_or: [css]
             exclude: "(example|legacy)/.*"
     - repo: https://github.com/pre-commit/mirrors-prettier
-      rev: v3.0.0-alpha.9-for-vscode
+      rev: v4.0.0-alpha.8
       hooks:
           - id: prettier
             types_or: [css, json, yaml]

@@ -12,6 +12,7 @@
     --color-grid: -apple-system-grid;
     --color-pre-background: -apple-system-grid;
     --color-header-text: -apple-system-header-text;
+
     /*
     --color-link: rgb(0 104 218);
     --color-link-visited: -apple-system-purple;
@@ -30,8 +31,7 @@
     --color-navbar: -apple-system-control-background;
     --color-primary-accent: #086aee;
     --color-secondary-accent: #086aee;
-
-    --color-onion-green: rgb(0, 107, 54);
+    --color-onion-green: rgb(0 107 54);
 }
 
 html {
@@ -68,7 +68,8 @@ font {
 }
 
 .nnwArticle body {
-    font-feature-settings: "ss01", "ss02", "ss04"; /* Straight-sided 6 and 9, Open four, Open currencies */
+    font-feature-settings:
+        "ss01", "ss02", "ss04"; /* Straight-sided 6 and 9, Open four, Open currencies */
 }
 
 .nnwNewsArticle body {
@@ -320,7 +321,8 @@ figure cite {
     text-align: initial;
 }
 
-article, nav {
+article,
+nav {
     margin-inline: auto;
     max-width: 42em;
     padding-inline: clamp(20px, calc(calc(100vw - 42em) + 20px), 48px);
@@ -365,6 +367,23 @@ article header a:link {
     color: inherit;
 }
 
+article header .externalLink {
+    clear: both;
+    color: var(--color-secondary-label);
+    font-style: italic;
+    font-weight: 200;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+article header .externalLink a {
+    font-family: var(--font-family-monospace);
+    font-size: 0.85em;
+    font-weight: 400;
+    color: var(--color-link);
+}
+
 article footer .dateline a:hover {
     color: var(--color-link);
 }
@@ -375,14 +394,6 @@ article footer .dateline a:link {
 
 article footer #comicDateline {
     display: none;
-}
-
-.nnwComicStrip article footer .dateline {
-    display: none;
-}
-
-.nnwComicStrip article footer .dateline#comicDateline {
-    display: initial;
 }
 
 .headerGrid {
@@ -526,23 +537,6 @@ article header .dateline {
     }
 }
 
-article header .externalLink {
-    clear: both;
-    color: var(--color-secondary-label);
-    font-style: italic;
-    font-weight: 200;
-    overflow: hidden;
-    text-overflow: ellipsis;
-    white-space: nowrap;
-}
-
-article header .externalLink a {
-    font-family: var(--font-family-monospace);
-    font-size: 0.85em;
-    font-weight: 400;
-    color: var(--color-link);
-}
-
 pre small.shcb-language {
     float: inline-end;
     color: var(--color-secondary-label);
@@ -616,6 +610,20 @@ body a.footnote:hover {
 
 .newsfoot-footnote-popover-inner {
     background: var(--color-newsfoot-background);
+}
+
+.nnwComicStrip article footer .dateline {
+    display: none;
+}
+
+.nnwComicStrip article footer .dateline#comicDateline {
+    display: initial;
+}
+
+p:has(a[href*="dois-and-their-discontents"]) {
+    color: var(--color-secondary-label);
+    font: var(--font-footnote);
+    font-family: var(--font-family-footnote);
 }
 
 /****************************************************   */
@@ -831,6 +839,117 @@ article table[frame~="void"] {
     place-content: flex-start;
 }
 
+/* TOO BROAD
+.arstechnica-com p:has(> em:only-child) {
+font: var(--font-footnote);
+font-family: var(--font-family-footnote);
+color: var(--color-secondary-label);
+}
+*/
+
+.arstechnica-com .articleBody,
+.arstechnica-com ul.gallery {
+    font: var(--font-caption1);
+    font-family: var(--font-family-caption);
+    color: var(--color-secondary-label);
+    font-feature-settings: "ss06";
+    font-variant-numeric: tabular-nums;
+}
+
+.arstechnica-com ul.gallery {
+    list-style-type: none;
+}
+
+.arstechnica-com .articleBody p {
+    font: var(--font-body);
+    font-family: var(--font-family-body);
+    color: var(--color-body);
+    font-feature-settings: normal;
+    font-variant-numeric: normal;
+}
+
+.arstechnica-com .articleBody > :is(div, p):last-child:has(a[href*="comment"]) {
+    border-block-start: thin solid var(--color-border);
+    color: var(--color-secondary-label);
+    font: var(--font-footnote);
+    font-family: var(--font-family-footnote);
+    margin-block-start: 1em;
+    padding-block-start: 1em;
+}
+
+.arstechnica-com aside.pullbox {
+    background-color: var(--color-pre-background);
+    padding: 1em 2ch;
+    max-width: 100%;
+    border-radius: 8px;
+    border: 1px solid var(--color-border);
+    font: var(--font-footnote);
+    font-family: var(--font-family-footnote);
+    font-style: italic;
+}
+
+.arstechnica-com aside.pullbox :is(em, cite, i) {
+    font-style: normal;
+}
+
+.arstechnica-com div.image.center {
+    text-align: center;
+}
+
+.arstechnica-com .ars-newsletter-callbox {
+    display: none;
+}
+
+.arstechnica-com .right {
+    float: right;
+    clear: both;
+    max-width: 65%;
+    margin: 0 0 20px 20px;
+}
+
+.linkback i {
+    font-style: normal;
+}
+
+.macrumors-com .linkback em {
+    font-style: normal;
+}
+
+.inputmag-com p > u {
+    font: var(--font-headline);
+    font-family: var(--font-family-headline);
+    font-weight: 800;
+    letter-spacing: 0.75px;
+    text-decoration: none;
+    text-transform: uppercase;
+}
+
+.inputmag-com blockquote[data-md-text-align="center"] {
+    /* pull quote */
+    display: block;
+    font: var(--font-callout);
+    font-family: var(--font-family-callout);
+    font-weight: 300;
+    font-style: italic;
+    text-align: center;
+    color: var(--color-secondary-label);
+    margin-block: 1em;
+    padding-block: 1em;
+    padding-inline: inherit;
+    border-block: 1px solid var(--color-border);
+    border-inline: inherit;
+}
+
+.inputmag-com blockquote[data-md-text-align="center"] strong,
+blockquote[data-md-text-align="center"] b {
+    font-weight: 500;
+}
+
+.inputmag-com blockquote[data-md-text-align="center"] em,
+blockquote[data-md-text-align="center"] i {
+    font-style: normal;
+}
+
 /*
 .theonion-com .gridible-row img {
     width: 196px !important;
@@ -911,36 +1030,6 @@ article table[frame~="void"] {
     color: var(--color-secondary-label);
 }
 
-.inputmag-com p > u {
-    font: var(--font-headline);
-    font-family: var(--font-family-headline);
-    font-weight: 800;
-    letter-spacing: 0.75px;
-    text-decoration: none;
-    text-transform: uppercase;
-}
-
-.inputmag-com blockquote[data-md-text-align="center"] {
-    /* pull quote */
-    display: block;
-    font: var(--font-callout);
-    font-family: var(--font-family-callout);
-    font-weight: 300;
-    font-style: italic;
-    text-align: center;
-    color: var(--color-secondary-label);
-    margin-block: 1em;
-    padding-block: 1em;
-    padding-inline: inherit;
-    border-block: 1px solid var(--color-border);
-    border-inline: inherit;
-}
-
-.inputmag-com blockquote[data-md-text-align="center"] strong,
-blockquote[data-md-text-align="center"] b {
-    font-weight: 500;
-}
-
 .macrumors-com .linkback {
     font-style: italic;
 }
@@ -949,19 +1038,6 @@ blockquote[data-md-text-align="center"] b {
     border-block-start: 1px solid var(--color-border);
     margin-block-start: 1.65em;
     padding-block-start: 1.65em;
-}
-
-.macrumors-com .linkback em {
-    font-style: normal;
-}
-
-.linkback i {
-    font-style: normal;
-}
-
-.inputmag-com blockquote[data-md-text-align="center"] em,
-blockquote[data-md-text-align="center"] i {
-    font-style: normal;
 }
 
 /* TBD: macrumors-only or generaly useful? */
@@ -1007,12 +1083,6 @@ img + center:has(> em) {
     border-radius: 5px;
     margin-bottom: -18px;
     padding: 0 6px;
-}
-
-p:has(a[href*="dois-and-their-discontents"]) {
-    color: var(--color-secondary-label);
-    font: var(--font-footnote);
-    font-family: var(--font-family-footnote);
 }
 
 .macstories-net .aside p {
@@ -1243,7 +1313,6 @@ font-family: var(--font-family-title);
     width: 68ch;
 }
 
-
 :is(.npr-org, .mprnews-org) #bodyContainer *:first-child:is(img) {
     width: 100% !important;
 }
@@ -1379,74 +1448,6 @@ img.size-full {
     color: var(--color-secondary-label);
     font-feature-settings: "ss06";
     font-variant-numeric: tabular-nums;
-}
-
-/* TOO BROAD
-.arstechnica-com p:has(> em:only-child) {
-font: var(--font-footnote);
-font-family: var(--font-family-footnote);
-color: var(--color-secondary-label);
-}
-*/
-
-.arstechnica-com .articleBody, 
-.arstechnica-com ul.gallery {
-    font: var(--font-caption1);
-    font-family: var(--font-family-caption);
-    color: var(--color-secondary-label);
-    font-feature-settings: "ss06";
-    font-variant-numeric: tabular-nums;
-}
-
-.arstechnica-com ul.gallery {
-    list-style-type: none;
-}
-
-.arstechnica-com .articleBody p {
-    font: var(--font-body);
-    font-family: var(--font-family-body);
-    color: var(--color-body);
-    font-feature-settings: normal;
-    font-variant-numeric: normal;
-}
-
-.arstechnica-com .articleBody > :is(div, p):last-child:has(a[href*="comment"]) {
-    border-block-start: thin solid var(--color-border);
-    color: var(--color-secondary-label);
-    font: var(--font-footnote);
-    font-family: var(--font-family-footnote);
-    margin-block-start: 1em;
-    padding-block-start: 1em;
-}
-
-.arstechnica-com aside.pullbox {
-    background-color: var(--color-pre-background);
-    padding: 1em 2ch;
-    max-width: 100%;
-    border-radius: 8px;
-    border: 1px solid var(--color-border);
-    font: var(--font-footnote);
-    font-family: var(--font-family-footnote);
-    font-style: italic;
-}
-
-.arstechnica-com aside.pullbox :is(em, cite, i) {
-    font-style: normal;
-}
-
-.arstechnica-com div.image.center {
-    text-align: center;
-}
-
-.arstechnica-com .ars-newsletter-callbox {
-    display: none;
-}
-
-.arstechnica-com .right {
-    float: right;
-    clear: both;
-    max-width: 65%;
-    margin: 0 0 20px 20px;
 }
 
 .bbc-co-uk .gel-pica-bold {
@@ -1858,7 +1859,6 @@ pre.wp-block-verse {
         --color-link: rgb(65 156 255);
         --color-primary-accent: #2d80f1;
         --color-secondary-accent: #5e9ef4;
-
         --color-onion-green: -apple-system-green;
     }
 }
@@ -1897,7 +1897,6 @@ pre.wp-block-verse {
         /* these are intentionally reversed */
         --color-even-alternating-content-background: -apple-system-odd-alternating-content-background;
         --color-odd-alternating-content-background: -apple-system-even-alternating-content-background;
-
 
         /* the values for .mediumText are default */
         --font-body: normal normal normal normal 16px/24px var(--font-family-body);
