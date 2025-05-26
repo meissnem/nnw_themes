@@ -6,26 +6,36 @@
 
     /* colors */
     --color-blockquote-background: rgba(0 0 0 / 5%);
-    --color-body: -webkit-text;
+    --color-body: text;
     --color-body-background: -apple-system-text-background;
     --color-border: -apple-system-container-border;
     --color-grid: -apple-system-grid;
     --color-pre-background: -apple-system-grid;
     --color-header-text: -apple-system-header-text;
+    /*
     --color-link: rgb(0 104 218);
+    --color-link-visited: -apple-system-purple;
+    --color-link-active: -apple-system-green;
+    */
+    --color-link: linktext;
+    --color-link-visited: visitedtext;
+    --color-link-active: activetext;
     --color-label: -apple-system-label;
     --color-secondary-label: -apple-system-secondary-label;
     --color-tertiary-label: -apple-system-tertiary-label;
-    --color-newsfoot-background: -apple-system-background;
+    --color-newsfoot-background: background;
     --color-newsfoot-secondary-background: -apple-system-secondary-background;
     --color-newsfoot-popover-background: -apple-system-tertiary-label;
     --color-newsfoot-popover-hover-background: -apple-system-quaternary-label;
-    --color-navbar: -apple-control-background;
+    --color-navbar: -apple-system-control-background;
     --color-primary-accent: #086aee;
     --color-secondary-accent: #086aee;
+
+    --color-onion-green: rgb(0, 107, 54);
 }
 
 html {
+    --font-family-body: ui-sans-serif;
     --font-family-callout: var(--font-family-title);
     --font-family-caption: var(--font-family-title);
     --font-family-footnote: var(--font-family-title);
@@ -37,10 +47,6 @@ html {
     font-size: 16px;
 }
 
-html.nnwArticle {
-    --font-family-body: ui-sans-serif;
-}
-
 html.nnwNewsArticle {
     --font-family-body: ui-serif;
     --font-family-title: ui-sans-serif;
@@ -48,12 +54,17 @@ html.nnwNewsArticle {
 
 html.nnwPost {
     --font-family-body: ui-rounded;
+    --font-family-title: ui-rounded;
 }
 
 body {
     font: var(--font-body);
     font-family: var(--font-family-body);
     margin: 20px auto 64px;
+}
+
+font {
+    font: inherit !important;
 }
 
 .nnwArticle body {
@@ -101,9 +112,11 @@ h3,
 h4,
 h5,
 h6 {
-    font-weight: 600;
+    font-weight: 700;
     clear: both;
     color: var(--color-header-text);
+    font-stretch: extra-condensed;
+    text-wrap: balance;
 }
 
 tt,
@@ -156,10 +169,19 @@ a:hover {
     text-decoration: underline;
 }
 
+a:active {
+    color: var(--color-link-active);
+}
+
+a:visited {
+    color: var(--color-link-visited);
+}
+
 header {
     font: var(--font-headline);
     font-family: var(--font-family-headline);
     margin-block-end: 1em;
+    text-wrap: balance;
 }
 
 :is(.comicskingdom-com, .gocomics-com, .ohjoysextoy-com, .smbc-comics-com, .xkcd-com)
@@ -174,7 +196,7 @@ div.footnote,
 .footnotes,
 .footnotes ~ *,
 .twitterTimestamp,
-ol.footnote,
+ol:is(.footnote, .wp-block-footnotes),
 ol:has(li.footnote) {
     font: var(--font-footnote);
     font-family: var(--font-family-footnote);
@@ -210,7 +232,7 @@ ol:has(li.footnote) {
 
 :is(footer, .articleFooter, div.footnote, #footnotes, .footnotes) :is(h1, h2, h3, h4, h5, h6) {
     border-block-end: none;
-    font-weight: 600;
+    font-weight: 700;
     color: var(--color-header-text);
 }
 
@@ -298,7 +320,7 @@ figure cite {
     text-align: initial;
 }
 
-article {
+article, nav {
     margin-inline: auto;
     max-width: 42em;
     padding-inline: clamp(20px, calc(calc(100vw - 42em) + 20px), 48px);
@@ -310,12 +332,29 @@ article header {
     font-family: var(--font-family-subheadline);
 }
 
+:is(article, nav) :is(article, nav) {
+    padding-inline: 0;
+}
+
 nav a:hover {
     color: var(--color-link);
 }
 
 nav a:link {
     color: inherit;
+}
+
+nav div.byline {
+    display: none;
+}
+
+.nnwComicStrip nav span.feed_title {
+    font-weight: 800;
+}
+
+.nnwComicStrip nav div.byline {
+    display: initial;
+    float: right;
 }
 
 article header a:hover {
@@ -334,6 +373,18 @@ article footer .dateline a:link {
     color: inherit;
 }
 
+article footer #comicDateline {
+    display: none;
+}
+
+.nnwComicStrip article footer .dateline {
+    display: none;
+}
+
+.nnwComicStrip article footer .dateline#comicDateline {
+    display: initial;
+}
+
 .headerGrid {
     display: grid;
     grid-template-columns: auto 32px;
@@ -342,12 +393,17 @@ article footer .dateline a:link {
 }
 
 nav {
-    text-align: center;
     font: var(--font-headline);
     font-family: var(--font-family-headline);
-    font-weight: 800;
+    font-stretch: expanded;
+    font-weight: 300;
     overflow: hidden;
+    margin-block: 20px;
+
+    /*
     margin: 20px;
+    text-align: center;
+     */
 }
 
 nav .favicon {
@@ -373,6 +429,10 @@ article header .avatar {
     max-width: 48px;
     margin-inline-start: 8px;
     margin-block-end: 4px;
+}
+
+.nnwComicStrip article header {
+    display: none;
 }
 
 .headerGrid .avatar {
@@ -476,6 +536,24 @@ article header .externalLink {
     white-space: nowrap;
 }
 
+article header .externalLink a {
+    font-family: var(--font-family-monospace);
+    font-size: 0.85em;
+    font-weight: 400;
+    color: var(--color-link);
+}
+
+pre small.shcb-language {
+    float: inline-end;
+    color: var(--color-secondary-label);
+    font: var(--font-footnote);
+    font-family: var(--font-family-monospace);
+}
+
+pre small.shcb-language :is(.shcb-language__label, .shcb-language__paren, .shcb-language__slug) {
+    display: none;
+}
+
 /* Newsfoot theme */
 body a.footnote {
     margin-inline-start: 5px;
@@ -549,7 +627,9 @@ body a.footnote:hover {
     transform: translateX(-55%) translateY(-50%);
     user-select: none;
     cursor: default;
-    color: var(--color-tertiary-label);
+    color: var(--color-secondary-label);
+    font: var(--font-title1);
+    font-weight: 700;
 }
 
 /* Feedbin stuff */
@@ -638,6 +718,7 @@ body a.footnote:hover {
 
 .articleBody {
     clear: both;
+    text-wrap: pretty;
 }
 
 .articleBody > img {
@@ -741,6 +822,66 @@ article table[frame~="void"] {
     padding: 2px 0 0;
 }
 
+.theonion-com .gridible-row {
+    display: grid;
+    grid-template-columns: auto auto;
+    font: var(--font-callaout);
+    font-family: var(--font-family-callout);
+    color: var(--color-secondary-label);
+    place-content: flex-start;
+}
+
+/*
+.theonion-com .gridible-row img {
+    width: 196px !important;
+    height: auto !important;
+}
+*/
+
+.theonion-com .gridible-row blockquote {
+    background-color: initial;
+    border-inline: none;
+    font: var(--font-title1);
+    font-stretch: extra-condensed;
+    font-weight: 500;
+}
+
+.theonion-com .gridible-row blockquote cite strong {
+    font: var(--font-caption2);
+    font-family: var(--font-family-caption);
+    font-stretch: initial;
+}
+
+.theonion-com .has-primary-1-color {
+    color: var(--color-onion-green);
+}
+
+.theonion-com .has-tablet-gothic-semi-condensed-font-family {
+    font: var(--font-subheadline);
+    font-family: var(--font-family-title);
+    font-weight: 700;
+    clear: both;
+    font-stretch: extra-condensed;
+}
+
+.theonion-com .gridible-col__md-4 {
+    width: 128px;
+    padding-inline: 8px;
+}
+
+.theonion-com .has-background {
+    background-color: var(--color-blockquote-background);
+}
+
+.theonion-com .gridible-row__md-start {
+    border: 1px solid var(--color-grid);
+}
+
+.theonion-com .gridible-col__md-8 {
+    font: var(--font-body);
+    color: var(--color-body);
+}
+
 .appleinsider-com div[align="center"]:has(> img) {
     margin-block: 1em;
     text-align: inherit;
@@ -757,14 +898,16 @@ article table[frame~="void"] {
     font-family: var(--font-family-footnote);
 }
 
-.appleinsider-com :is(.small, .hero-caption) {
+.appleinsider-com :is(.small, .hero-caption),
+.appleinsider-com div > img + br + span {
     font: var(--font-caption1);
     font-family: var(--font-family-caption1);
     font-feature-settings: "ss06";
     font-variant-numeric: tabular-nums;
 }
 
-.appleinsider-com :is(.gray, .hero-caption) {
+.appleinsider-com :is(.gray, .hero-caption),
+.appleinsider-com div > img + br + span {
     color: var(--color-secondary-label);
 }
 
@@ -955,7 +1098,7 @@ iframe[src*="video.startribune.com"] {
 .startribune-com div.articleBody > p:last-child:has(> em:only-child),
 .startribune-com .article-author-contact {
     border-block-start: 1px solid var(--color-border);
-    font-family: var(--font-family-footnote);
+    font: var(--font-footnote);
     color: var(--color-secondary-label);
 }
 
@@ -1022,9 +1165,8 @@ font-family: var(--font-family-title);
 /* The Verge */
 .theverge-com .p--has-dropcap::first-letter,
 .theverge-com p.has-drop-cap::first-letter {
-    font-size: 4em;
-    float: left;
-    margin-block-start: 0.15em;
+    padding-inline-end: 4px;
+    -webkit-initial-letter: 2;
 }
 
 .theverge-com .p-large-text {
@@ -1094,9 +1236,13 @@ font-family: var(--font-family-title);
     color: var(--color-primary-accent);
 }
 
-body.alerts-weather-gov {
+.api-weather-gov .articleBody {
+    white-space: pre-line;
+    font: var(--font-subheadline);
     font-family: var(--font-family-monospace);
+    width: 68ch;
 }
+
 
 :is(.npr-org, .mprnews-org) #bodyContainer *:first-child:is(img) {
     width: 100% !important;
@@ -1128,6 +1274,10 @@ body.alerts-weather-gov {
 .npr-org .disclaimer:not(.disclaimer ~ .disclaimer) {
     padding-block-start: 10px;
     border-block-start: 1px solid var(--color-border);
+}
+
+.npr-org .imagewrap + .enlarge_measure {
+    display: none;
 }
 
 .nytimes-com #fullBleedHeaderContent header,
@@ -1181,7 +1331,7 @@ padding-block-start: 0.5em;
 }
 */
 
-.boingboing-net .next-post-list-container {
+.boingboing-net :is(.next-post-list-container, div.red-box) {
     display: none;
 }
 
@@ -1239,13 +1389,25 @@ color: var(--color-secondary-label);
 }
 */
 
+.arstechnica-com .articleBody, 
 .arstechnica-com ul.gallery {
     font: var(--font-caption1);
     font-family: var(--font-family-caption);
     color: var(--color-secondary-label);
     font-feature-settings: "ss06";
     font-variant-numeric: tabular-nums;
+}
+
+.arstechnica-com ul.gallery {
     list-style-type: none;
+}
+
+.arstechnica-com .articleBody p {
+    font: var(--font-body);
+    font-family: var(--font-family-body);
+    color: var(--color-body);
+    font-feature-settings: normal;
+    font-variant-numeric: normal;
 }
 
 .arstechnica-com .articleBody > :is(div, p):last-child:has(a[href*="comment"]) {
@@ -1321,6 +1483,10 @@ color: var(--color-secondary-label);
     font-family: var(--font-family-footnote);
 }
 
+.bringmethenews-com p[align="center"] {
+    display: none;
+}
+
 :is(footer, .articleFooter, div.footnote, #footnotes, .footnotes) blockquote {
     color: var(--color-secondary-label);
 }
@@ -1329,7 +1495,7 @@ color: var(--color-secondary-label);
     display: none;
 }
 
-.twincities-com :is(.size-article-inline-half, .size-article_infline_half) {
+.twincities-com :is(.size-article-inline-half, .size-article_inline_half) {
     width: calc(50% - 10px);
 }
 
@@ -1341,7 +1507,7 @@ color: var(--color-secondary-label);
     width: calc(25% - 10px);
 }
 
-.twincities-com .article-slideshow button.icon-close {
+.twincities-com .article-slideshow :is(button.icon-close, button.mng-gallery-arrow) {
     display: none;
 }
 
@@ -1598,9 +1764,8 @@ pre.wp-block-verse {
 }
 
 .talkingpointsmemo-com .has-drop-cap::first-letter {
-    float: left;
-    font-size: 4em;
-    margin-block-start: 0.15em;
+    padding-inline-end: 4px;
+    -webkit-initial-letter: 2;
 }
 
 .eclecticlight-co code {
@@ -1693,6 +1858,8 @@ pre.wp-block-verse {
         --color-link: rgb(65 156 255);
         --color-primary-accent: #2d80f1;
         --color-secondary-accent: #5e9ef4;
+
+        --color-onion-green: -apple-system-green;
     }
 }
 
@@ -1730,6 +1897,20 @@ pre.wp-block-verse {
         /* these are intentionally reversed */
         --color-even-alternating-content-background: -apple-system-odd-alternating-content-background;
         --color-odd-alternating-content-background: -apple-system-even-alternating-content-background;
+
+
+        /* the values for .mediumText are default */
+        --font-body: normal normal normal normal 16px/24px var(--font-family-body);
+        --font-headline: normal normal 500 normal 16px/22px var(--font-family-headline);
+        --font-subheadline: normal normal normal normal 15px/22px var(--font-family-subheadline);
+        --font-footnote: normal normal normal normal 13px/19px var(--font-family-footnote);
+        --font-caption1: normal normal normal normal 12px/15px var(--font-family-caption);
+        --font-caption2: normal normal 510 normal 12px/15px var(--font-family-caption);
+        --font-title0: normal normal normal normal 33px/41px var(--font-family-title);
+        --font-title1: normal normal normal normal 27px/34px var(--font-family-title);
+        --font-title2: normal normal normal normal 21px/27px var(--font-family-title);
+        --font-title3: normal normal normal normal 19px/26px var(--font-family-title);
+        --font-callout: normal normal normal normal 16px/22px var(--font-family-callout);
     }
 
     .nnwPost article :is(.articleBody, footer) {
@@ -1764,6 +1945,7 @@ pre.wp-block-verse {
         --font-callout: normal normal normal normal 15px/22px var(--font-family-callout);
     }
 
+    /*
     .mediumText {
         --font-body: normal normal normal normal 16px/24px var(--font-family-body);
         --font-headline: normal normal 500 normal 16px/22px var(--font-family-headline);
@@ -1777,6 +1959,7 @@ pre.wp-block-verse {
         --font-title3: normal normal normal normal 19px/26px var(--font-family-title);
         --font-callout: normal normal normal normal 16px/22px var(--font-family-callout);
     }
+    */
 
     .largeText {
         --font-body: 17px/26px var(--font-family-body);

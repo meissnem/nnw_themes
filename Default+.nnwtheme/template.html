@@ -36,11 +36,39 @@ body: The body of the article.
 
         var feedDomain = "";
         try {
-            let url = (new URL("[[feed_link]]"));
+            console.debug(`title: "[[title]]"`);
+            console.debug(`preferred_link: "[[preferred_link]]"`);
+            console.debug(`external_link_label: "[[external_link_label]]"`);
+            console.debug(`external_link_stripped: "[[external_link_stripped]]"`);
+            console.debug(`external_link: "[[external_link]]"`);
+            console.debug(`feed_link_title: "[[feed_link_title]]"`);
+            console.debug(`feed_link: "[[feed_link]]"`);
+            console.debug(`byline: "[[byline]]"`);
+            console.debug(`dateline_style: "[[dateline_style]]"`);
+            console.debug(`datetime_long: "[[datetime_long]]"`);
+            console.debug(`datetime_medium: "[[datetime_medium]]"`);
+            console.debug(`datetime_short: "[[datetime_short]]"`);
+            console.debug(`date_long: "[[date_long]]"`);
+            console.debug(`date_medium: "[[date_medium]]"`);
+            console.debug(`date_short: "[[date_short]]"`);
+            console.debug(`time_long: "[[time_long]]"`);
+            console.debug(`time_medium: "[[time_medium]]"`);
+            console.debug(`time_short: "[[time_short]]"`);
+            console.debug(`text_size_class: "[[text_size_class]]"`);
+
+            let url = (new URL(`[[feed_link]]` ? `[[feed_link]]` : `[[preferred_link]]`));
             feedDomain = url.hostname.replace("www.","").replaceAll(".", "-");
+
+            console.debug(`feedDomain: "` + feedDomain + `"`);
         } catch(e) {
+            console.warn(e);
             ;
         }
+
+        const comic_sites = [
+            "comicskingdom-com",
+            "gocomics-com",
+        ];
 
         const news_sites = [
             "bbc-co-uk",
@@ -59,6 +87,8 @@ body: The body of the article.
 
         if (("[[dateline_style]]" == "articleDatelineTitle") || (feedDomain == "unofficialbird-com") || /nitter/.test(feedDomain)) {
             document.documentElement.className += " nnwPost";
+        } else if (comic_sites.includes(feedDomain)) {
+            document.documentElement.className += " nnwComicStrip";
         } else if (news_sites.includes(feedDomain)) {
             document.documentElement.className += " nnwNewsArticle";
         } else {
@@ -85,8 +115,9 @@ body: The body of the article.
 <nav class="postHidden" id="navbar">
     <a href="[[feed_link]]" class="feedlink">
         <img class="favicon" id="navbar_favicon" src="[[avatar_src]]" />
-        <span>[[feed_link_title]]</span>
+        <span class="feed_title">[[feed_link_title]]</span>
     </a>
+    <div class="byline">[[byline]]</div>
 </nav>
 <article id="nnwArticle" class="topContainer">
     <header class="headerContainer">
@@ -107,5 +138,6 @@ body: The body of the article.
     </div>
     <footer id="articleFooter">
         <div class="dateline articleHidden"><a href="[[preferred_link]]">[[datetime_medium]]</a></div>
+        <div class="dateline articleHidden" id="comicDateline"><a href="[[preferred_link]]">[[date_long]]</a></div>
     </footer>
 </article>
